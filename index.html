@@ -4,225 +4,81 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pendaftaran Megavision - Promo Double Speed</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --primary:#0d47a1;
-  --primary-light:#1565c0;
-  --primary-dark:#093170;
-  --secondary:#ffc107;
-  --accent:#ff6f00;
-  --success:#2e7d32;
-  --danger:#d32f2f;
-  --bg:#f0f4f8;
-  --card:#ffffff;
-  --text:#1a1a2e;
-  --gray:#6b7280;
-  --border:#e5e7eb;
-}
+:root{--primary:#0d47a1;--primary-light:#1565c0;--primary-dark:#093170;--secondary:#ffc107;--accent:#ff6f00;--success:#2e7d32;--danger:#d32f2f;--bg:#f0f4f8;--text:#1a1a2e;--gray:#6b7280;--border:#e5e7eb}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',Arial,sans-serif}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);line-height:1.5;font-size:15px;-webkit-font-smoothing:antialiased}
-
-/* HERO - simple, no blur */
-.hero{
-  background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 100%);
-  color:#fff;padding:35px 15px 55px;text-align:center;
-}
+body{background:var(--bg);color:var(--text);line-height:1.5;font-size:15px}
+.hero{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 100%);color:#fff;padding:35px 15px 55px;text-align:center}
 .hero-content{max-width:800px;margin:0 auto}
-.badge-promo{
-  display:inline-block;background:var(--secondary);color:var(--primary-dark);
-  padding:6px 16px;border-radius:50px;font-weight:700;font-size:0.78rem;
-  letter-spacing:.5px;margin-bottom:12px;
-}
+.badge-promo{display:inline-block;background:var(--secondary);color:var(--primary-dark);padding:6px 16px;border-radius:50px;font-weight:700;font-size:.78rem;margin-bottom:12px}
 .hero h1{font-size:1.9rem;font-weight:700;margin-bottom:8px}
 .hero h1 span{color:var(--secondary)}
-.hero p{font-size:.9rem;opacity:.95;margin-bottom:16px}
-.hero-stats{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
-.stat-item{
-  background:rgba(255,255,255,.15);
-  padding:8px 14px;border-radius:10px;font-size:.72rem;
-  border:1px solid rgba(255,255,255,.2);
-}
+.hero p{font-size:.9rem;opacity:.95}
+.hero-stats{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:16px}
+.stat-item{background:rgba(255,255,255,.15);padding:8px 14px;border-radius:10px;font-size:.72rem;border:1px solid rgba(255,255,255,.2)}
 .stat-item strong{color:var(--secondary);font-size:.9rem;display:block}
-
-/* CONTAINER */
 .container{max-width:850px;margin:-35px auto 30px;padding:0 15px;position:relative;z-index:2}
-
-/* STEPS */
-.steps{
-  display:flex;justify-content:space-between;background:#fff;
-  padding:14px 18px;border-radius:14px;
-  box-shadow:0 2px 10px rgba(0,0,0,.06);margin-bottom:18px;gap:6px;
-}
-.step{display:flex;align-items:center;gap:6px;flex:1;font-size:.78rem;color:var(--gray);font-weight:600}
-.step-num{
-  width:26px;height:26px;border-radius:50%;background:var(--border);
-  color:var(--gray);display:flex;align-items:center;justify-content:center;
-  font-weight:700;font-size:.75rem;flex-shrink:0;
-}
+.steps{display:flex;justify-content:space-between;background:#fff;padding:14px 18px;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.06);margin-bottom:18px;gap:6px}
+.step{display:flex;align-items:center;gap:6px;flex:1;font-size:.8rem;color:var(--gray);font-weight:600}
+.step-num{width:28px;height:28px;border-radius:50%;background:var(--border);color:var(--gray);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;flex-shrink:0}
 .step.active .step-num{background:var(--primary);color:#fff}
 .step.active{color:var(--primary)}
 .step.done .step-num{background:var(--success);color:#fff}
-
-/* CARD */
-.section-card{
-  background:var(--card);border-radius:16px;padding:22px;
-  margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.06);
-}
-.section-header{
-  display:flex;align-items:center;gap:10px;margin-bottom:16px;
-  padding-bottom:12px;border-bottom:1px dashed var(--border);
-}
-.section-icon{
-  width:38px;height:38px;background:var(--primary);color:#fff;
-  border-radius:10px;display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;flex-shrink:0;
-}
+.section-card{background:#fff;border-radius:16px;padding:22px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px dashed var(--border)}
+.section-icon{width:38px;height:38px;background:var(--primary);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
 .section-header h2{font-size:1rem;font-weight:700}
 .section-header p{font-size:.75rem;color:var(--gray);margin-top:2px}
-
-/* PAKET GRID */
 .paket-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 @media(max-width:560px){.paket-grid{grid-template-columns:1fr}}
-.card{
-  background:#fff;border-radius:12px;padding:14px;
-  border:2px solid var(--border);cursor:pointer;position:relative;
-  transition:border-color .15s,background .15s;
-}
+.card{background:#fff;border-radius:12px;padding:14px;border:2px solid var(--border);cursor:pointer;position:relative;transition:border-color .15s,background .15s}
 .card:hover{border-color:var(--primary-light)}
-.card.selected{
-  border-color:var(--primary);
-  background:#e3f2fd;
-}
-.card.selected::after{
-  content:"✓";position:absolute;top:8px;right:8px;
-  width:22px;height:22px;background:var(--primary);color:#fff;
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  font-weight:700;font-size:.75rem;
-}
+.card.selected{border-color:var(--primary);background:#e3f2fd}
+.card.selected::after{content:"✓";position:absolute;top:8px;right:8px;width:22px;height:22px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.75rem}
 .card-speed{font-size:1.5rem;font-weight:700;color:var(--primary);line-height:1}
 .card-speed small{font-size:.75rem;font-weight:500;color:var(--gray)}
 .card-price{font-size:1.15rem;font-weight:700;color:var(--accent);margin:8px 0 3px}
 .card-price small{font-size:.7rem;color:var(--gray);font-weight:400}
 .card-ppn{font-size:.7rem;color:var(--gray);margin-bottom:5px}
-.card-tag{
-  font-size:.68rem;color:var(--primary);background:#e3f2fd;
-  display:inline-block;padding:3px 8px;border-radius:50px;font-weight:600;
-}
-
-/* FORM */
+.card-tag{font-size:.68rem;color:var(--primary);background:#e3f2fd;display:inline-block;padding:3px 8px;border-radius:50px;font-weight:600}
 .form-group{margin-bottom:14px}
 .form-group label{display:block;margin-bottom:6px;font-weight:600;font-size:.82rem}
 .form-group label .req{color:var(--danger)}
-.form-group input,.form-group select,.form-group textarea{
-  width:100%;padding:11px 13px;border:1.5px solid var(--border);
-  border-radius:9px;font-size:.88rem;font-family:inherit;
-  background:#fafafa;color:var(--text);
-  transition:border-color .15s;
-}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
-  border-color:var(--primary);outline:none;background:#fff;
-}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:9px;font-size:.88rem;font-family:inherit;background:#fafafa;color:var(--text)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary);outline:none;background:#fff}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:560px){.form-row{grid-template-columns:1fr;gap:0}}
-
-/* SELECTED PACKAGE */
-.selected-package-box{
-  background:#e3f2fd;border:2px dashed var(--primary);
-  border-radius:10px;padding:12px 15px;margin-bottom:16px;
-}
-.selected-package-box .label{
-  font-size:.7rem;color:var(--gray);font-weight:700;
-  text-transform:uppercase;letter-spacing:.5px;
-}
-.selected-package-box .value{
-  font-size:.95rem;font-weight:700;color:var(--primary);margin-top:3px;
-}
+.selected-package-box{background:#e3f2fd;border:2px dashed var(--primary);border-radius:10px;padding:12px 15px;margin-bottom:16px}
+.selected-package-box .label{font-size:.7rem;color:var(--gray);font-weight:700;text-transform:uppercase}
+.selected-package-box .value{font-size:.95rem;font-weight:700;color:var(--primary);margin-top:3px}
 .selected-package-box .ppn-note{font-size:.72rem;color:var(--gray);margin-top:4px}
-
-/* UPLOAD */
-.upload-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-@media(max-width:560px){.upload-grid{grid-template-columns:1fr}}
-.upload-item{
-  background:#fafafa;border:2px dashed var(--border);
-  border-radius:10px;padding:12px;
-}
-.upload-item label{
-  display:flex;align-items:center;gap:5px;
-  font-weight:600;font-size:.8rem;margin-bottom:7px;
-}
-.upload-item label .req{color:var(--danger)}
-.upload-item input[type="file"]{
-  width:100%;padding:6px;font-size:.72rem;background:#fff;
-  border:1px solid var(--border);border-radius:7px;cursor:pointer;
-}
-.upload-item input[type="file"]::file-selector-button{
-  background:var(--primary);color:#fff;border:none;
-  padding:5px 10px;border-radius:5px;font-weight:600;
-  font-size:.72rem;cursor:pointer;margin-right:8px;
-}
-
-/* BUTTONS */
 .btn-group{display:flex;gap:10px;margin-top:16px}
-.btn{
-  padding:14px 18px;border-radius:11px;font-size:.92rem;
-  font-weight:700;cursor:pointer;border:none;font-family:inherit;
-  display:flex;align-items:center;justify-content:center;gap:6px;
-  transition:opacity .15s;
-  -webkit-tap-highlight-color:transparent;
-  touch-action:manipulation;
-}
+.btn{padding:14px 18px;border-radius:11px;font-size:.92rem;font-weight:700;cursor:pointer;border:none;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:6px;-webkit-tap-highlight-color:transparent}
 .btn:active{opacity:.85}
 .btn-primary{background:var(--primary);color:#fff;flex:2}
 .btn-primary:disabled{background:#9ca3af;cursor:not-allowed}
 .btn-secondary{background:#fff;color:var(--primary);border:2px solid var(--primary);flex:1}
-
-/* SPINNER */
-.spinner{
-  border:3px solid rgba(255,255,255,.3);border-top:3px solid #fff;
-  border-radius:50%;width:16px;height:16px;
-  animation:spin .8s linear infinite;display:none;
-}
+.spinner{border:3px solid rgba(255,255,255,.3);border-top:3px solid #fff;border-radius:50%;width:16px;height:16px;animation:spin .8s linear infinite;display:none}
 @keyframes spin{to{transform:rotate(360deg)}}
-
-/* SUCCESS */
 .success-box{display:none;text-align:center;padding:35px 20px}
-.success-icon{
-  width:70px;height:70px;background:#e8f5e9;color:var(--success);
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  font-size:2.2rem;margin:0 auto 18px;font-weight:700;
-}
+.success-icon{width:70px;height:70px;background:#e8f5e9;color:var(--success);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 18px;font-weight:700}
 .success-box h2{color:var(--success);font-size:1.25rem;margin-bottom:8px}
 .success-box p{color:var(--gray);margin-bottom:6px;font-size:.85rem}
-.ref-code{
-  display:inline-block;background:#f3f4f6;padding:7px 16px;
-  border-radius:7px;font-family:monospace;font-weight:700;
-  color:var(--primary);margin-top:12px;font-size:.88rem;
-}
-
-/* ERROR */
+.ref-code{display:inline-block;background:#f3f4f6;padding:7px 16px;border-radius:7px;font-family:monospace;font-weight:700;color:var(--primary);margin-top:12px;font-size:.88rem}
 .error-text{color:var(--danger);font-size:.75rem;margin-top:5px;display:none}
 .error-text.show{display:block}
-
-/* PPN INFO */
-.ppn-info{
-  background:#fff8e1;border-left:4px solid var(--accent);
-  padding:10px 13px;border-radius:7px;margin-top:14px;
-  font-size:.76rem;color:#6d4c00;
-}
+.ppn-info{background:#fff8e1;border-left:4px solid var(--accent);padding:10px 13px;border-radius:7px;margin-top:14px;font-size:.76rem;color:#6d4c00}
 .ppn-info strong{color:var(--accent)}
-
-/* FOOTER */
-footer{
-  text-align:center;padding:22px 15px;
-  color:var(--gray);font-size:.78rem;
-}
+.info-dokumen{background:#e8f5e9;border-left:4px solid var(--success);padding:12px 15px;border-radius:7px;margin-top:16px;font-size:.8rem;color:#1b5e20;line-height:1.6}
+.info-dokumen strong{color:var(--success);display:block;margin-bottom:5px}
+.info-dokumen ul{margin-left:18px;margin-top:5px}
+.status-msg{padding:10px 13px;border-radius:7px;margin-top:12px;font-size:.82rem;display:none;text-align:center;font-weight:600}
+.status-msg.info{background:#e3f2fd;color:var(--primary);display:block}
+.status-msg.success{background:#e8f5e9;color:var(--success);display:block}
+.status-msg.error{background:#ffebee;color:var(--danger);display:block}
+footer{text-align:center;padding:22px 15px;color:var(--gray);font-size:.78rem}
 footer strong{color:var(--primary)}
-
-/* STEP SHOW/HIDE */
 .form-step{display:none}
 .form-step.active{display:block}
 </style>
@@ -246,22 +102,17 @@ footer strong{color:var(--primary)}
   <div class="steps" id="stepIndicator">
     <div class="step active" id="step1"><span class="step-num">1</span><span>Pilih Paket</span></div>
     <div class="step" id="step2"><span class="step-num">2</span><span>Data Diri</span></div>
-    <div class="step" id="step3"><span class="step-num">3</span><span>Upload Dokumen</span></div>
   </div>
 
-  <form id="pendaftaranForm" action="https://formspree.io/f/mwlkazyg" method="POST" enctype="multipart/form-data">
+  <form id="pendaftaranForm" action="https://formspree.io/f/mwlkazyg" method="POST">
 
-    <!-- STEP 1 -->
+    <!-- STEP 1: PILIH PAKET -->
     <div class="form-step active" id="formStep1">
       <div class="section-card">
         <div class="section-header">
           <div class="section-icon">📶</div>
-          <div>
-            <h2>Pilih Paket Internet</h2>
-            <p>Klik salah satu paket untuk melanjutkan</p>
-          </div>
+          <div><h2>Pilih Paket Internet</h2><p>Klik salah satu paket untuk melanjutkan</p></div>
         </div>
-
         <div class="paket-grid" id="paketContainer">
           <div class="card" onclick="selectPaket('100 Mbps - Rp 150.000/bln (belum PPN)', this)">
             <div class="card-speed">100 <small>Mbps</small></div>
@@ -300,85 +151,43 @@ footer strong{color:var(--primary)}
             <div class="card-tag">25+ device</div>
           </div>
         </div>
-
-        <input type="hidden" name="Paket_Dipilih" id="selected_paket" required>
         <p class="error-text" id="errorPaket">⚠️ Silakan pilih paket terlebih dahulu</p>
-
-        <div class="ppn-info">
-          💡 <strong>Info PPN 11%:</strong> Semua harga belum termasuk PPN 11%. Total setelah PPN ditampilkan di bawah tiap paket.
-        </div>
-
+        <div class="ppn-info">💡 <strong>Info PPN 11%:</strong> Semua harga belum termasuk PPN 11%.</div>
         <div class="btn-group">
           <button type="button" class="btn btn-primary" onclick="goToStep(2)">Lanjut ke Data Diri →</button>
         </div>
       </div>
     </div>
 
-    <!-- STEP 2 -->
+    <!-- STEP 2: DATA DIRI -->
     <div class="form-step" id="formStep2">
       <div class="section-card">
         <div class="section-header">
           <div class="section-icon">👤</div>
-          <div>
-            <h2>Data Calon Pelanggan</h2>
-            <p>Isi sesuai dokumen resmi (KTP/SIM/Paspor)</p>
-          </div>
+          <div><h2>Data Calon Pelanggan</h2><p>Isi sesuai dokumen resmi</p></div>
         </div>
-
         <div class="selected-package-box">
           <div class="label">Paket Terpilih</div>
           <div class="value" id="tampil_paket">-</div>
           <div class="ppn-note" id="tampil_ppn">-</div>
         </div>
-
-        <div class="form-group">
-          <label>Nama Lengkap <span class="req">*</span></label>
-          <input type="text" name="Nama" id="nama" required placeholder="Sesuai KTP">
-        </div>
-        <div class="form-group">
-          <label>No Identitas (KTP/SIM/Paspor/KITAS) <span class="req">*</span></label>
-          <input type="text" name="No_Identitas" id="no_identitas" required placeholder="Nomor identitas Anda">
-        </div>
-        <div class="form-group">
-          <label>Alamat Pemasangan <span class="req">*</span></label>
-          <textarea name="Alamat" id="alamat" rows="2" required placeholder="Nama Jalan, Blok, RT/RW"></textarea>
+        <div class="form-group"><label>Nama Lengkap <span class="req">*</span></label><input type="text" name="Nama" id="nama" required placeholder="Sesuai KTP"></div>
+        <div class="form-group"><label>No Identitas (KTP/SIM/Paspor/KITAS) <span class="req">*</span></label><input type="text" name="No_Identitas" id="no_identitas" required></div>
+        <div class="form-group"><label>Alamat Pemasangan <span class="req">*</span></label><textarea name="Alamat" id="alamat" rows="2" required placeholder="Nama Jalan, Blok, RT/RW"></textarea></div>
+        <div class="form-row">
+          <div class="form-group"><label>Nomor Rumah <span class="req">*</span></label><input type="text" name="No_Rumah" id="no_rumah" required></div>
+          <div class="form-group"><label>Kelurahan <span class="req">*</span></label><input type="text" name="Kelurahan" id="kelurahan" required></div>
         </div>
         <div class="form-row">
-          <div class="form-group">
-            <label>Nomor Rumah <span class="req">*</span></label>
-            <input type="text" name="No_Rumah" id="no_rumah" required placeholder="Contoh: No. 12B">
-          </div>
-          <div class="form-group">
-            <label>Kelurahan <span class="req">*</span></label>
-            <input type="text" name="Kelurahan" id="kelurahan" required>
-          </div>
+          <div class="form-group"><label>Kecamatan <span class="req">*</span></label><input type="text" name="Kecamatan" id="kecamatan" required></div>
+          <div class="form-group"><label>Kota / Kabupaten <span class="req">*</span></label><input type="text" name="Kota" id="kota" required></div>
         </div>
         <div class="form-row">
-          <div class="form-group">
-            <label>Kecamatan <span class="req">*</span></label>
-            <input type="text" name="Kecamatan" id="kecamatan" required>
-          </div>
-          <div class="form-group">
-            <label>Kota / Kabupaten <span class="req">*</span></label>
-            <input type="text" name="Kota" id="kota" required>
-          </div>
+          <div class="form-group"><label>No HP 1 (WhatsApp) <span class="req">*</span></label><input type="tel" name="No_HP_1" id="hp1" required placeholder="08xxxxxxxxxx"></div>
+          <div class="form-group"><label>No HP 2 (Opsional)</label><input type="tel" name="No_HP_2" id="hp2"></div>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>No HP 1 (WhatsApp) <span class="req">*</span></label>
-            <input type="tel" name="No_HP_1" id="hp1" required placeholder="08xxxxxxxxxx">
-          </div>
-          <div class="form-group">
-            <label>No HP 2 (Opsional)</label>
-            <input type="tel" name="No_HP_2" id="hp2" placeholder="08xxxxxxxxxx">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>E-mail <span class="req">*</span></label>
-          <input type="email" name="Email" id="email" required placeholder="email@contoh.com">
-        </div>
-        <div class="form-group">
-          <label>Pernah Pakai Provider Lain? <span class="req">*</span></label>
+        <div class="form-group"><label>E-mail <span class="req">*</span></label><input type="email" name="Email" id="email" required></div>
+        <div class="form-group"><label>Pernah Pakai Provider Lain? <span class="req">*</span></label>
           <select name="Provider_Sebelumnya" id="provider" required>
             <option value="">-- Pilih --</option>
             <option value="Belum Pernah">Belum Pernah</option>
@@ -389,58 +198,25 @@ footer strong{color:var(--primary)}
             <option value="Lainnya">Lainnya</option>
           </select>
         </div>
+        <input type="hidden" name="Paket_Dipilih" id="selected_paket" required>
+
+        <div class="info-dokumen">
+          📋 <strong>Dokumen yang perlu disiapkan:</strong>
+          <ul>
+            <li>Foto KTP</li>
+            <li>Foto Rumah</li>
+            <li>Foto Meteran</li>
+            <li>Foto Lantai</li>
+            <li>Bukti Bayar/ID Provider Lama (jika ada)</li>
+            <li>Share Lokasi & Patokan</li>
+          </ul>
+          <p style="margin-top:8px;font-size:.78rem;">📲 Dokumen akan diminta oleh admin setelah data Anda terkirim.</p>
+        </div>
+
+        <div id="statusMsg" class="status-msg"></div>
 
         <div class="btn-group">
           <button type="button" class="btn btn-secondary" onclick="goToStep(1)">← Kembali</button>
-          <button type="button" class="btn btn-primary" onclick="goToStep(3)">Lanjut Upload →</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 3 -->
-    <div class="form-step" id="formStep3">
-      <div class="section-card">
-        <div class="section-header">
-          <div class="section-icon">📎</div>
-          <div>
-            <h2>Upload Dokumen Wajib</h2>
-            <p>Semua dokumen wajib diunggah (JPG/PNG, max 2MB/file)</p>
-          </div>
-        </div>
-
-        <div class="upload-grid">
-          <div class="upload-item">
-            <label>🪪 Foto KTP <span class="req">*</span></label>
-            <input type="file" name="Foto_KTP" accept="image/*" required>
-          </div>
-          <div class="upload-item">
-            <label>🏠 Foto Rumah <span class="req">*</span></label>
-            <input type="file" name="Foto_Rumah" accept="image/*" required>
-          </div>
-          <div class="upload-item">
-            <label>⚡ Foto Meteran <span class="req">*</span></label>
-            <input type="file" name="Foto_Meteran" accept="image/*" required>
-          </div>
-          <div class="upload-item">
-            <label>🧱 Foto Lantai <span class="req">*</span></label>
-            <input type="file" name="Foto_Lantai" accept="image/*" required>
-          </div>
-          <div class="upload-item">
-            <label>🧾 Bukti Bayar/ID Provider Lama <span class="req">*</span></label>
-            <input type="file" name="Bukti_Provider_Lama" accept="image/*" required>
-          </div>
-          <div class="upload-item">
-            <label>📍 Share Lokasi & Patokan <span class="req">*</span></label>
-            <input type="file" name="Share_Lokasi" accept="image/*" required>
-          </div>
-        </div>
-
-        <div class="ppn-info" style="margin-top:16px">
-          📌 <strong>Tips:</strong> Kompres foto dulu (di bawah 2MB) agar upload lebih cepat.
-        </div>
-
-        <div class="btn-group">
-          <button type="button" class="btn btn-secondary" onclick="goToStep(2)">← Kembali</button>
           <button type="submit" class="btn btn-primary" id="btnSubmit">
             <span id="btnText">🚀 KIRIM PENDAFTARAN</span>
             <div class="spinner" id="spinner"></div>
@@ -456,13 +232,12 @@ footer strong{color:var(--primary)}
     <h2>Pendaftaran Berhasil!</h2>
     <p>Terima kasih <strong id="successName"></strong>, data Anda telah kami terima.</p>
     <p>Tim Megavision akan menghubungi Anda dalam 1x24 jam.</p>
+    <p style="font-size:.78rem;margin-top:10px;color:#6b7280;">📲 Siapkan foto dokumen untuk dikirim ke admin saat dihubungi.</p>
     <div class="ref-code" id="refCode">REF: -</div>
   </div>
 </div>
 
-<footer>
-  &copy; 2026 <strong>Megavision</strong> — Internet Cepat Harga Hemat
-</footer>
+<footer>&copy; 2026 <strong>Megavision</strong> — Internet Cepat Harga Hemat</footer>
 
 <script>
 var paketTerpilih = "";
@@ -470,10 +245,9 @@ var ppnTerpilih = "";
 
 function selectPaket(namaPaket, element){
   var cards = document.querySelectorAll('.card');
-  for(var i=0;i<cards.length;i++){ cards[i].classList.remove('selected'); }
+  for(var i=0;i<cards.length;i++){cards[i].classList.remove('selected');}
   element.classList.add('selected');
   paketTerpilih = namaPaket;
-
   var priceEl = element.querySelector('.card-price').textContent;
   var match = priceEl.match(/Rp ([\d.]+)/);
   if(match){
@@ -482,7 +256,6 @@ function selectPaket(namaPaket, element){
     var total = harga + ppn;
     ppnTerpilih = 'Rp ' + harga.toLocaleString('id-ID') + ' + PPN 11% (Rp ' + ppn.toLocaleString('id-ID') + ') = Rp ' + total.toLocaleString('id-ID') + '/bln';
   }
-
   document.getElementById('selected_paket').value = namaPaket;
   document.getElementById('tampil_paket').textContent = namaPaket;
   document.getElementById('tampil_ppn').textContent = ppnTerpilih;
@@ -494,36 +267,25 @@ function goToStep(step){
     document.getElementById('errorPaket').classList.add('show');
     return;
   }
-  if(step === 3){
-    var fields = ['nama','no_identitas','alamat','no_rumah','kelurahan','kecamatan','kota','hp1','email','provider'];
-    for(var i=0;i<fields.length;i++){
-      var el = document.getElementById(fields[i]);
-      if(!el.value.trim()){
-        el.style.borderColor = '#d32f2f';
-        el.focus();
-        alert('⚠️ Mohon lengkapi semua data yang wajib diisi.');
-        return;
-      } else {
-        el.style.borderColor = '';
-      }
-    }
-  }
-
   var steps = document.querySelectorAll('.form-step');
-  for(var i=0;i<steps.length;i++){ steps[i].classList.remove('active'); }
+  for(var i=0;i<steps.length;i++){steps[i].classList.remove('active');}
   document.getElementById('formStep'+step).classList.add('active');
-
   var indicators = document.querySelectorAll('.step');
   for(var i=0;i<indicators.length;i++){
     indicators[i].classList.remove('active','done');
     if(i+1 < step) indicators[i].classList.add('done');
     if(i+1 === step) indicators[i].classList.add('active');
   }
-
   window.scrollTo(0, 200);
 }
 
-document.getElementById('pendaftaranForm').addEventListener('submit', function(e){
+function showStatus(msg, type){
+  var el = document.getElementById('statusMsg');
+  el.textContent = msg;
+  el.className = 'status-msg ' + type;
+}
+
+document.getElementById('pendaftaranForm').addEventListener('submit', async function(e){
   e.preventDefault();
   var btnSubmit = document.getElementById('btnSubmit');
   var btnText = document.getElementById('btnText');
@@ -533,11 +295,42 @@ document.getElementById('pendaftaranForm').addEventListener('submit', function(e
   btnSubmit.disabled = true;
   btnText.textContent = "Mengirim...";
   spinner.style.display = "inline-block";
+  showStatus('📤 Mengirim data...', 'info');
 
   var formData = new FormData(form);
   formData.append('Info_PPN', ppnTerpilih);
 
-  fetch(form.action, {
+  try {
+    var response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {'Accept': 'application/json'}
+    });
+
+    if(response.ok){
+      showStatus('✅ Berhasil!', 'success');
+      form.style.display = 'none';
+      document.getElementById('stepIndicator').style.display = 'none';
+      var namaUser = document.getElementById('nama').value;
+      document.getElementById('successName').textContent = namaUser;
+      document.getElementById('refCode').textContent = 'REF: MV-' + Date.now().toString().slice(-8);
+      document.getElementById('successBox').style.display = 'block';
+      window.scrollTo(0, 0);
+    } else {
+      var errData = await response.json().catch(function(){return {};});
+      throw new Error(errData.error || 'Gagal mengirim (kode ' + response.status + ')');
+    }
+  } catch(err){
+    console.error(err);
+    showStatus('❌ Gagal: ' + err.message + '. Silakan coba lagi.', 'error');
+    btnSubmit.disabled = false;
+    btnText.textContent = "🚀 KIRIM PENDAFTARAN";
+    spinner.style.display = "none";
+  }
+});
+</script>
+</body>
+</html>  fetch(form.action, {
     method: 'POST',
     body: formData,
     headers: { 'Accept': 'application/json' }
