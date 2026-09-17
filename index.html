@@ -104,9 +104,9 @@ footer strong{color:var(--primary)}
     <div class="step" id="step2"><span class="step-num">2</span><span>Data Diri</span></div>
   </div>
 
-  <form id="pendaftaranForm" action="https://formspree.io/f/mwlkazyg" method="POST">
+  <form id="pendaftaranForm" onsubmit="kirimData(event)">
 
-    <!-- STEP 1: PILIH PAKET -->
+    <!-- STEP 1 -->
     <div class="form-step active" id="formStep1">
       <div class="section-card">
         <div class="section-header">
@@ -159,7 +159,7 @@ footer strong{color:var(--primary)}
       </div>
     </div>
 
-    <!-- STEP 2: DATA DIRI -->
+    <!-- STEP 2 -->
     <div class="form-step" id="formStep2">
       <div class="section-card">
         <div class="section-header">
@@ -198,7 +198,6 @@ footer strong{color:var(--primary)}
             <option value="Lainnya">Lainnya</option>
           </select>
         </div>
-        <input type="hidden" name="Paket_Dipilih" id="selected_paket" required>
 
         <div class="info-dokumen">
           📋 <strong>Dokumen yang perlu disiapkan:</strong>
@@ -240,6 +239,13 @@ footer strong{color:var(--primary)}
 <footer>&copy; 2026 <strong>Megavision</strong> — Internet Cepat Harga Hemat</footer>
 
 <script>
+/* ============================================================
+   ⚙️ KONFIGURASI - GANTI URL DI BAWAH DENGAN URL APPS SCRIPT ANDA
+   Cara dapat URL: lihat panduan Google Apps Script
+   ============================================================ */
+var URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfyc.../exec";
+/* ============================================================ */
+
 var paketTerpilih = "";
 var ppnTerpilih = "";
 
@@ -256,7 +262,6 @@ function selectPaket(namaPaket, element){
     var total = harga + ppn;
     ppnTerpilih = 'Rp ' + harga.toLocaleString('id-ID') + ' + PPN 11% (Rp ' + ppn.toLocaleString('id-ID') + ') = Rp ' + total.toLocaleString('id-ID') + '/bln';
   }
-  document.getElementById('selected_paket').value = namaPaket;
   document.getElementById('tampil_paket').textContent = namaPaket;
   document.getElementById('tampil_ppn').textContent = ppnTerpilih;
   document.getElementById('errorPaket').classList.remove('show');
@@ -285,49 +290,84 @@ function showStatus(msg, type){
   el.className = 'status-msg ' + type;
 }
 
-document.getElementById('pendaftaranForm').addEventListener('submit', async function(e){
+function kirimData(e){
   e.preventDefault();
+
+  if(paketTerpilih === ""){
+    document.getElementById('errorPaket').classList.add('show');
+    goToStep(1);
+    return;
+  }
+
   var btnSubmit = document.getElementById('btnSubmit');
   var btnText = document.getElementById('btnText');
   var spinner = document.getElementById('spinner');
-  var form = this;
 
+  var data = {
+    nama: document.getElementById('nama').value.trim(),
+    no_identitas: document.getElementById('no_identitas').value.trim(),
+    alamat: document.getElementById('alamat').value.trim(),
+    no_rumah: document.getElementById('no_rumah').value.trim(),
+    kelurahan: document.getElementById('kelurahan').value.trim(),
+    kecamatan: document.getElementById('kecamatan').value.trim(),
+    kota: document.getElementById('kota').value.trim(),
+    hp1: document.getElementById('hp1').value.trim(),
+    hp2: document.getElementById('hp2').value.trim() || '-',
+    email: document.getElementById('email').value.trim(),
+    provider: document.getElementById('provider').value,
+    paket: paketTerpilih,
+    ppn: ppnTerpilih,
+    refCode: 'MV-' + Date.now().toString().slice(-8),
+    waktu: new Date().toLocaleString('id-ID', {
+      day: '2-digit', month: '2-digit', year: 'numeric',
+      hour: '2-digit', minute: '2-digit'
+    })
+  };
+
+  // Validasi
+  var wajib = ['nama','no_identitas','alamat','no_rumah','kelurahan','kecamatan','kota','hp1','email','provider'];
+  for(var i=0;i<wajib.length;i++){
+    if(!data[wajib[i]]){
+      alert('⚠️ Mohon lengkapi semua data yang wajib diisi.');
+      document.getElementById(wajib[i]).focus();
+      return;
+    }
+  }
+
+  // Loading
   btnSubmit.disabled = true;
   btnText.textContent = "Mengirim...";
   spinner.style.display = "inline-block";
-  showStatus('📤 Mengirim data...', 'info');
+  showStatus('📤 Mengirim data ke admin...', 'info');
 
-  var formData = new FormData(form);
-  formData.append('Info_PPN', ppnTerpilih);
-
-  try {
-    var response = await fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      headers: {'Accept': 'application/json'}
-    });
-
-    if(response.ok){
-      showStatus('✅ Berhasil!', 'success');
-      form.style.display = 'none';
+  // Kirim ke Google Apps Script
+  fetch(URL_APPS_SCRIPT, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {'Content-Type': 'text/plain;charset=utf-8'}
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(result){
+    if(result.success){
+      showStatus('✅ Berhasil dikirim!', 'success');
+      document.getElementById('pendaftaranForm').style.display = 'none';
       document.getElementById('stepIndicator').style.display = 'none';
-      var namaUser = document.getElementById('nama').value;
-      document.getElementById('successName').textContent = namaUser;
-      document.getElementById('refCode').textContent = 'REF: MV-' + Date.now().toString().slice(-8);
+      document.getElementById('successName').textContent = data.nama;
+      document.getElementById('refCode').textContent = 'REF: ' + data.refCode;
       document.getElementById('successBox').style.display = 'block';
       window.scrollTo(0, 0);
     } else {
-      var errData = await response.json().catch(function(){return {};});
-      throw new Error(errData.error || 'Gagal mengirim (kode ' + response.status + ')');
+      throw new Error(result.message || 'Gagal kirim');
     }
-  } catch(err){
+  })
+  .catch(function(err){
     console.error(err);
     showStatus('❌ Gagal: ' + err.message + '. Silakan coba lagi.', 'error');
     btnSubmit.disabled = false;
     btnText.textContent = "🚀 KIRIM PENDAFTARAN";
     spinner.style.display = "none";
-  }
-});
+  });
+}
 </script>
 </body>
 </html>
