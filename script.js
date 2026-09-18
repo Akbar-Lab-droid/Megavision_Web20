@@ -1,8 +1,7 @@
 /* ============================================================
    ⚙️ KONFIGURASI - GANTI URL DI BAWAH DENGAN URL APPS SCRIPT ANDA
-   Cara dapat URL: lihat panduan di bawah
    ============================================================ */
-var URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbwJM7sdkkFc-vOxD_g2EBqUB4f54h8sPZu7yCFVsEMRDMj-k_G1DsuKL4Lm9VUMBrJI/exec";
+var URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfyc.../exec";
 /* ============================================================ */
 
 /* ========== MENU MOBILE ========== */
@@ -110,7 +109,6 @@ function kirimData(e){
 
   var data = {
     nama: document.getElementById('nama').value.trim(),
-    no_identitas: document.getElementById('no_identitas').value.trim(),
     alamat: document.getElementById('alamat').value.trim(),
     no_rumah: document.getElementById('no_rumah').value.trim(),
     kelurahan: document.getElementById('kelurahan').value.trim(),
@@ -118,8 +116,7 @@ function kirimData(e){
     kota: document.getElementById('kota').value.trim(),
     hp1: document.getElementById('hp1').value.trim(),
     hp2: document.getElementById('hp2').value.trim() || '-',
-    email: document.getElementById('email').value.trim(),
-    provider: document.getElementById('provider').value,
+    email: document.getElementById('email').value.trim() || '-',
     paket: paketTerpilih,
     ppn: ppnTerpilih,
     refCode: 'MV-' + Date.now().toString().slice(-8),
@@ -129,7 +126,7 @@ function kirimData(e){
     })
   };
 
-  var wajib = ['nama','alamat','no_rumah','kelurahan','kecamatan','kota','hp1','email'];
+  var wajib = ['nama','alamat','no_rumah','kelurahan','kecamatan','kota','hp1'];
   for(var i=0;i<wajib.length;i++){
     if(!data[wajib[i]]){
       alert('⚠️ Mohon lengkapi semua data yang wajib diisi.');
