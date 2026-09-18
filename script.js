@@ -2,7 +2,7 @@
    ⚙️ KONFIGURASI - GANTI URL DI BAWAH DENGAN URL APPS SCRIPT ANDA
    Cara dapat URL: lihat panduan di bawah
    ============================================================ */
-var URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfyc.../exec";
+var URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbwJM7sdkkFc-vOxD_g2EBqUB4f54h8sPZu7yCFVsEMRDMj-k_G1DsuKL4Lm9VUMBrJI/exec";
 /* ============================================================ */
 
 /* ========== MENU MOBILE ========== */
