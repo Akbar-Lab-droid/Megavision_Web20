@@ -30,13 +30,35 @@
 <body>
 <header class="navbar">
   <div class="container nav-inner">
-    <a class="brand" href="#home"><img src="assets/logo.png" alt="Megavision" class="brand-logo" onerror="this.style.display='none'"><span class="brand-text"><b>MEGAVISION</b><small>Internet & TV Kabel</small></span></a>
+    <a class="brand" href="#home">
+      <div class="brand-mark">M</div>
+      <span class="brand-text">
+        <b>MEGAVISION</b>
+        <small>Internet & TV Kabel</small>
+      </span>
+    </a>
     <nav id="navMenu"><a href="#home">Beranda</a><a href="#paket">Paket</a><a href="#promo">Promo</a><a href="#daftar">Daftar</a><a href="#kontak">Kontak</a></nav>
     <a class="nav-cta" href="#daftar">Daftar Sekarang</a><button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
   </div>
 </header>
 <main>
-<section class="hero" id="home"><div class="container hero-grid"><div class="hero-copy reveal"><div class="eyebrow">🔥 PROMO SPESIAL MEGAVISION</div><h1>Double Speed.<br><span>Double Hemat.</span></h1><p class="hero-text">Nikmati internet cepat dan stabil untuk streaming, gaming, kerja, belajar, dan semua kebutuhan keluarga.</p><div class="hero-buttons"><a class="btn primary" href="#daftar">🚀 Daftar Online</a><a class="btn secondary" href="#paket">Lihat Paket ↓</a></div><div class="trust-row"><div><b>73+</b><span>Channel TV</span></div><div><b>WiFi 6</b><span>Paket Maxi</span></div><div><b>24/7</b><span>Koneksi Stabil</span></div></div></div><div class="hero-card reveal"><div class="promo-badge">25<sup>th</sup></div><img src="assets/promo-megavision.jpg" alt="Promo Megavision" onerror="this.src='https://via.placeholder.com/500x600/0758c9/ffffff?text=Promo+Megavision'"><div class="floating-price"><small>Mulai dari</small><strong>Rp 150.000<span>/bulan</span></strong></div></div></div></section>
+<section class="hero" id="home"><div class="container hero-grid"><div class="hero-copy reveal"><div class="eyebrow">🔥 PROMO SPESIAL MEGAVISION</div><h1>Double Speed.<br><span>Double Hemat.</span></h1><p class="hero-text">Nikmati internet cepat dan stabil untuk streaming, gaming, kerja, belajar, dan semua kebutuhan keluarga.</p><div class="hero-buttons"><a class="btn primary" href="#daftar">🚀 Daftar Online</a><a class="btn secondary" href="#paket">Lihat Paket ↓</a></div><div class="trust-row"><div><b>73+</b><span>Channel TV</span></div><div><b>WiFi 6</b><span>Paket Maxi</span></div><div><b>24/7</b><span>Koneksi Stabil</span></div></div></div>
+<div class="hero-card reveal">
+  <div class="hero-visual">
+    <div class="visual-top">
+      <span>Megavision</span>
+      <span class="live-pill"><i></i> Online</span>
+    </div>
+    <div class="visual-speed">100 <small>Mbps</small></div>
+    <div class="visual-split">50 + 50 Mbps</div>
+    <div class="visual-graph">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="visual-pills"><span>Streaming</span><span>Gaming</span><span>WFH</span></div>
+  </div>
+  <div class="floating-price"><small>Mulai dari</small><strong>Rp 150.000<span>/bulan</span></strong></div>
+</div>
+</div></section>
 <section class="section" id="paket"><div class="container"><div class="section-head reveal"><span class="section-label">PILIH SESUAI KEBUTUHAN</span><h2>Paket Internet <span>Megavision</span></h2><p>Harga terjangkau dengan pilihan kecepatan internet yang jelas dan transparan.</p></div>
 <div class="package-grid">
 <article class="package reveal"><div class="tag">INTERNET ONLY</div><div class="speed"><small class="speed-split">50 + 50 Mbps</small><span class="speed-total">100 <small>Mbps</small></span></div><div class="price">Rp 150.000 <small>per bulan</small></div><ul><li>✓ Internet cepat & stabil</li><li>✓ Cocok untuk keluarga</li><li>✓ Tanpa TV Kabel</li></ul><a href="#daftar">Pilih Paket</a></article>
@@ -56,7 +78,7 @@
 <div class="paket-card-form" onclick="selectPaket('400 Mbps (200+200) - Rp 300.000 per bulan', this)"><div class="pc-speed"><span class="speed-total">400 Mbps</span><small class="speed-split">200 + 200 Mbps</small></div><div class="pc-price">Rp 300.000 <small>per bulan</small></div><div class="pc-ppn">+ PPN 11% = Rp 333.000</div></div></div><p class="error-text" id="errorPaket">⚠️ Silakan pilih paket terlebih dahulu</p><div class="form-actions"><button type="button" class="btn primary" onclick="goToStep(2)">Lanjut ke Data Diri →</button></div></div>
 <div class="form-step" id="formStep2"><div class="form-head"><div class="form-icon">👤</div><div><h3>Data Calon Pelanggan</h3><p>Isi data dengan benar. Admin akan menghubungi Anda.</p></div></div><div class="selected-pkg-box"><div class="spb-label">PAKET TERPILIH</div><div class="spb-value" id="tampil_paket">-</div><div class="spb-ppn" id="tampil_ppn">-</div></div><div class="form-group"><label>Nama Lengkap <span class="req">*</span></label><input type="text" id="nama" required placeholder="Sesuai KTP"></div><div class="form-group"><label>Alamat Pemasangan <span class="req">*</span></label><textarea id="alamat" rows="2" required placeholder="Nama Jalan, Blok, RT/RW"></textarea></div><div class="form-row"><div class="form-group"><label>Nomor Rumah <span class="req">*</span></label><input type="text" id="no_rumah" required></div><div class="form-group"><label>Kelurahan <span class="req">*</span></label><input type="text" id="kelurahan" required></div></div><div class="form-row"><div class="form-group"><label>Kecamatan <span class="req">*</span></label><input type="text" id="kecamatan" required></div><div class="form-group"><label>Kota / Kabupaten <span class="req">*</span></label><input type="text" id="kota" required></div></div><div class="form-row"><div class="form-group"><label>No HP 1 (WhatsApp) <span class="req">*</span></label><input type="tel" id="hp1" required placeholder="08xxxxxxxxxx"></div><div class="form-group"><label>No HP 2 (Opsional)</label><input type="tel" id="hp2"></div></div><div class="form-group"><label>E-mail <span class="req">*</span></label><input type="email" id="email" required></div><div class="info-dokumen">📋 <strong>Dokumen yang perlu disiapkan:</strong><ul><li>Foto KTP</li><li>Foto Rumah</li><li>Foto Meteran</li><li>Foto Lantai</li><li>Bukti Bayar/ID Provider Lama (jika ada)</li><li>Share Lokasi & Patokan</li></ul><p>📲 Dokumen akan diminta admin setelah data terkirim.</p></div><div id="statusMsg" class="status-msg"></div><div class="form-actions"><button type="button" class="btn secondary" onclick="goToStep(1)">← Kembali</button><button type="submit" class="btn primary" id="btnSubmit"><span id="btnText">🚀 KIRIM PENDAFTARAN</span><span class="spinner" id="spinner"></span></button></div></div>
 <div class="form-step" id="formStep3"><div class="success-box"><div class="success-icon">✓</div><h3>Pendaftaran Berhasil!</h3><p>Terima kasih <strong id="successName"></strong>, data Anda telah kami terima.</p><p>Tim Megavision akan menghubungi Anda dalam 1x24 jam.</p><p class="small-note">📲 Siapkan foto dokumen untuk dikirim ke admin saat dihubungi.</p><div class="ref-code" id="refCode">REF: -</div></div></div></form></div></section>
-<section class="poster-section"><div class="container poster-grid"><div class="poster-copy reveal"><span class="section-label">PROMO TERBARU</span><h2>Internet kencang untuk semua aktivitas.</h2><p>Gunakan koneksi untuk WFH, sekolah online, streaming, gaming, bisnis, hingga kebutuhan rumah tangga.</p><a class="btn primary" href="#daftar">Daftar Sekarang</a></div><img class="poster" src="assets/promo-megavision.jpg" alt="Poster promo Megavision" loading="lazy" onerror="this.src='https://via.placeholder.com/430x540/0758c9/ffffff?text=Promo+Megavision'"></div></section>
+<section class="poster-section"><div class="container poster-grid"><div class="poster-copy reveal"><span class="section-label">PROMO TERBARU</span><h2>Internet kencang untuk semua aktivitas.</h2><p>Gunakan koneksi untuk WFH, sekolah online, streaming, gaming, bisnis, hingga kebutuhan rumah tangga.</p><a class="btn primary" href="#daftar">Daftar Sekarang</a></div><div class="poster-art reveal"><div class="poster-card"><div class="poster-card-top"><span>Megavision</span><span class="live-pill"><i></i> Aktif</span></div><div class="poster-speed">100 <small>Mbps</small></div><div class="poster-split">50 + 50 Mbps</div><div class="poster-metrics"><span>73 Channel</span><span>WiFi 6</span></div></div></div></div></section>
 <section class="contact" id="kontak"><div class="container contact-box reveal"><div><span class="section-label">SIAP PASANG?</span><h2>Hubungi <span>Kami</span> Sekarang</h2><p>Dapatkan info area, ketersediaan jaringan, dan pilihan paket yang paling sesuai.</p></div><div class="contact-actions"><a href="tel:085642448407" class="contact-item">📞 <span>0856 4244 8407</span></a><a href="https://wa.me/6285642448407" target="_blank" class="contact-item wa">💬 <span>WhatsApp Sekarang</span></a></div></div></section>
 </main><footer><div class="container footer-inner"><div><b>MEGAVISION</b><span>Internet & TV Kabel</span></div><p>© 2026 Megavision Promo. S&K berlaku.</p></div></footer><a class="floating-wa" href="https://wa.me/6285642448407" target="_blank" aria-label="WhatsApp">☏</a><script src="script.js"></script>
 </body></html>
