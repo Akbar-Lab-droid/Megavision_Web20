@@ -129,7 +129,7 @@ function kirimData(e){
     })
   };
 
-  var wajib = ['nama','no_identitas','alamat','no_rumah','kelurahan','kecamatan','kota','hp1','email','provider'];
+  var wajib = ['nama','alamat','no_rumah','kelurahan','kecamatan','kota','hp1','email'];
   for(var i=0;i<wajib.length;i++){
     if(!data[wajib[i]]){
       alert('⚠️ Mohon lengkapi semua data yang wajib diisi.');
