@@ -2,83 +2,1274 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0758c9">
-<meta name="description" content="Promo Megavision Internet & TV Kabel - Internet cepat, stabil dan hemat.">
-<title>Megavision — Promo Double Speed</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#FFFFFF">
+<title>MEGAVISION — Internet Cepat, Hidup Lebih Seru</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* Tampilan paket: total Mbps besar, pembagian speed kecil di atas, harga tidak disingkat. */
-.package .speed{display:flex;flex-direction:column;gap:2px}
-.package .speed .speed-split{order:-1;font-size:11px;line-height:1.2;font-weight:700;letter-spacing:.3px;color:#718098;background:#eef6ff;border-radius:6px;padding:4px 8px;width:max-content}
-.package .speed .speed-total{font-size:43px;line-height:1;font-weight:900;color:var(--blue)}
-.package .price{font-size:19px;white-space:nowrap}
-.package .price small{font-size:10px}
-.maxi-card{display:block}
-.maxi-card b{display:block;margin-bottom:6px}
-.maxi-card strong{display:block;font-size:17px;white-space:nowrap}
-.maxi-card strong small{display:inline;color:#758399;font-size:9px;margin-left:3px}
-.paket-card-form .pc-speed{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:2px}
-.paket-card-form .pc-speed .speed-total{font-size:1.5rem;line-height:1.1}
-.paket-card-form .pc-speed .speed-split{font-size:.68rem;color:var(--muted);font-weight:600;background:#eef6ff;border-radius:5px;padding:2px 6px}
-.paket-card-form .pc-price{font-size:1.05rem}
+:root{
+  --white:#FFFFFF; --bg:#F5F7FB; --bg-2:#EEF2FA;
+  --blue:#0B3DA8; --blue-2:#1D4ED8; --blue-3:#2563EB; --blue-100:#DBEAFE; --blue-50:#EFF6FF;
+  --yellow:#F5C518; --yellow-2:#FCD34D; --yellow-3:#D97706;
+  --red:#DC2626; --red-2:#EF4444;
+  --green:#16A34A; --green-2:#22C55E;
+  --ink:#0F172A; --ink-2:#334155; --muted:#64748B;
+  --line:rgba(15,23,42,.08); --line-2:rgba(15,23,42,.14);
+  --grad-blue:linear-gradient(135deg,#0B3DA8 0%,#1D4ED8 55%,#2563EB 100%);
+  --grad-yellow:linear-gradient(135deg,#FCD34D 0%,#F5C518 50%,#D97706 100%);
+  --grad-red:linear-gradient(135deg,#EF4444 0%,#DC2626 100%);
+  --grad-green:linear-gradient(135deg,#22C55E 0%,#16A34A 100%);
+  --r-md:12px; --r-lg:18px; --r-xl:24px;
+  --sh-sm:0 1px 2px rgba(15,23,42,.04),0 2px 8px rgba(15,23,42,.04);
+  --sh-md:0 2px 6px rgba(15,23,42,.05),0 12px 28px rgba(15,23,42,.07);
+  --sh-lg:0 4px 12px rgba(15,23,42,.06),0 24px 60px rgba(15,23,42,.10);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;border:none;background:none}
+
+/* NAVBAR */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--white);border-bottom:1px solid var(--line);box-shadow:0 2px 12px rgba(15,23,42,.04)}
+.topbar-inner{max-width:1280px;margin:0 auto;padding:10px 16px;display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:8px}
+.icon-btn{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;color:var(--ink);transition:.22s var(--ease);position:relative}
+.icon-btn:active{background:rgba(15,23,42,.06);transform:scale(.94)}
+.icon-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.hamburger span{position:absolute;left:50%;top:50%;width:20px;height:1.6px;background:var(--ink);border-radius:2px;transform:translate(-50%,-50%);transition:.3s var(--ease)}
+.hamburger span:nth-child(1){transform:translate(-50%,calc(-50% - 6px))}
+.hamburger span:nth-child(2){transform:translate(-50%,calc(-50%))}
+.hamburger span:nth-child(3){transform:translate(-50%,calc(-50% + 6px))}
+.brand{display:flex;align-items:center;justify-content:center;min-height:52px;padding:4px}
+.brand-inner{display:flex;flex-direction:column;align-items:center;gap:3px}
+.brand-logo-img{height:42px;width:auto;max-width:200px;object-fit:contain;transition:.3s var(--ease)}
+.brand-sub{font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);line-height:1}
+.brand-fallback{display:none;flex-direction:column;align-items:center;gap:4px}
+.brand-fallback.show{display:flex}
+.bf-mark{display:inline-flex;align-items:center;gap:6px;padding:5px 16px;background:var(--grad-yellow);border-radius:100px;box-shadow:0 4px 14px rgba(217,119,6,.3),inset 0 -1px 2px rgba(0,0,0,.08),inset 0 1px 2px rgba(255,255,255,.4);transform:skewX(-5deg);position:relative}
+.bf-mark::after{content:"";position:absolute;inset:0;border-radius:100px;background:linear-gradient(180deg,rgba(255,255,255,.28),transparent 45%);pointer-events:none}
+.bf-text{font-size:18px;font-weight:800;letter-spacing:1.6px;color:#0B3DA8;transform:skewX(5deg);text-shadow:0 1px 0 rgba(255,255,255,.3);line-height:1}
+.bf-dot{width:13px;height:13px;border-radius:50%;background:#DC2626;box-shadow:inset 0 0 0 2px #FFF,0 0 0 1.5px #DC2626,0 2px 4px rgba(220,38,38,.3);transform:skewX(5deg);position:relative;flex-shrink:0}
+.bf-dot::after{content:"";position:absolute;inset:3.5px;border-radius:50%;background:#FFF;box-shadow:inset 0 0 0 1px #DC2626}
+.nav-desktop{max-width:1280px;margin:0 auto;padding:0 20px 12px;display:none;align-items:center;justify-content:center;gap:2px}
+.nav-desktop a{padding:8px 15px;border-radius:100px;font-size:13.5px;font-weight:600;color:var(--ink-2);transition:.22s var(--ease);position:relative}
+.nav-desktop a:hover{color:var(--blue);background:var(--blue-50)}
+.nav-desktop a.active{color:var(--blue);background:var(--blue-100)}
+.nav-desktop a.active::before{content:"";position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:14px;height:2px;background:var(--blue);border-radius:2px}
+.nav-cta-desk{margin-left:8px;padding:9px 20px!important;background:var(--grad-yellow)!important;color:#0B3DA8!important;font-weight:800!important;box-shadow:0 6px 18px rgba(217,119,6,.25)}
+.nav-cta-desk:hover{transform:translateY(-1px)}
+
+/* DRAWER */
+.drawer{position:fixed;inset:0;z-index:1100;background:var(--white);padding:16px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateX(-16px);transition:.35s var(--ease)}
+.drawer.open{opacity:1;visibility:visible;transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:6px 4px 20px;border-bottom:1px solid var(--line);margin-bottom:20px}
+.drawer .brand{justify-content:flex-start}
+.drawer-close{width:42px;height:42px;border-radius:11px;background:var(--bg-2);color:var(--ink);font-size:22px;font-weight:300;display:grid;place-items:center;transition:.22s}
+.drawer-close:active{transform:scale(.94);background:var(--blue-100)}
+.drawer-links{display:flex;flex-direction:column;gap:2px;flex:1}
+.drawer-links a{padding:15px 16px;border-radius:12px;color:var(--ink);font-size:15.5px;font-weight:600;display:flex;align-items:center;justify-content:space-between;transition:.22s var(--ease)}
+.drawer-links a::after{content:"→";color:var(--blue);opacity:0;transform:translateX(-6px);transition:.22s var(--ease);font-weight:700}
+.drawer-links a:active,.drawer-links a.active{background:var(--blue-50);color:var(--blue)}
+.drawer-links a.active::after{opacity:1;transform:translateX(0)}
+.drawer-cta{margin-top:12px;background:var(--grad-yellow)!important;color:#0B3DA8!important;font-weight:800!important;justify-content:center!important;box-shadow:0 10px 24px rgba(217,119,6,.25)}
+.drawer-cta::after{display:none!important}
+.drawer-foot{padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;text-align:center}
+
+/* ROUTER */
+main{padding-top:76px;min-height:100vh;position:relative}
+.page{display:none;animation:pageIn .5s var(--ease)}
+.page.active{display:block}
+@keyframes pageIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;border-radius:0 0 28px 28px;background:#0B3DA8}
+.slider{position:relative;height:520px}
+.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .8s var(--ease);pointer-events:none;overflow:hidden}
+.slide.active{opacity:1;pointer-events:auto;z-index:2}
+.slide-bg-img{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;transform:scale(1.05);animation:kenburns 14s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1.05)}to{transform:scale(1.15)}}
+.slide-overlay{position:absolute;inset:0;z-index:1}
+.slide-1 .slide-overlay{background:linear-gradient(90deg,rgba(11,61,168,.94) 0%,rgba(11,61,168,.78) 40%,rgba(11,61,168,.35) 100%)}
+.slide-2 .slide-overlay{background:linear-gradient(90deg,rgba(15,23,42,.94) 0%,rgba(15,23,42,.72) 45%,rgba(15,23,42,.30) 100%)}
+.slide-3 .slide-overlay{background:linear-gradient(90deg,rgba(124,45,18,.94) 0%,rgba(180,83,9,.75) 45%,rgba(217,119,6,.35) 100%)}
+.slide-4 .slide-overlay{background:linear-gradient(90deg,rgba(127,29,29,.94) 0%,rgba(153,27,27,.72) 45%,rgba(220,38,38,.30) 100%)}
+.slide-content{position:relative;z-index:3;max-width:1280px;width:100%;padding:40px 22px;display:flex;flex-direction:column;justify-content:center;height:100%}
+.slide-text{color:#fff;max-width:560px}
+.slide-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:100px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(8px);color:#FCD34D;font-size:10.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;align-self:flex-start}
+.slide-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:#FCD34D;box-shadow:0 0 0 3px rgba(252,211,77,.35);animation:pulseDot 2s infinite}
+@keyframes pulseDot{50%{box-shadow:0 0 0 8px rgba(252,211,77,0)}}
+.slide-title{font-size:30px;line-height:1.12;font-weight:800;letter-spacing:-1px;margin-bottom:14px;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+.slide-title .highlight{background:var(--grad-yellow);-webkit-background-clip:text;background-clip:text;color:transparent}
+.slide-desc{font-size:14px;line-height:1.65;color:rgba(255,255,255,.85);margin-bottom:24px}
+.slide-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:100px;font-size:14.5px;font-weight:800;letter-spacing:.2px;border:none;cursor:pointer;transition:.28s var(--ease);white-space:nowrap}
+.btn-gold{background:var(--grad-yellow);color:#0B3DA8;box-shadow:0 12px 32px rgba(217,119,6,.45),0 4px 10px rgba(0,0,0,.15)}
+.btn-gold:active{transform:scale(.97)}
+.btn-gold:hover{transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--blue);box-shadow:0 12px 30px rgba(0,0,0,.2)}
+.btn-white:active{transform:scale(.97)}
+.btn-dark{background:var(--ink);color:#fff;box-shadow:0 12px 30px rgba(15,23,42,.20)}
+
+.slider-dots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:.3s var(--ease)}
+.dot.active{background:#FCD34D;width:26px;border-radius:100px}
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.9);color:var(--blue);display:none;place-items:center;z-index:10;cursor:pointer;transition:.25s var(--ease);box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.slider-arrow:hover{background:#fff}
+.slider-arrow.prev{left:16px}
+.slider-arrow.next{right:16px}
+.slider-arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* SECTIONS */
+.section{padding:52px 20px}
+.section.alt{background:var(--bg-2)}
+.container{max-width:1200px;margin:0 auto}
+.sec-head{margin-bottom:28px;max-width:640px}
+.sec-tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:2.4px;color:var(--blue);background:var(--blue-100);padding:5px 12px;border-radius:100px;text-transform:uppercase;margin-bottom:14px}
+.sec-head h2{font-size:25px;font-weight:800;letter-spacing:-.8px;line-height:1.2;color:var(--ink)}
+.sec-head h2 .g{color:var(--blue)}
+.sec-head h2 .y{background:var(--grad-yellow);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sec-head p{color:var(--muted);margin-top:10px;font-size:14px;line-height:1.65}
+
+/* FEATURES */
+.features{display:grid;grid-template-columns:1fr;gap:14px}
+.feature{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;transition:.3s var(--ease);box-shadow:var(--sh-sm)}
+.feature-icon{width:44px;height:44px;border-radius:12px;background:var(--blue-50);display:grid;place-items:center;font-size:20px;margin-bottom:14px;border:1px solid var(--blue-100);color:var(--blue)}
+.feature h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.feature p{color:var(--muted);font-size:13.5px;line-height:1.6}
+
+/* PACKAGES */
+.pkg-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.pkg-group-title{display:flex;align-items:center;gap:14px;margin:36px 0 18px}
+.pkg-group-title h3{font-size:12px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;color:var(--blue);white-space:nowrap;background:var(--blue-100);padding:5px 12px;border-radius:100px}
+.pkg-group-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--blue-100),transparent)}
+.pkg{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;transition:.32s var(--ease);cursor:pointer;position:relative;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--sh-sm)}
+.pkg::before{content:"";position:absolute;inset:0;background:var(--grad-blue);opacity:0;transition:.35s var(--ease);z-index:0}
+.pkg > *{position:relative;z-index:1;transition:color .3s}
+.pkg.selected,.pkg:hover{border-color:rgba(11,61,168,.4);box-shadow:0 18px 40px rgba(11,61,168,.15);transform:translateY(-3px)}
+.pkg.selected::before{opacity:1}
+.pkg.selected .pkg-tag{background:rgba(252,211,77,.2);color:#FCD34D;border-color:rgba(252,211,77,.4)}
+.pkg.selected .pkg-speed{color:#fff}
+.pkg.selected .pkg-speed small{color:rgba(255,255,255,.65)}
+.pkg.selected .pkg-sub{color:rgba(255,255,255,.6)}
+.pkg.selected .pkg-price{color:#FCD34D;border-top-color:rgba(255,255,255,.15)}
+.pkg.selected .pkg-extras{color:rgba(255,255,255,.7)}
+.pkg.selected .pkg-check{opacity:1;transform:scale(1)}
+.pkg-tag{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:1.6px;padding:5px 11px;border-radius:100px;background:var(--blue-50);color:var(--blue);border:1px solid var(--blue-100);text-transform:uppercase;margin-bottom:16px;align-self:flex-start}
+.pkg-speed{font-size:42px;font-weight:800;letter-spacing:-1.5px;line-height:1;color:var(--ink)}
+.pkg-speed small{font-size:14px;font-weight:700;color:var(--muted);margin-left:2px}
+.pkg-sub{font-size:10.5px;font-weight:700;letter-spacing:1.4px;color:var(--muted);text-transform:uppercase;margin-top:8px;margin-bottom:18px}
+.pkg-price{font-size:20px;font-weight:800;letter-spacing:-.5px;color:var(--blue);display:flex;align-items:baseline;gap:4px;padding-top:16px;border-top:1px solid var(--line)}
+.pkg-price small{font-size:11.5px;font-weight:700;opacity:.7}
+.pkg-extras{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5}
+.pkg-check{position:absolute;top:18px;right:18px;width:24px;height:24px;border-radius:50%;background:var(--grad-yellow);display:grid;place-items:center;opacity:0;transform:scale(.5);transition:.35s var(--ease);z-index:2}
+.pkg-check::after{content:"";width:5px;height:10px;border:solid #0B3DA8;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-2px)}
+.pkg-badge-promo{position:absolute;top:0;right:0;background:var(--grad-red);color:#fff;font-size:9px;font-weight:800;letter-spacing:1px;padding:5px 11px;border-bottom-left-radius:12px;text-transform:uppercase}
+
+/* PROMO VISUAL */
+.promo-visual-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.promo-visual{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:180px;display:flex;align-items:flex-end;cursor:pointer;transition:.3s var(--ease);box-shadow:var(--sh-md)}
+.promo-visual:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.promo-visual-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:.5s var(--ease)}
+.promo-visual:hover .promo-visual-img{transform:scale(1.06)}
+.promo-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,23,42,.92) 0%,rgba(15,23,42,.6) 50%,transparent 100%)}
+.promo-visual-content{position:relative;z-index:2;padding:22px;color:#fff;width:100%}
+.promo-visual-tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:1.4px;background:var(--grad-yellow);color:#0B3DA8;padding:5px 11px;border-radius:100px;text-transform:uppercase;margin-bottom:10px}
+.promo-visual h3{font-size:18px;font-weight:800;line-height:1.25;margin-bottom:6px}
+.promo-visual p{font-size:13px;opacity:.85;line-height:1.5}
+
+/* PROMO CARDS */
+.promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.promo-card-item{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 16px;text-align:center;cursor:pointer;transition:.32s var(--ease);position:relative;overflow:hidden;box-shadow:var(--sh-sm)}
+.promo-card-item::before{content:"";position:absolute;inset:0;background:var(--grad-blue);opacity:0;transition:.35s}
+.promo-card-item > *{position:relative;z-index:1;transition:color .3s}
+.promo-card-item.selected,.promo-card-item:hover{border-color:rgba(11,61,168,.4);box-shadow:0 18px 40px rgba(11,61,168,.15);transform:translateY(-3px)}
+.promo-card-item.selected::before{opacity:1}
+.promo-card-item.selected .promo-title{color:#fff}
+.promo-card-item.selected .promo-icon{background:rgba(252,211,77,.2);border-color:rgba(252,211,77,.4)}
+.promo-icon{width:44px;height:44px;border-radius:12px;background:var(--blue-50);display:grid;place-items:center;font-size:20px;margin:0 auto 14px;border:1px solid var(--blue-100);transition:.35s}
+.promo-title{font-size:13.5px;font-weight:700;margin-bottom:8px;color:var(--ink)}
+.promo-free{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.7px;background:var(--grad-yellow);color:#0B3DA8;padding:5px 11px;border-radius:100px;text-transform:uppercase}
+
+/* FORM SECTION */
+.form-section{background:var(--grad-blue);color:#fff;border-radius:24px 24px 0 0;padding:48px 20px 60px;position:relative;overflow:hidden}
+.form-section::before{content:"";position:absolute;top:-100px;right:-100px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(252,211,77,.15),transparent 70%)}
+.form-inner{position:relative;z-index:2}
+.form-section .sec-tag{color:#FCD34D;background:rgba(252,211,77,.15)}
+.form-left h2{font-size:28px;font-weight:800;letter-spacing:-1px;color:#fff;line-height:1.15;margin:14px 0 16px}
+.form-left h2 .y{color:#FCD34D}
+.form-left p{color:rgba(255,255,255,.7);font-size:14.5px;line-height:1.7;margin-bottom:28px}
+.trust-list{display:flex;flex-direction:column;gap:12px}
+.trust-item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;backdrop-filter:blur(8px)}
+.trust-icon{width:36px;height:36px;border-radius:10px;background:rgba(252,211,77,.15);display:grid;place-items:center;font-size:16px;flex-shrink:0;border:1px solid rgba(252,211,77,.25);color:#FCD34D}
+.trust-item strong{display:block;font-size:13.5px;color:#fff;font-weight:700;margin-bottom:2px}
+.trust-item span{font-size:12.5px;color:rgba(255,255,255,.65)}
+
+.form-card{background:#FCFCFD;color:var(--ink);border-radius:var(--r-xl);padding:28px 22px;box-shadow:0 30px 70px rgba(0,0,0,.25);margin-top:24px;border:1px solid rgba(252,211,77,.2)}
+.form-card h3{font-size:18px;font-weight:800;margin-bottom:6px;color:var(--blue)}
+.form-card > p{color:var(--muted);font-size:12.5px;margin-bottom:22px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:11px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;color:var(--ink-2);opacity:.85;margin-bottom:7px}
+.field label .req{color:var(--red)}
+.field input,.field textarea,.field select{width:100%;padding:13px 14px;border-radius:var(--r-md);border:1.5px solid var(--line-2);background:#FFFFFF;font-size:14.5px;transition:.2s;outline:none;color:var(--ink);font-family:inherit}
+.field textarea{resize:vertical;min-height:70px}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--yellow);box-shadow:0 0 0 4px rgba(245,197,24,.15)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* LOCATION STATUS */
+.loc-status{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 14px;border-radius:var(--r-md);
+  background:var(--blue-50);border:1px solid var(--blue-100);
+  font-size:12.5px;color:var(--blue);
+  margin-bottom:14px;
+  transition:.3s var(--ease);
+}
+.loc-status.success{background:#DCFCE7;border-color:#86EFAC;color:#166534}
+.loc-status.warning{background:#FEF3C7;border-color:#FCD34D;color:#92400E}
+.loc-status.error{background:#FEE2E2;border-color:#FCA5A5;color:#991B1B}
+.loc-icon{
+  width:32px;height:32px;border-radius:9px;
+  background:rgba(255,255,255,.6);
+  display:grid;place-items:center;
+  font-size:14px;flex-shrink:0;
+}
+.loc-info{flex:1;min-width:0}
+.loc-info strong{display:block;font-weight:800;font-size:12.5px;margin-bottom:2px}
+.loc-info span{font-size:11.5px;opacity:.8;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.btn-submit{
+  width:100%;margin-top:10px;padding:16px;border-radius:var(--r-md);
+  background:var(--grad-yellow);color:#0B3DA8;font-weight:800;font-size:15px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:.28s var(--ease);box-shadow:0 12px 30px rgba(217,119,6,.3);
+}
+.btn-submit:active{transform:scale(.98)}
+.btn-submit:disabled{opacity:.8;cursor:not-allowed;transform:none}
+.btn-submit.loading{background:var(--grad-blue);color:#fff}
+.btn-submit.success{background:var(--grad-green)!important;color:#fff!important}
+.btn-submit.error{background:var(--grad-red)!important;color:#fff!important}
+
+/* FOOTER */
+footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;text-align:center}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-logo{display:inline-block;margin-bottom:16px;padding:10px 20px;background:rgba(255,255,255,.05);border-radius:12px;border:1px solid rgba(255,255,255,.08)}
+.footer-logo .brand-logo-img{height:34px;max-width:160px}
+.footer-slogan{color:#FCD34D;font-size:14px;font-weight:600;letter-spacing:.5px;margin-bottom:22px}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin-bottom:22px}
+.footer-links a{color:rgba(255,255,255,.6);font-size:13px;font-weight:500;transition:.2s}
+.footer-links a:hover{color:#FCD34D}
+.footer-copy{font-size:11.5px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06);letter-spacing:.3px;line-height:1.7}
+
+.reveal{opacity:0;transform:translateY(16px);transition:.7s var(--ease)}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+@media (min-width:640px){
+  body{font-size:15.5px}
+  .slider{height:560px}
+  .slide-title{font-size:42px;letter-spacing:-1.8px}
+  .slide-desc{font-size:15.5px}
+  .section{padding:72px 32px}
+  .sec-head h2{font-size:32px}
+  .features{grid-template-columns:repeat(3,1fr);gap:18px}
+  .pkg-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .promo-visual-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .promo-grid{grid-template-columns:repeat(4,1fr);gap:14px}
+  .form-card{padding:34px 30px}
+  .field-row{gap:14px}
+  .brand-logo-img{height:50px;max-width:230px}
+  .slider-arrow{display:grid}
+  .dot{width:10px;height:10px}
+  .dot.active{width:32px}
+}
+@media (min-width:900px){
+  .topbar-inner{padding:14px 32px;grid-template-columns:44px auto 44px}
+  .nav-desktop{display:flex;padding:0 32px 14px}
+  .hamburger{display:none!important}
+  .share-btn{visibility:hidden}
+  .slider{height:620px}
+  .pkg-grid{grid-template-columns:repeat(4,1fr);gap:18px}
+  .promo-visual-grid{grid-template-columns:repeat(4,1fr);gap:16px}
+  .slide-title{font-size:52px;letter-spacing:-2.2px}
+  .slide-content{padding:0 60px}
+  .slide-text{max-width:580px}
+  .form-inner{display:grid;grid-template-columns:1fr 1.15fr;gap:50px;align-items:start}
+  .form-card{margin-top:0}
+}
 </style>
 </head>
 <body>
-<header class="navbar">
-  <div class="container nav-inner">
-    <a class="brand" href="#home">
-      <div class="brand-mark">M</div>
-      <span class="brand-text">
-        <b>MEGAVISION</b>
-        <small>Internet & TV Kabel</small>
-      </span>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <button class="icon-btn hamburger" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="#/" class="brand" aria-label="MEGAVISION">
+      <div class="brand-inner">
+        <img src="logo.png" alt="MEGAVISION" class="brand-logo-img"
+             onerror="this.style.display='none';document.getElementById('brandFallback').classList.add('show')">
+        <div class="brand-fallback" id="brandFallback">
+          <div class="bf-mark">
+            <span class="bf-text">MEGAVISION</span>
+            <span class="bf-dot"></span>
+          </div>
+        </div>
+        <div class="brand-sub">Internet &amp; TV Kabel</div>
+      </div>
     </a>
-    <nav id="navMenu"><a href="#home">Beranda</a><a href="#paket">Paket</a><a href="#promo">Promo</a><a href="#daftar">Daftar</a><a href="#kontak">Kontak</a></nav>
-    <a class="nav-cta" href="#daftar">Daftar Sekarang</a><button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+    <button class="icon-btn share-btn" id="shareBtn" aria-label="Bagikan">
+      <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+    </button>
   </div>
+  <nav class="nav-desktop">
+    <a href="#/" data-route="beranda">Beranda</a>
+    <a href="#/paket" data-route="paket">Paket</a>
+    <a href="#/promo" data-route="promo">Promo</a>
+    <a href="#/daftar" class="nav-cta-desk">Daftar Sekarang</a>
+  </nav>
 </header>
-<main>
-<section class="hero" id="home"><div class="container hero-grid"><div class="hero-copy reveal"><div class="eyebrow">🔥 PROMO SPESIAL MEGAVISION</div><h1>Double Speed.<br><span>Double Hemat.</span></h1><p class="hero-text">Nikmati internet cepat dan stabil untuk streaming, gaming, kerja, belajar, dan semua kebutuhan keluarga.</p><div class="hero-buttons"><a class="btn primary" href="#daftar">🚀 Daftar Online</a><a class="btn secondary" href="#paket">Lihat Paket ↓</a></div><div class="trust-row"><div><b>73+</b><span>Channel TV</span></div><div><b>WiFi 6</b><span>Paket Maxi</span></div><div><b>24/7</b><span>Koneksi Stabil</span></div></div></div>
-<div class="hero-card reveal">
-  <div class="hero-visual">
-    <div class="visual-top">
-      <span>Megavision</span>
-      <span class="live-pill"><i></i> Online</span>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <div class="brand" style="justify-content:flex-start">
+      <div class="brand-inner" style="align-items:flex-start">
+        <img src="logo.png" alt="MEGAVISION" class="brand-logo-img"
+             onerror="this.style.display='none';document.getElementById('drawerFallback').classList.add('show')">
+        <div class="brand-fallback" id="drawerFallback">
+          <div class="bf-mark">
+            <span class="bf-text">MEGAVISION</span>
+            <span class="bf-dot"></span>
+          </div>
+        </div>
+        <div class="brand-sub">Internet &amp; TV Kabel</div>
+      </div>
     </div>
-    <div class="visual-speed">100 <small>Mbps</small></div>
-    <div class="visual-split">50 + 50 Mbps</div>
-    <div class="visual-graph">
-      <span></span><span></span><span></span><span></span><span></span>
-    </div>
-    <div class="visual-pills"><span>Streaming</span><span>Gaming</span><span>WFH</span></div>
+    <button class="drawer-close" id="drawerClose" aria-label="Tutup">×</button>
   </div>
-  <div class="floating-price"><small>Mulai dari</small><strong>Rp 150.000<span>/bulan</span></strong></div>
+  <nav class="drawer-links">
+    <a href="#/" data-route="beranda">Beranda</a>
+    <a href="#/paket" data-route="paket">Paket Internet</a>
+    <a href="#/promo" data-route="promo">Promo Spesial</a>
+    <a href="#/daftar" data-route="daftar" class="drawer-cta">Daftar Sekarang</a>
+  </nav>
+  <div class="drawer-foot">Internet Cepat · Hidup Lebih Seru</div>
 </div>
-</div></section>
-<section class="section" id="paket"><div class="container"><div class="section-head reveal"><span class="section-label">PILIH SESUAI KEBUTUHAN</span><h2>Paket Internet <span>Megavision</span></h2><p>Harga terjangkau dengan pilihan kecepatan internet yang jelas dan transparan.</p></div>
-<div class="package-grid">
-<article class="package reveal"><div class="tag">INTERNET ONLY</div><div class="speed"><small class="speed-split">50 + 50 Mbps</small><span class="speed-total">100 <small>Mbps</small></span></div><div class="price">Rp 150.000 <small>per bulan</small></div><ul><li>✓ Internet cepat & stabil</li><li>✓ Cocok untuk keluarga</li><li>✓ Tanpa TV Kabel</li></ul><a href="#daftar">Pilih Paket</a></article>
-<article class="package silver reveal"><div class="tag">PAKET SILVER</div><div class="speed"><small class="speed-split">75 + 75 Mbps</small><span class="speed-total">150 <small>Mbps</small></span></div><div class="price">Rp 185.000 <small>per bulan</small></div><p class="included">Gratis 73 Channel TV Kabel</p><a href="#daftar">Pilih Paket</a></article>
-<article class="package silver reveal popular"><div class="popular-label">PALING DICARI</div><div class="tag">PAKET SILVER</div><div class="speed"><small class="speed-split">100 + 100 Mbps</small><span class="speed-total">200 <small>Mbps</small></span></div><div class="price">Rp 200.000 <small>per bulan</small></div><p class="included">Gratis 73 Channel TV Kabel</p><a href="#daftar">Pilih Paket</a></article>
-<article class="package silver reveal"><div class="tag">PAKET SILVER</div><div class="speed"><small class="speed-split">150 + 150 Mbps</small><span class="speed-total">300 <small>Mbps</small></span></div><div class="price">Rp 250.000 <small>per bulan</small></div><p class="included">Gratis 73 Channel TV Kabel</p><a href="#daftar">Pilih Paket</a></article>
-</div>
-<div class="maxi-title reveal"><span>PAKET MAXI</span><p>Internet hemat untuk bisnis & gaming • Didukung teknologi WiFi 6</p></div><div class="maxi-grid"><article class="maxi-card reveal"><b>350 Mbps</b><strong>Rp 275.000 <small>per bulan</small></strong></article><article class="maxi-card reveal"><b>400 Mbps</b><strong>Rp 300.000 <small>per bulan</small></strong></article><article class="maxi-card reveal"><b>450 Mbps</b><strong>Rp 350.000 <small>per bulan</small></strong></article><article class="maxi-card featured reveal"><b>500 Mbps</b><strong>Rp 400.000 <small>per bulan</small></strong></article><article class="maxi-card reveal"><b>600 Mbps</b><strong>Rp 450.000 <small>per bulan</small></strong></article><article class="maxi-card reveal"><b>750 Mbps</b><strong>Rp 500.000 <small>per bulan</small></strong></article><article class="maxi-card reveal"><b>800 Mbps</b><strong>Rp 670.000 <small>per bulan</small></strong></article><article class="maxi-card reveal"><b>900 Mbps</b><strong>Rp 780.000 <small>per bulan</small></strong></article></div><div class="addon reveal">ADD ON + IP STATIC <b>Rp 25.000 per bulan</b></div></div></section>
-<section class="payment" id="promo"><div class="container"><div class="section-head light reveal"><span class="section-label">PROMO PEMBAYARAN DI MUKA</span><h2>Bayar Lebih Lama, <span>Gratis Lebih Banyak</span></h2></div><div class="payment-grid"><div class="payment-card reveal"><b>Bayar 3 bulan</b><span>→</span><strong>GRATIS 1 BULAN</strong></div><div class="payment-card reveal"><b>Bayar 6 bulan</b><span>→</span><strong>GRATIS 3 BULAN</strong></div><div class="payment-card reveal"><b>Bayar 9 bulan</b><span>→</span><strong>GRATIS 4 BULAN</strong></div><div class="payment-card reveal"><b>Bayar 12 bulan</b><span>→</span><strong>GRATIS 7 BULAN</strong></div></div></div></section>
-<section class="section daftar-section" id="daftar"><div class="container"><div class="section-head reveal"><span class="section-label">DAFTAR ONLINE</span><h2>Formulir <span>Pendaftaran</span></h2><p>Isi data dengan lengkap. Admin akan menghubungi Anda dalam 1x24 jam.</p></div><div class="steps reveal" id="stepIndicator"><div class="step active" id="step1"><span class="step-num">1</span><span>Pilih Paket</span></div><div class="step" id="step2"><span class="step-num">2</span><span>Data Diri</span></div><div class="step" id="step3"><span class="step-num">3</span><span>Selesai</span></div></div>
-<form id="pendaftaranForm" class="form-card reveal" onsubmit="kirimData(event)"><div class="form-step active" id="formStep1"><div class="form-head"><div class="form-icon">📶</div><div><h3>Pilih Paket Internet</h3><p>Harga belum termasuk PPN 11%. Speed = kecepatan dasar + bonus.</p></div></div><div class="paket-grid-form">
-<div class="paket-card-form" onclick="selectPaket('100 Mbps (50+50) - Rp 150.000 per bulan', this)"><div class="pc-speed"><span class="speed-total">100 Mbps</span><small class="speed-split">50 + 50 Mbps</small></div><div class="pc-price">Rp 150.000 <small>per bulan</small></div><div class="pc-ppn">+ PPN 11% = Rp 166.500</div></div>
-<div class="paket-card-form" onclick="selectPaket('150 Mbps (75+75) - Rp 185.000 per bulan', this)"><div class="pc-speed"><span class="speed-total">150 Mbps</span><small class="speed-split">75 + 75 Mbps</small></div><div class="pc-price">Rp 185.000 <small>per bulan</small></div><div class="pc-ppn">+ PPN 11% = Rp 205.350</div></div>
-<div class="paket-card-form" onclick="selectPaket('200 Mbps (100+100) - Rp 200.000 per bulan', this)"><div class="pc-speed"><span class="speed-total">200 Mbps</span><small class="speed-split">100 + 100 Mbps</small></div><div class="pc-price">Rp 200.000 <small>per bulan</small></div><div class="pc-ppn">+ PPN 11% = Rp 222.000</div></div>
-<div class="paket-card-form" onclick="selectPaket('250 Mbps (125+125) - Rp 225.000 per bulan', this)"><div class="pc-speed"><span class="speed-total">250 Mbps</span><small class="speed-split">125 + 125 Mbps</small></div><div class="pc-price">Rp 225.000 <small>per bulan</small></div><div class="pc-ppn">+ PPN 11% = Rp 249.750</div></div>
-<div class="paket-card-form" onclick="selectPaket('300 Mbps (150+150) - Rp 250.000 per bulan', this)"><div class="pc-speed"><span class="speed-total">300 Mbps</span><small class="speed-split">150 + 150 Mbps</small></div><div class="pc-price">Rp 250.000 <small>per bulan</small></div><div class="pc-ppn">+ PPN 11% = Rp 277.500</div></div>
-<div class="paket-card-form" onclick="selectPaket('400 Mbps (200+200) - Rp 300.000 per bulan', this)"><div class="pc-speed"><span class="speed-total">400 Mbps</span><small class="speed-split">200 + 200 Mbps</small></div><div class="pc-price">Rp 300.000 <small>per bulan</small></div><div class="pc-ppn">+ PPN 11% = Rp 333.000</div></div></div><p class="error-text" id="errorPaket">⚠️ Silakan pilih paket terlebih dahulu</p><div class="form-actions"><button type="button" class="btn primary" onclick="goToStep(2)">Lanjut ke Data Diri →</button></div></div>
-<div class="form-step" id="formStep2"><div class="form-head"><div class="form-icon">👤</div><div><h3>Data Calon Pelanggan</h3><p>Isi data dengan benar. Admin akan menghubungi Anda.</p></div></div><div class="selected-pkg-box"><div class="spb-label">PAKET TERPILIH</div><div class="spb-value" id="tampil_paket">-</div><div class="spb-ppn" id="tampil_ppn">-</div></div><div class="form-group"><label>Nama Lengkap <span class="req">*</span></label><input type="text" id="nama" required placeholder="Sesuai KTP"></div><div class="form-group"><label>Alamat Pemasangan <span class="req">*</span></label><textarea id="alamat" rows="2" required placeholder="Nama Jalan, Blok, RT/RW"></textarea></div><div class="form-row"><div class="form-group"><label>Nomor Rumah <span class="req">*</span></label><input type="text" id="no_rumah" required></div><div class="form-group"><label>Kelurahan <span class="req">*</span></label><input type="text" id="kelurahan" required></div></div><div class="form-row"><div class="form-group"><label>Kecamatan <span class="req">*</span></label><input type="text" id="kecamatan" required></div><div class="form-group"><label>Kota / Kabupaten <span class="req">*</span></label><input type="text" id="kota" required></div></div><div class="form-row"><div class="form-group"><label>No HP 1 (WhatsApp) <span class="req">*</span></label><input type="tel" id="hp1" required placeholder="08xxxxxxxxxx"></div><div class="form-group"><label>No HP 2 (Opsional)</label><input type="tel" id="hp2"></div></div><div class="form-group"><label>E-mail <span class="req">*</span></label><input type="email" id="email" required></div><div class="info-dokumen">📋 <strong>Dokumen yang perlu disiapkan:</strong><ul><li>Foto KTP</li><li>Foto Rumah</li><li>Foto Meteran</li><li>Foto Lantai</li><li>Bukti Bayar/ID Provider Lama (jika ada)</li><li>Share Lokasi & Patokan</li></ul><p>📲 Dokumen akan diminta admin setelah data terkirim.</p></div><div id="statusMsg" class="status-msg"></div><div class="form-actions"><button type="button" class="btn secondary" onclick="goToStep(1)">← Kembali</button><button type="submit" class="btn primary" id="btnSubmit"><span id="btnText">🚀 KIRIM PENDAFTARAN</span><span class="spinner" id="spinner"></span></button></div></div>
-<div class="form-step" id="formStep3"><div class="success-box"><div class="success-icon">✓</div><h3>Pendaftaran Berhasil!</h3><p>Terima kasih <strong id="successName"></strong>, data Anda telah kami terima.</p><p>Tim Megavision akan menghubungi Anda dalam 1x24 jam.</p><p class="small-note">📲 Siapkan foto dokumen untuk dikirim ke admin saat dihubungi.</p><div class="ref-code" id="refCode">REF: -</div></div></div></form></div></section>
-<section class="poster-section"><div class="container poster-grid"><div class="poster-copy reveal"><span class="section-label">PROMO TERBARU</span><h2>Internet kencang untuk semua aktivitas.</h2><p>Gunakan koneksi untuk WFH, sekolah online, streaming, gaming, bisnis, hingga kebutuhan rumah tangga.</p><a class="btn primary" href="#daftar">Daftar Sekarang</a></div><div class="poster-art reveal"><div class="poster-card"><div class="poster-card-top"><span>Megavision</span><span class="live-pill"><i></i> Aktif</span></div><div class="poster-speed">100 <small>Mbps</small></div><div class="poster-split">50 + 50 Mbps</div><div class="poster-metrics"><span>73 Channel</span><span>WiFi 6</span></div></div></div></div></section>
-<section class="contact" id="kontak"><div class="container contact-box reveal"><div><span class="section-label">SIAP PASANG?</span><h2>Hubungi <span>Kami</span> Sekarang</h2><p>Dapatkan info area, ketersediaan jaringan, dan pilihan paket yang paling sesuai.</p></div><div class="contact-actions"><a href="tel:085642448407" class="contact-item">📞 <span>0856 4244 8407</span></a><a href="https://wa.me/6285642448407" target="_blank" class="contact-item wa">💬 <span>WhatsApp Sekarang</span></a></div></div></section>
-</main><footer><div class="container footer-inner"><div><b>MEGAVISION</b><span>Internet & TV Kabel</span></div><p>© 2026 Megavision Promo. S&K berlaku.</p></div></footer><a class="floating-wa" href="https://wa.me/6285642448407" target="_blank" aria-label="WhatsApp">☏</a><script src="script.js"></script>
-</body></html>
+
+<main>
+
+  <section class="page" data-page="beranda">
+    <div class="hero">
+      <div class="slider" id="slider">
+        <div class="slide slide-1 active">
+          <div class="slide-bg-img" style="background-image:url('https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=1600&q=80')"></div>
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <div class="slide-eyebrow">Promo Double Speed</div>
+              <h1 class="slide-title">Internet Cepat,<br><span class="highlight">Hidup Lebih Seru</span></h1>
+              <p class="slide-desc">Streaming, gaming, bekerja, dan belajar tanpa hambatan. Nikmati jaringan stabil untuk seluruh keluarga.</p>
+              <div class="slide-actions">
+                <a href="#/daftar" class="btn btn-gold">Daftar Sekarang</a>
+                <a href="#/paket" class="btn btn-white">Lihat Paket</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide-2">
+          <div class="slide-bg-img" style="background-image:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1600&q=80')"></div>
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <div class="slide-eyebrow">Paket Maxi · WiFi 6</div>
+              <h1 class="slide-title">Untuk Gaming<br><span class="highlight">& Bisnis Modern</span></h1>
+              <p class="slide-desc">Kecepatan hingga 900 Mbps dengan teknologi WiFi 6. Ideal untuk gaming, streaming 4K, dan kebutuhan bisnis.</p>
+              <div class="slide-actions">
+                <a href="#/daftar" class="btn btn-gold">Daftar Sekarang</a>
+                <a href="#/paket" class="btn btn-white">Lihat Paket</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide-3">
+          <div class="slide-bg-img" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&q=80')"></div>
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <div class="slide-eyebrow">Promo Spesial Bulan Ini</div>
+              <h1 class="slide-title">Bayar 6 Bulan,<br><span class="highlight">Gratis 3 Bulan</span></h1>
+              <p class="slide-desc">Hemat lebih banyak dengan pembayaran di muka. Semakin lama periode, semakin besar bonus bulan gratis Anda.</p>
+              <div class="slide-actions">
+                <a href="#/daftar" class="btn btn-gold">Klaim Promo</a>
+                <a href="#/promo" class="btn btn-white">Lihat Semua Promo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide-4">
+          <div class="slide-bg-img" style="background-image:url('https://images.unsplash.com/photo-1593784991095-a205069470b6?w=1600&q=80')"></div>
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <div class="slide-eyebrow">Bonus Eksklusif</div>
+              <h1 class="slide-title">Gratis TV Kabel,<br><span class="highlight">73+ Channel</span></h1>
+              <p class="slide-desc">Nikmati 73+ channel TV kabel berkualitas tanpa biaya tambahan. Sudah termasuk untuk semua paket Silver & Maxi.</p>
+              <div class="slide-actions">
+                <a href="#/daftar" class="btn btn-gold">Daftar Sekarang</a>
+                <a href="#/paket" class="btn btn-white">Lihat Paket</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-dots" id="dots">
+        <div class="dot active" data-idx="0"></div>
+        <div class="dot" data-idx="1"></div>
+        <div class="dot" data-idx="2"></div>
+        <div class="dot" data-idx="3"></div>
+      </div>
+      <button class="slider-arrow prev" id="prevBtn" aria-label="Sebelumnya">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="slider-arrow next" id="nextBtn" aria-label="Berikutnya">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div class="sec-head reveal">
+          <div class="sec-tag">Keunggulan Layanan</div>
+          <h2>Mengapa Memilih <span class="g">MEGAVISION</span></h2>
+          <p>Kami berkomitmen memberikan pengalaman internet terbaik untuk keluarga Indonesia.</p>
+        </div>
+        <div class="features">
+          <div class="feature reveal">
+            <div class="feature-icon">⚡</div>
+            <h3>Internet Super Cepat</h3>
+            <p>Kecepatan hingga 1 Gbps dengan teknologi WiFi 6 terbaru untuk pengalaman tanpa lag.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="feature-icon">📺</div>
+            <h3>Gratis TV Kabel</h3>
+            <p>73+ channel TV kabel berkualitas tanpa biaya tambahan untuk seluruh keluarga.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="feature-icon">🛡️</div>
+            <h3>Stabil & Terpercaya</h3>
+            <p>Jaringan fiber optic dengan dukungan teknisi profesional 24 jam setiap hari.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section alt">
+      <div class="container">
+        <div class="sec-head reveal">
+          <div class="sec-tag">Promo & Penawaran</div>
+          <h2>Nikmati <span class="y">Keuntungan</span> Bergabung</h2>
+          <p>Berbagai promo menarik untuk Anda yang mendaftar hari ini.</p>
+        </div>
+        <div class="promo-visual-grid">
+          <div class="promo-visual reveal" data-goto="daftar">
+            <div class="promo-visual-img" style="background-image:url('https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&q=80')"></div>
+            <div class="promo-visual-content">
+              <div class="promo-visual-tag">GRATIS</div>
+              <h3>TV Kabel 73+ Channel</h3>
+              <p>Sudah termasuk untuk paket Silver & Maxi</p>
+            </div>
+          </div>
+          <div class="promo-visual reveal" data-goto="daftar">
+            <div class="promo-visual-img" style="background-image:url('https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=800&q=80')"></div>
+            <div class="promo-visual-content">
+              <div class="promo-visual-tag">HEMAT</div>
+              <h3>Bayar di Muka</h3>
+              <p>Gratis hingga 7 bulan untuk pembayaran 12 bulan</p>
+            </div>
+          </div>
+          <div class="promo-visual reveal" data-goto="daftar">
+            <div class="promo-visual-img" style="background-image:url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80')"></div>
+            <div class="promo-visual-content">
+              <div class="promo-visual-tag">PROFESIONAL</div>
+              <h3>Teknisi Ramah</h3>
+              <p>Pemasangan rapi dan cepat sesuai jadwal Anda</p>
+            </div>
+          </div>
+          <div class="promo-visual reveal" data-goto="daftar">
+            <div class="promo-visual-img" style="background-image:url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800&q=80')"></div>
+            <div class="promo-visual-content">
+              <div class="promo-visual-tag">DUKUNGAN</div>
+              <h3>Support 24/7</h3>
+              <p>Tim kami siap membantu kapan pun dibutuhkan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div class="sec-head reveal">
+          <div class="sec-tag">Paket Populer</div>
+          <h2>Pilihan <span class="y">Favorit</span> Keluarga</h2>
+          <p>Klik paket untuk langsung mendaftar.</p>
+        </div>
+        <div class="pkg-grid">
+          <div class="pkg reveal" data-paket="Internet Only 100 Mbps - Rp 150.000/bulan">
+            <div class="pkg-tag">Internet Only</div>
+            <div class="pkg-speed">100<small> Mbps</small></div>
+            <div class="pkg-sub">Download Speed</div>
+            <div class="pkg-price">Rp 150<small>rb/bln</small></div>
+            <div class="pkg-extras">Internet only</div>
+            <div class="pkg-check"></div>
+          </div>
+          <div class="pkg reveal" data-paket="Paket Silver 200 Mbps - Rp 200.000/bulan">
+            <div class="pkg-tag">Paket Silver</div>
+            <div class="pkg-speed">200<small> Mbps</small></div>
+            <div class="pkg-sub">Download Speed</div>
+            <div class="pkg-price">Rp 200<small>rb/bln</small></div>
+            <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="pkg-check"></div>
+          </div>
+          <div class="pkg reveal" data-paket="Paket Maxi 500 Mbps - Rp 400.000/bulan">
+            <div class="pkg-badge-promo">Best Value</div>
+            <div class="pkg-tag">Paket Maxi</div>
+            <div class="pkg-speed">500<small> Mbps</small></div>
+            <div class="pkg-sub">Up Speed · WiFi 6</div>
+            <div class="pkg-price">Rp 400<small>rb/bln</small></div>
+            <div class="pkg-extras">🚀 Untuk bisnis & gaming</div>
+            <div class="pkg-check"></div>
+          </div>
+          <div class="pkg reveal" data-paket="Paket Maxi 900 Mbps - Rp 780.000/bulan">
+            <div class="pkg-tag">Paket Maxi</div>
+            <div class="pkg-speed">900<small> Mbps</small></div>
+            <div class="pkg-sub">Up Speed · WiFi 6</div>
+            <div class="pkg-price">Rp 780<small>rb/bln</small></div>
+            <div class="pkg-extras">⚡ Performa maksimal</div>
+            <div class="pkg-check"></div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:28px">
+          <a href="#/paket" class="btn btn-dark">Lihat Semua Paket</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="padding-top:0">
+      <div class="container">
+        <div class="form-section reveal" style="border-radius:24px;padding:44px 24px">
+          <div style="position:relative;z-index:2;text-align:center;max-width:520px;margin:0 auto">
+            <div class="sec-tag" style="color:#FCD34D;background:rgba(252,211,77,.15);border:1px solid rgba(252,211,77,.25)">Promo Terbatas</div>
+            <h2 style="font-size:24px;font-weight:800;letter-spacing:-.7px;color:#fff;margin:12px 0;line-height:1.25">
+              Daftar Hari Ini,<br>Dapatkan <span style="color:#FCD34D">Bonus Bulan Gratis</span>
+            </h2>
+            <p style="color:rgba(255,255,255,.7);font-size:14px;margin-bottom:24px">Pembayaran di muka 12 bulan, gratis hingga 7 bulan.</p>
+            <a href="#/daftar" class="btn btn-gold">Isi Formulir Pendaftaran</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" data-page="paket">
+    <div class="section" style="padding-top:36px">
+      <div class="container">
+        <div class="sec-head reveal">
+          <div class="sec-tag">Semua Paket</div>
+          <h2>Paket Internet <span class="g">Double Speed</span></h2>
+          <p>Pilih paket sesuai kebutuhan Anda. Klik paket untuk langsung mendaftar.</p>
+        </div>
+        <div class="pkg-group-title"><h3>Internet Only & Silver</h3></div>
+        <div class="pkg-grid">
+          <div class="pkg" data-paket="Internet Only 100 Mbps - Rp 150.000/bulan">
+            <div class="pkg-tag">Internet Only</div>
+            <div class="pkg-speed">100<small> Mbps</small></div>
+            <div class="pkg-sub">Download Speed</div>
+            <div class="pkg-price">Rp 150<small>rb/bln</small></div>
+            <div class="pkg-extras">📡 Internet only</div>
+            <div class="pkg-check"></div>
+          </div>
+          <div class="pkg" data-paket="Paket Silver 150 Mbps - Rp 185.000/bulan">
+            <div class="pkg-tag">Paket Silver</div>
+            <div class="pkg-speed">150<small> Mbps</small></div>
+            <div class="pkg-sub">Download Speed</div>
+            <div class="pkg-price">Rp 185<small>rb/bln</small></div>
+            <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="pkg-check"></div>
+          </div>
+          <div class="pkg" data-paket="Paket Silver 200 Mbps - Rp 200.000/bulan">
+            <div class="pkg-tag">Paket Silver</div>
+            <div class="pkg-speed">200<small> Mbps</small></div>
+            <div class="pkg-sub">Download Speed</div>
+            <div class="pkg-price">Rp 200<small>rb/bln</small></div>
+            <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="pkg-check"></div>
+          </div>
+          <div class="pkg" data-paket="Paket Silver 300 Mbps - Rp 250.000/bulan">
+            <div class="pkg-tag">Paket Silver</div>
+            <div class="pkg-speed">300<small> Mbps</small></div>
+            <div class="pkg-sub">Download Speed</div>
+            <div class="pkg-price">Rp 250<small>rb/bln</small></div>
+            <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="pkg-check"></div>
+          </div>
+        </div>
+        <div class="pkg-group-title"><h3>Paket Maxi · WiFi 6</h3></div>
+        <div class="pkg-grid">
+          <div class="pkg" data-paket="Paket Maxi 350 Mbps - Rp 275.000/bulan">
+            <div class="pkg-tag">Maxi</div>
+            <div class="pkg-speed">350<small> Mbps</small></div>
+            <div class="pkg-sub">Up Speed · WiFi 6</div>
+            <div class="pkg-price">Rp 275<small>rb/bln</small></div>
+            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-check"></div>
+          </div>
+          <div class="pkg" data-paket="Paket Maxi 400 Mbps - Rp 300.000/bulan">
+            <div class="pkg-tag">Maxi</div>
+            <div class="pkg-speed">400<small> Mbps</small></div>
+            <div class="pkg-sub">Up Speed · WiFi 6</div>
+            <div class="pkg-price">Rp 300<small>rb/bln</small></div>
+            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-check"></div>
+          </div>
+          <div class="pkg" data-paket="Paket Maxi 450 Mbps - Rp 350.000/bulan">
+            <div class="pkg-tag">Maxi</div>
+            <div class="pkg-speed">450<small> Mbps</small></div>
+            <div class="pkg-sub">Up Speed · WiFi 6</div>
+            <div class="pkg-price">Rp 350<small>rb/bln</small></div>
+            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-check"></div>
+          </div>
+          <div class="pkg" data-paket="Paket Maxi 500 Mbps - Rp 400.000/bulan">
+            <div class="pkg-badge-promo">Best Value</div>
+            <div class="pkg-tag">Maxi</div>
+            <div class="pkg-speed">500<small> Mbps</small></div>
+            <div class="pkg-sub">Up Speed · WiFi 6</div>
+            <div class="pkg-price">Rp 400<small>rb/bln</small></div>
+            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-check"></div>
+          </div>
+          <div class="pkg" data-paket="Paket Maxi 600 Mbps - Rp 450.000/bulan">
+            <div class="pkg-tag">Maxi</div>
+            <div class="pkg-speed">600<small> Mbps</small></div>
+            <div class="pkg-sub">Up Speed · WiFi 6</div>
+            <div class="pkg-price">Rp 450<small>rb/bln</small></div>
+            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-check"></div>
+          </div>
+          <div class="pkg" data-paket="Paket Maxi 750 Mbps - Rp 500.000/bulan">
+            <div class="pkg-tag">Maxi</div>
+            <div class="pkg-speed">750<small> Mbps</small></div>
+            <div class="pkg-sub">Up Speed · WiFi 6</div>
+            <div class="pkg-price">Rp 500<small>rb/bln</small></div>
+            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-check"></div>
+          </div>
+          <div class="pkg" data-paket="Paket Maxi 800 Mbps - Rp 670.000/bulan">
+            <div class="pkg-tag">Maxi</div>
+            <div class="pkg-speed">800<small> Mbps</small></div>
+            <div class="pkg-sub">Up Speed · WiFi 6</div>
+            <div class="pkg-price">Rp 670<small>rb/bln</small></div>
+            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-check"></div>
+          </div>
+          <div class="pkg" data-paket="Paket Maxi 900 Mbps - Rp 780.000/bulan">
+            <div class="pkg-tag">Maxi</div>
+            <div class="pkg-speed">900<small> Mbps</small></div>
+            <div class="pkg-sub">Up Speed · WiFi 6</div>
+            <div class="pkg-price">Rp 780<small>rb/bln</small></div>
+            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-check"></div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:36px">
+          <div style="display:inline-block;background:var(--blue-50);border:1px solid var(--blue-100);color:var(--blue);padding:11px 22px;border-radius:100px;font-weight:700;font-size:13px">
+            Add on + IP Static · Rp 25.000/bln
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" data-page="promo">
+    <div class="section" style="padding-top:36px">
+      <div class="container">
+        <div class="sec-head reveal">
+          <div class="sec-tag">Penawaran Spesial</div>
+          <h2>Promo <span class="y">Pembayaran di Muka</span></h2>
+          <p>Bayar di awal, hemat lebih banyak. Pilih durasi pembayaran sesuai kebutuhan Anda.</p>
+        </div>
+        <div class="promo-grid">
+          <div class="promo-card-item" data-paket="PROMO Bayar 3 Bulan - GRATIS 1 Bulan">
+            <div class="promo-icon">📅</div>
+            <div class="promo-title">Bayar 3 Bulan</div>
+            <div class="promo-free">Gratis 1 Bulan</div>
+          </div>
+          <div class="promo-card-item" data-paket="PROMO Bayar 6 Bulan - GRATIS 3 Bulan">
+            <div class="promo-icon">📅</div>
+            <div class="promo-title">Bayar 6 Bulan</div>
+            <div class="promo-free">Gratis 3 Bulan</div>
+          </div>
+          <div class="promo-card-item" data-paket="PROMO Bayar 9 Bulan - GRATIS 4 Bulan">
+            <div class="promo-icon">📅</div>
+            <div class="promo-title">Bayar 9 Bulan</div>
+            <div class="promo-free">Gratis 4 Bulan</div>
+          </div>
+          <div class="promo-card-item" data-paket="PROMO Bayar 12 Bulan - GRATIS 7 Bulan">
+            <div class="promo-icon">🏆</div>
+            <div class="promo-title">Bayar 12 Bulan</div>
+            <div class="promo-free">Gratis 7 Bulan</div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:44px">
+          <a href="#/daftar" class="btn btn-gold">Isi Formulir Pendaftaran</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" data-page="daftar">
+    <div class="form-section" style="border-radius:0;min-height:calc(100vh - 76px)">
+      <div class="container form-inner">
+        <div class="form-left">
+          <div class="sec-tag" style="color:#FCD34D;background:rgba(252,211,77,.15);border:1px solid rgba(252,211,77,.25)">Pendaftaran</div>
+          <h2>Isi Formulir,<br><span class="y">Tim Kami Menghubungi</span></h2>
+          <p>Lengkapi data di samping. Tim kami akan menghubungi Anda untuk konfirmasi jadwal pemasangan.</p>
+          <div class="trust-list">
+            <div class="trust-item">
+              <div class="trust-icon">✓</div>
+              <div><strong>Tanpa Biaya Survey</strong><span>Pengecekan lokasi gratis</span></div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">⚡</div>
+              <div><strong>Proses Cepat</strong><span>Respon maksimal 1x24 jam</span></div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">🛠️</div>
+              <div><strong>Teknisi Profesional</strong><span>Pemasangan rapi & ramah</span></div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">🔒</div>
+              <div><strong>Data Anda Aman</strong><span>Hanya untuk keperluan pemasangan</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Formulir Pendaftaran Pemasangan</h3>
+          <p>Lengkapi data berikut untuk memproses pendaftaran Anda.</p>
+
+          <!-- STATUS LOKASI -->
+          <div class="loc-status" id="locStatus">
+            <div class="loc-icon" id="locIcon">📍</div>
+            <div class="loc-info">
+              <strong id="locTitle">Mengambil lokasi...</strong>
+              <span id="locText">Mohon izinkan akses lokasi untuk mempercepat pemasangan</span>
+            </div>
+          </div>
+
+          <form id="orderForm" novalidate>
+            <div class="field">
+              <label>Nama Lengkap <span class="req">*</span></label>
+              <input type="text" name="nama" required placeholder="Contoh: Budi Santoso" autocomplete="name">
+            </div>
+            <div class="field">
+              <label>Alamat Pemasangan <span class="req">*</span></label>
+              <textarea name="alamat" required placeholder="Nama jalan / gang / blok" autocomplete="street-address"></textarea>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label>Nomor Rumah <span class="req">*</span></label>
+                <input type="text" name="noRumah" required placeholder="No. 12">
+              </div>
+              <div class="field">
+                <label>Kelurahan <span class="req">*</span></label>
+                <input type="text" name="kelurahan" required placeholder="Kelurahan">
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label>Kecamatan <span class="req">*</span></label>
+                <input type="text" name="kecamatan" required placeholder="Kecamatan">
+              </div>
+              <div class="field">
+                <label>Kota / Kabupaten <span class="req">*</span></label>
+                <input type="text" name="kota" required placeholder="Kota/Kab">
+              </div>
+            </div>
+            <div class="field">
+              <label>Nomor WhatsApp Aktif <span class="req">*</span></label>
+              <input type="tel" name="noHp" required placeholder="08xxxxxxxxxx" inputmode="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label>Paket yang Diambil <span class="req">*</span></label>
+              <select name="paket" id="paketSelect" required>
+                <option value="">— Pilih Paket —</option>
+                <optgroup label="Internet Only & Silver">
+                  <option value="Internet Only 100 Mbps - Rp 150.000/bulan">Internet Only 100 Mbps — Rp 150.000/bln</option>
+                  <option value="Paket Silver 150 Mbps - Rp 185.000/bulan">Paket Silver 150 Mbps — Rp 185.000/bln</option>
+                  <option value="Paket Silver 200 Mbps - Rp 200.000/bulan">Paket Silver 200 Mbps — Rp 200.000/bln</option>
+                  <option value="Paket Silver 300 Mbps - Rp 250.000/bulan">Paket Silver 300 Mbps — Rp 250.000/bln</option>
+                </optgroup>
+                <optgroup label="Paket Maxi · WiFi 6">
+                  <option value="Paket Maxi 350 Mbps - Rp 275.000/bulan">Paket Maxi 350 Mbps — Rp 275.000/bln</option>
+                  <option value="Paket Maxi 400 Mbps - Rp 300.000/bulan">Paket Maxi 400 Mbps — Rp 300.000/bln</option>
+                  <option value="Paket Maxi 450 Mbps - Rp 350.000/bulan">Paket Maxi 450 Mbps — Rp 350.000/bln</option>
+                  <option value="Paket Maxi 500 Mbps - Rp 400.000/bulan">Paket Maxi 500 Mbps — Rp 400.000/bln</option>
+                  <option value="Paket Maxi 600 Mbps - Rp 450.000/bulan">Paket Maxi 600 Mbps — Rp 450.000/bln</option>
+                  <option value="Paket Maxi 750 Mbps - Rp 500.000/bulan">Paket Maxi 750 Mbps — Rp 500.000/bln</option>
+                  <option value="Paket Maxi 800 Mbps - Rp 670.000/bulan">Paket Maxi 800 Mbps — Rp 670.000/bln</option>
+                  <option value="Paket Maxi 900 Mbps - Rp 780.000/bulan">Paket Maxi 900 Mbps — Rp 780.000/bln</option>
+                </optgroup>
+                <optgroup label="Promo Pembayaran di Muka">
+                  <option value="PROMO Bayar 3 Bulan - GRATIS 1 Bulan">Promo Bayar 3 Bulan — GRATIS 1 Bulan</option>
+                  <option value="PROMO Bayar 6 Bulan - GRATIS 3 Bulan">Promo Bayar 6 Bulan — GRATIS 3 Bulan</option>
+                  <option value="PROMO Bayar 9 Bulan - GRATIS 4 Bulan">Promo Bayar 9 Bulan — GRATIS 4 Bulan</option>
+                  <option value="PROMO Bayar 12 Bulan - GRATIS 7 Bulan">Promo Bayar 12 Bulan — GRATIS 7 Bulan</option>
+                </optgroup>
+              </select>
+            </div>
+            <button type="submit" class="btn-submit" id="submitBtn">
+              Kirim Data Pendaftaran
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="logo.png" alt="MEGAVISION" class="brand-logo-img"
+           onerror="this.style.display='none';document.getElementById('footFallback').classList.add('show')">
+      <div class="brand-fallback" id="footFallback">
+        <div class="bf-mark">
+          <span class="bf-text">MEGAVISION</span>
+          <span class="bf-dot"></span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-slogan">Internet Cepat · Hidup Lebih Seru</div>
+    <div class="footer-links">
+      <a href="#/">Beranda</a>
+      <a href="#/paket">Paket</a>
+      <a href="#/promo">Promo</a>
+      <a href="#/daftar">Daftar</a>
+    </div>
+    <div class="footer-copy">
+      © 2025 MEGAVISION — Internet & TV Kabel<br>
+      Lebih Cepat · Lebih Stabil · Lebih Dekat
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =====================================================
+   KONFIGURASI TELEGRAM
+   ===================================================== */
+const BOT_TOKEN = '8983782937:AAGnkQdl0ycc7ENzk8yrdqMq7nqVfgKEHNE';
+const CHAT_ID   = '5695909970';
+
+/* ============ STATE LOKASI GLOBAL ============ */
+const LOCATION = {
+  lat: null,
+  lng: null,
+  accuracy: null,
+  status: 'idle', // idle | loading | success | denied | unsupported | timeout
+  errorMsg: ''
+};
+
+/* ============ MULAI AMBIL LOKASI (OTOMATIS SAAT PAGE LOAD) ============ */
+function initLocation(){
+  const locStatus = document.getElementById('locStatus');
+  const locIcon   = document.getElementById('locIcon');
+  const locTitle  = document.getElementById('locTitle');
+  const locText   = document.getElementById('locText');
+  if (!locStatus) return;
+
+  if (!navigator.geolocation){
+    LOCATION.status = 'unsupported';
+    locStatus.className = 'loc-status warning';
+    locIcon.textContent = '⚠';
+    locTitle.textContent = 'Lokasi Tidak Didukung';
+    locText.textContent = 'Browser Anda tidak mendukung GPS';
+    return;
+  }
+
+  LOCATION.status = 'loading';
+  locStatus.className = 'loc-status';
+  locIcon.textContent = '📍';
+  locTitle.textContent = 'Mengambil lokasi...';
+  locText.textContent = 'Mohon izinkan akses lokasi';
+
+  // Timeout 12 detik agar tidak menggantung
+  const timeoutId = setTimeout(() => {
+    if (LOCATION.status === 'loading'){
+      LOCATION.status = 'timeout';
+      locStatus.className = 'loc-status warning';
+      locIcon.textContent = '⏱';
+      locTitle.textContent = 'Lokasi Belum Terdeteksi';
+      locText.textContent = 'Tetap lanjutkan pendaftaran';
+    }
+  }, 12000);
+
+  navigator.geolocation.getCurrentPosition(
+    // SUKSES
+    (pos) => {
+      clearTimeout(timeoutId);
+      LOCATION.lat = pos.coords.latitude.toFixed(6);
+      LOCATION.lng = pos.coords.longitude.toFixed(6);
+      LOCATION.accuracy = Math.round(pos.coords.accuracy);
+      LOCATION.status = 'success';
+
+      locStatus.className = 'loc-status success';
+      locIcon.textContent = '✓';
+      locTitle.textContent = 'Lokasi Terdeteksi';
+      locText.textContent = `Akurasi ±${LOCATION.accuracy}m · Siap kirim`;
+    },
+    // GAGAL
+    (err) => {
+      clearTimeout(timeoutId);
+      LOCATION.status = 'denied';
+      locStatus.className = 'loc-status warning';
+      locIcon.textContent = '⚠';
+      if (err.code === 1){
+        locTitle.textContent = 'Izin Lokasi Ditolak';
+        locText.textContent = 'Pendaftaran tetap bisa dilanjutkan';
+      } else if (err.code === 2){
+        locTitle.textContent = 'Lokasi Tidak Tersedia';
+        locText.textContent = 'Pendaftaran tetap bisa dilanjutkan';
+      } else {
+        locTitle.textContent = 'Waktu Habis';
+        locText.textContent = 'Pendaftaran tetap bisa dilanjutkan';
+      }
+    },
+    // OPTIONS
+    {
+      enableHighAccuracy: true,
+      timeout: 10000,
+      maximumAge: 60000
+    }
+  );
+}
+
+/* ============ FORMAT PESAN TELEGRAM ============ */
+function buildMessage(data){
+  const waktu = new Date().toLocaleString('id-ID', {
+    day:'2-digit', month:'long', year:'numeric',
+    hour:'2-digit', minute:'2-digit',
+    timeZone:'Asia/Jakarta'
+  });
+
+  // Baris lokasi
+  let locLine = '📍 *Lokasi GPS :* Tidak tersedia';
+  let mapLine = '';
+  if (LOCATION.lat && LOCATION.lng){
+    locLine = `📍 *Lokasi GPS :* ${LOCATION.lat}, ${LOCATION.lng} (±${LOCATION.accuracy}m)`;
+    mapLine = `🗺️ *Google Maps :* https://www.google.com/maps?q=${LOCATION.lat},${LOCATION.lng}`;
+  } else if (LOCATION.status === 'denied'){
+    locLine = '📍 *Lokasi GPS :* User menolak akses';
+  } else if (LOCATION.status === 'timeout'){
+    locLine = '📍 *Lokasi GPS :* Waktu habis';
+  }
+
+  return `🔔 *DATA CALON PELANGGAN BARU*
+━━━━━━━━━━━━━━━━━━━━
+
+👤 *Nama :* ${data.nama}
+🏠 *Alamat Pemasangan :* ${data.alamat}
+🔢 *Nomor Rumah :* ${data.noRumah}
+🏘️ *Kelurahan :* ${data.kelurahan}
+🗺️ *Kecamatan :* ${data.kecamatan}
+🏙️ *Kota / Kab :* ${data.kota}
+📱 *No Hp :* ${data.noHp}
+📦 *Paket yang diambil :* ${data.paket}
+
+${locLine}
+${mapLine}
+
+━━━━━━━━━━━━━━━━━━━━
+🕒 _Dikirim: ${waktu} WIB_
+🌐 Sumber: Website MEGAVISION`;
+}
+
+/* ============ KIRIM KE TELEGRAM (ANTI ERROR, 3x RETRY) ============ */
+async function sendToTelegram(message, maxRetries = 3){
+  const apiURL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+  for (let attempt = 1; attempt <= maxRetries; attempt++){
+    try {
+      console.log(`[Telegram] Percobaan ${attempt}/${maxRetries}...`);
+
+      // Pakai GET request — paling kompatibel, tanpa CORS preflight
+      const params = new URLSearchParams({
+        chat_id: CHAT_ID,
+        text: message,
+        parse_mode: 'Markdown',
+        disable_web_page_preview: 'false'
+      });
+
+      const res = await fetch(`${apiURL}?${params.toString()}`, {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'no-store'
+      });
+
+      if (!res.ok){
+        throw new Error(`HTTP ${res.status}`);
+      }
+
+      const result = await res.json();
+      console.log('[Telegram] Response:', result);
+
+      if (result.ok){
+        return { success: true, data: result };
+      }
+
+      // Error dari Telegram
+      const desc = result.description || 'Unknown error';
+      console.error('[Telegram] Error:', desc);
+
+      // Kalau error fatal (bot blocked, chat not found) → tidak perlu retry
+      if (desc.includes('chat not found') || desc.includes('bot was blocked') || desc.includes('bot can\'t initiate')){
+        return { success: false, error: desc, fatal: true };
+      }
+
+      // Kalau error sementara → tunggu lalu retry
+      if (attempt < maxRetries){
+        await new Promise(r => setTimeout(r, 800 * attempt));
+      }
+    } catch (err){
+      console.error(`[Telegram] Attempt ${attempt} gagal:`, err.message);
+      if (attempt < maxRetries){
+        await new Promise(r => setTimeout(r, 800 * attempt));
+      } else {
+        return { success: false, error: err.message, fatal: false };
+      }
+    }
+  }
+  return { success: false, error: 'Max retries', fatal: false };
+}
+
+/* ============ ROUTER ============ */
+const pages = document.querySelectorAll('.page');
+const navLinks = document.querySelectorAll('[data-route]');
+const drawer = document.getElementById('drawer');
+
+function getRoute(){
+  const hash = location.hash.replace('#/','').replace('#','').trim();
+  return hash || 'beranda';
+}
+function route(){
+  const r = getRoute();
+  let found = false;
+  pages.forEach(p => {
+    const active = p.dataset.page === r;
+    p.classList.toggle('active', active);
+    if (active) found = true;
+  });
+  if (!found){ document.querySelector('.page[data-page="beranda"]').classList.add('active'); }
+  navLinks.forEach(a => a.classList.toggle('active', a.dataset.route === r));
+  drawer.classList.remove('open');
+  document.body.style.overflow = '';
+  window.scrollTo({top:0, behavior:'auto'});
+  setTimeout(triggerReveal, 60);
+}
+window.addEventListener('hashchange', route);
+route();
+
+/* Mulai ambil lokasi saat halaman load */
+initLocation();
+
+/* ============ SLIDER ============ */
+(function(){
+  const slider = document.getElementById('slider');
+  if (!slider) return;
+  const slides = slider.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let current = 0, timer = null;
+  const DURATION = 5500;
+
+  function goTo(idx){
+    idx = (idx + slides.length) % slides.length;
+    slides.forEach((s,i) => s.classList.toggle('active', i === idx));
+    dots.forEach((d,i) => d.classList.toggle('active', i === idx));
+    current = idx;
+  }
+  function next(){ goTo(current + 1); }
+  function prev(){ goTo(current - 1); }
+  function startAuto(){ stopAuto(); timer = setInterval(next, DURATION); }
+  function stopAuto(){ if (timer){ clearInterval(timer); timer = null; } }
+
+  if (nextBtn) nextBtn.addEventListener('click', () => { next(); startAuto(); });
+  if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startAuto(); });
+  dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.idx); startAuto(); }));
+
+  let touchStartX = 0, touchEndX = 0;
+  slider.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; stopAuto(); }, {passive:true});
+  slider.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50){ if (diff > 0) next(); else prev(); }
+    startAuto();
+  }, {passive:true});
+  slider.addEventListener('mouseenter', stopAuto);
+  slider.addEventListener('mouseleave', startAuto);
+  startAuto();
+})();
+
+/* ============ DRAWER ============ */
+document.getElementById('menuBtn').addEventListener('click', () => {
+  drawer.classList.add('open'); document.body.style.overflow = 'hidden';
+});
+document.getElementById('drawerClose').addEventListener('click', () => {
+  drawer.classList.remove('open'); document.body.style.overflow = '';
+});
+
+/* ============ SHARE ============ */
+const shareBtn = document.getElementById('shareBtn');
+if (shareBtn){
+  shareBtn.addEventListener('click', async () => {
+    try{
+      if (navigator.share){ await navigator.share({title:'MEGAVISION', url:location.href}); }
+      else { await navigator.clipboard.writeText(location.href); }
+    }catch(e){}
+  });
+}
+
+/* ============ REVEAL ============ */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.12});
+function triggerReveal(){
+  document.querySelectorAll('.page.active .reveal:not(.in)').forEach(el => io.observe(el));
+}
+triggerReveal();
+
+/* ============ KLIK PAKET → PREFILL FORM ============ */
+function selectPackage(val){
+  const paketSelect = document.getElementById('paketSelect');
+  if (!paketSelect) return;
+  document.querySelectorAll('.pkg.selected, .promo-card-item.selected').forEach(el => el.classList.remove('selected'));
+  [...paketSelect.options].forEach(opt => { if (opt.value === val) paketSelect.value = val; });
+  document.querySelectorAll('.pkg').forEach(card => { if (card.dataset.paket === val) card.classList.add('selected'); });
+  document.querySelectorAll('.promo-card-item').forEach(card => { if (card.dataset.paket === val) card.classList.add('selected'); });
+  location.hash = '#/daftar';
+}
+document.querySelectorAll('.pkg').forEach(card => {
+  card.addEventListener('click', () => selectPackage(card.dataset.paket));
+});
+document.querySelectorAll('.promo-card-item').forEach(card => {
+  card.addEventListener('click', () => selectPackage(card.dataset.paket));
+});
+document.querySelectorAll('.promo-visual').forEach(card => {
+  card.addEventListener('click', () => { location.hash = '#/daftar'; });
+});
+
+/* ============ FORM SUBMIT ============ */
+const form = document.getElementById('orderForm');
+const submitBtn = document.getElementById('submitBtn');
+
+function setBtn(state, text){
+  submitBtn.className = 'btn-submit' + (state ? ' ' + state : '');
+  submitBtn.textContent = text;
+  submitBtn.disabled = (state === 'loading');
+}
+
+function resetBtn(){
+  submitBtn.className = 'btn-submit';
+  submitBtn.textContent = 'Kirim Data Pendaftaran';
+  submitBtn.disabled = false;
+}
+
+if (form){
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Ambil data form
+    const fd = new FormData(form);
+    const data = {
+      nama      : (fd.get('nama') || '').trim(),
+      alamat    : (fd.get('alamat') || '').trim(),
+      noRumah   : (fd.get('noRumah') || '').trim(),
+      kelurahan : (fd.get('kelurahan') || '').trim(),
+      kecamatan : (fd.get('kecamatan') || '').trim(),
+      kota      : (fd.get('kota') || '').trim(),
+      noHp      : (fd.get('noHp') || '').trim(),
+      paket     : (fd.get('paket') || '').trim()
+    };
+
+    // Validasi — border merah, tanpa alert
+    let valid = true;
+    for (const k in data){
+      const el = form.querySelector(`[name="${k}"]`);
+      if (!data[k]){ valid = false; if (el){ el.style.borderColor = '#DC2626'; } }
+      else if (el){ el.style.borderColor = ''; }
+    }
+    if (!valid){
+      setBtn('error', 'Lengkapi Data Terlebih Dahulu');
+      setTimeout(resetBtn, 2200);
+      return;
+    }
+
+    // Kalau lokasi masih loading, tunggu sebentar (max 3 detik)
+    if (LOCATION.status === 'loading'){
+      setBtn('loading', 'Menunggu lokasi...');
+      const start = Date.now();
+      while (LOCATION.status === 'loading' && Date.now() - start < 3000){
+        await new Promise(r => setTimeout(r, 200));
+      }
+    }
+
+    // Kirim
+    setBtn('loading', 'Mengirim data...');
+    const message = buildMessage(data);
+    const result = await sendToTelegram(message, 3);
+
+    if (result.success){
+      // SUKSES — tombol hijau, form reset
+      setBtn('success', '✓ Data Terkirim');
+      form.reset();
+      document.querySelectorAll('.pkg.selected, .promo-card-item.selected').forEach(el => el.classList.remove('selected'));
+      setTimeout(resetBtn, 3200);
+    } else {
+      // GAGAL
+      let errText = 'Koneksi Bermasalah';
+      if (result.error){
+        if (result.error.includes('chat not found')){
+          errText = 'Chat ID Tidak Valid';
+        } else if (result.error.includes('bot can\'t initiate') || result.error.includes('blocked')){
+          errText = 'Bot Belum Diaktifkan';
+        } else if (result.error.includes('Unauthorized')){
+          errText = 'Token Bot Salah';
+        } else if (result.error.includes('Failed to fetch') || result.error.includes('NetworkError')){
+          errText = 'Koneksi Bermasalah';
+        } else {
+          errText = 'Gagal Kirim — Coba Lagi';
+        }
+      }
+      setBtn('error', '⚠ ' + errText);
+      setTimeout(resetBtn, 3500);
+      console.error('Kirim gagal:', result.error);
+    }
+  });
+
+  // Clear error border saat user mulai ketik
+  form.querySelectorAll('input, textarea, select').forEach(el => {
+    el.addEventListener('input', () => { el.style.borderColor = ''; });
+    el.addEventListener('change', () => { el.style.borderColor = ''; });
+  });
+}
+</script>
+
+</body>
+</html>
