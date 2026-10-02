@@ -51,32 +51,30 @@ button{cursor:pointer;border:none;background:none}
 .brand-sub{font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);line-height:1}
 .brand-fallback{display:none;flex-direction:column;align-items:center;gap:4px}
 .brand-fallback.show{display:flex}
-.bf-mark{display:inline-flex;align-items:center;gap:6px;padding:5px 16px;background:var(--grad-yellow);border-radius:100px;box-shadow:0 4px 14px rgba(217,119,6,.3),inset 0 -1px 2px rgba(0,0,0,.08),inset 0 1px 2px rgba(255,255,255,.4);transform:skewX(-5deg);position:relative}
+.bf-mark{display:inline-flex;align-items:center;gap:6px;padding:5px 16px;background:var(--grad-yellow);border-radius:100px;box-shadow:0 4px 14px rgba(217,119,6,.3);transform:skewX(-5deg);position:relative}
 .bf-mark::after{content:"";position:absolute;inset:0;border-radius:100px;background:linear-gradient(180deg,rgba(255,255,255,.28),transparent 45%);pointer-events:none}
-.bf-text{font-size:18px;font-weight:800;letter-spacing:1.6px;color:#0B3DA8;transform:skewX(5deg);text-shadow:0 1px 0 rgba(255,255,255,.3);line-height:1}
-.bf-dot{width:13px;height:13px;border-radius:50%;background:#DC2626;box-shadow:inset 0 0 0 2px #FFF,0 0 0 1.5px #DC2626,0 2px 4px rgba(220,38,38,.3);transform:skewX(5deg);position:relative;flex-shrink:0}
-.bf-dot::after{content:"";position:absolute;inset:3.5px;border-radius:50%;background:#FFF;box-shadow:inset 0 0 0 1px #DC2626}
+.bf-text{font-size:18px;font-weight:800;letter-spacing:1.6px;color:#0B3DA8;transform:skewX(5deg);line-height:1}
+.bf-dot{width:13px;height:13px;border-radius:50%;background:#DC2626;box-shadow:inset 0 0 0 2px #FFF,0 0 0 1.5px #DC2626;transform:skewX(5deg);position:relative;flex-shrink:0}
+.bf-dot::after{content:"";position:absolute;inset:3.5px;border-radius:50%;background:#FFF}
 .nav-desktop{max-width:1280px;margin:0 auto;padding:0 20px 12px;display:none;align-items:center;justify-content:center;gap:2px}
 .nav-desktop a{padding:8px 15px;border-radius:100px;font-size:13.5px;font-weight:600;color:var(--ink-2);transition:.22s var(--ease);position:relative}
 .nav-desktop a:hover{color:var(--blue);background:var(--blue-50)}
 .nav-desktop a.active{color:var(--blue);background:var(--blue-100)}
 .nav-desktop a.active::before{content:"";position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:14px;height:2px;background:var(--blue);border-radius:2px}
-.nav-cta-desk{margin-left:8px;padding:9px 20px!important;background:var(--grad-yellow)!important;color:#0B3DA8!important;font-weight:800!important;box-shadow:0 6px 18px rgba(217,119,6,.25)}
-.nav-cta-desk:hover{transform:translateY(-1px)}
+.nav-cta-desk{margin-left:8px;padding:9px 20px!important;background:var(--grad-yellow)!important;color:#0B3DA8!important;font-weight:800!important}
 
 /* DRAWER */
 .drawer{position:fixed;inset:0;z-index:1100;background:var(--white);padding:16px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateX(-16px);transition:.35s var(--ease)}
 .drawer.open{opacity:1;visibility:visible;transform:translateX(0)}
 .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:6px 4px 20px;border-bottom:1px solid var(--line);margin-bottom:20px}
 .drawer .brand{justify-content:flex-start}
-.drawer-close{width:42px;height:42px;border-radius:11px;background:var(--bg-2);color:var(--ink);font-size:22px;font-weight:300;display:grid;place-items:center;transition:.22s}
-.drawer-close:active{transform:scale(.94);background:var(--blue-100)}
+.drawer-close{width:42px;height:42px;border-radius:11px;background:var(--bg-2);color:var(--ink);font-size:22px;font-weight:300;display:grid;place-items:center}
 .drawer-links{display:flex;flex-direction:column;gap:2px;flex:1}
-.drawer-links a{padding:15px 16px;border-radius:12px;color:var(--ink);font-size:15.5px;font-weight:600;display:flex;align-items:center;justify-content:space-between;transition:.22s var(--ease)}
-.drawer-links a::after{content:"→";color:var(--blue);opacity:0;transform:translateX(-6px);transition:.22s var(--ease);font-weight:700}
-.drawer-links a:active,.drawer-links a.active{background:var(--blue-50);color:var(--blue)}
+.drawer-links a{padding:15px 16px;border-radius:12px;color:var(--ink);font-size:15.5px;font-weight:600;display:flex;align-items:center;justify-content:space-between}
+.drawer-links a::after{content:"→";color:var(--blue);opacity:0;transform:translateX(-6px);transition:.22s;font-weight:700}
+.drawer-links a.active{background:var(--blue-50);color:var(--blue)}
 .drawer-links a.active::after{opacity:1;transform:translateX(0)}
-.drawer-cta{margin-top:12px;background:var(--grad-yellow)!important;color:#0B3DA8!important;font-weight:800!important;justify-content:center!important;box-shadow:0 10px 24px rgba(217,119,6,.25)}
+.drawer-cta{margin-top:12px;background:var(--grad-yellow)!important;color:#0B3DA8!important;font-weight:800!important;justify-content:center!important}
 .drawer-cta::after{display:none!important}
 .drawer-foot{padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;text-align:center}
 
@@ -86,7 +84,7 @@ main{padding-top:76px;min-height:100vh;position:relative}
 .page.active{display:block}
 @keyframes pageIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
-/* HERO SLIDER */
+/* HERO */
 .hero{position:relative;overflow:hidden;border-radius:0 0 28px 28px;background:#0B3DA8}
 .slider{position:relative;height:520px}
 .slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .8s var(--ease);pointer-events:none;overflow:hidden}
@@ -113,18 +111,15 @@ main{padding-top:76px;min-height:100vh;position:relative}
 .slide-desc{font-size:14px;line-height:1.65;color:rgba(255,255,255,.85);margin-bottom:24px}
 .slide-actions{display:flex;gap:10px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:100px;font-size:14.5px;font-weight:800;letter-spacing:.2px;border:none;cursor:pointer;transition:.28s var(--ease);white-space:nowrap}
-.btn-gold{background:var(--grad-yellow);color:#0B3DA8;box-shadow:0 12px 32px rgba(217,119,6,.45),0 4px 10px rgba(0,0,0,.15)}
+.btn-gold{background:var(--grad-yellow);color:#0B3DA8;box-shadow:0 12px 32px rgba(217,119,6,.45)}
 .btn-gold:active{transform:scale(.97)}
-.btn-gold:hover{transform:translateY(-2px)}
 .btn-white{background:#fff;color:var(--blue);box-shadow:0 12px 30px rgba(0,0,0,.2)}
-.btn-white:active{transform:scale(.97)}
 .btn-dark{background:var(--ink);color:#fff;box-shadow:0 12px 30px rgba(15,23,42,.2)}
 
 .slider-dots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
 .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:.3s var(--ease)}
 .dot.active{background:#FCD34D;width:26px;border-radius:100px}
-.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.9);color:var(--blue);display:none;place-items:center;z-index:10;cursor:pointer;transition:.25s var(--ease);box-shadow:0 8px 20px rgba(0,0,0,.2)}
-.slider-arrow:hover{background:#fff}
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.9);color:var(--blue);display:none;place-items:center;z-index:10;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.2)}
 .slider-arrow.prev{left:16px}
 .slider-arrow.next{right:16px}
 .slider-arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
@@ -142,50 +137,35 @@ main{padding-top:76px;min-height:100vh;position:relative}
 
 /* FEATURES */
 .features{display:grid;grid-template-columns:1fr;gap:14px}
-.feature{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;transition:.3s var(--ease);box-shadow:var(--sh-sm)}
+.feature{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;transition:.3s var(--ease);box-shadow:var(--sh-sm);position:relative;overflow:hidden}
 .feature-icon{width:44px;height:44px;border-radius:12px;background:var(--blue-50);display:grid;place-items:center;font-size:20px;margin-bottom:14px;border:1px solid var(--blue-100);color:var(--blue)}
 .feature h3{font-size:16px;font-weight:700;margin-bottom:6px}
 .feature p{color:var(--muted);font-size:13.5px;line-height:1.6}
 
-/* CHANNEL LOGOS */
-.channel-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  padding:20px;
-  background:var(--white);
+/* WIFI VISUAL CARDS */
+.wifi-cards{display:grid;grid-template-columns:1fr;gap:14px}
+.wifi-card{
+  position:relative;
   border-radius:var(--r-lg);
-  border:1px solid var(--line);
-  box-shadow:var(--sh-sm);
-}
-.channel-item{
+  overflow:hidden;
+  min-height:170px;
   display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 8px;
-  border-radius:10px;
-  background:#FAFBFC;
-  border:1px solid var(--line);
-  transition:.25s var(--ease);
-  min-height:60px;
+  align-items:flex-end;
+  box-shadow:var(--sh-md);
+  transition:.3s var(--ease);
+  background:var(--grad-blue);
 }
-.channel-item:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 16px rgba(15,23,42,.08);
-  border-color:var(--blue-100);
-}
-.channel-item img{
-  max-width:100%;
-  max-height:32px;
-  width:auto;
-  height:auto;
-  object-fit:contain;
-  filter:grayscale(0);
-  transition:.25s var(--ease);
-}
-.channel-item:hover img{
-  transform:scale(1.05);
-}
+.wifi-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.wifi-card-bg{position:absolute;inset:0;z-index:0}
+.wifi-card-bg img{width:100%;height:100%;object-fit:cover;transition:.5s var(--ease)}
+.wifi-card:hover .wifi-card-bg img{transform:scale(1.06)}
+.wifi-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,61,168,.95) 0%,rgba(11,61,168,.6) 55%,rgba(11,61,168,.15) 100%);z-index:1}
+.wifi-card.c2::after{background:linear-gradient(0deg,rgba(217,119,6,.95) 0%,rgba(217,119,6,.55) 55%,transparent 100%)}
+.wifi-card.c3::after{background:linear-gradient(0deg,rgba(220,38,38,.95) 0%,rgba(220,38,38,.55) 55%,transparent 100%)}
+.wifi-card-content{position:relative;z-index:2;padding:20px;color:#fff;width:100%}
+.wifi-card-badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;letter-spacing:1.2px;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);padding:5px 10px;border-radius:100px;text-transform:uppercase;margin-bottom:10px;border:1px solid rgba(255,255,255,.25)}
+.wifi-card h3{font-size:17px;font-weight:800;line-height:1.25;margin-bottom:4px;color:#fff}
+.wifi-card p{font-size:12.5px;color:rgba(255,255,255,.85);line-height:1.5}
 
 /* PACKAGES */
 .pkg-grid{display:grid;grid-template-columns:1fr;gap:14px}
@@ -202,18 +182,64 @@ main{padding-top:76px;min-height:100vh;position:relative}
 .pkg.selected .pkg-speed small{color:rgba(255,255,255,.65)}
 .pkg.selected .pkg-sub{color:rgba(255,255,255,.6)}
 .pkg.selected .pkg-price{color:#FCD34D;border-top-color:rgba(255,255,255,.15)}
-.pkg.selected .pkg-extras{color:rgba(255,255,255,.7)}
+.pkg.selected .pkg-extras{color:rgba(255,255,255,.75)}
 .pkg.selected .pkg-check{opacity:1;transform:scale(1)}
+.pkg.selected .channel-chips{border-top-color:rgba(255,255,255,.15)}
+.pkg.selected .channel-chips-label{color:rgba(255,255,255,.6)}
 .pkg-tag{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:1.6px;padding:5px 11px;border-radius:100px;background:var(--blue-50);color:var(--blue);border:1px solid var(--blue-100);text-transform:uppercase;margin-bottom:16px;align-self:flex-start}
 .pkg-speed{font-size:42px;font-weight:800;letter-spacing:-1.5px;line-height:1;color:var(--ink)}
 .pkg-speed small{font-size:14px;font-weight:700;color:var(--muted);margin-left:2px}
 .pkg-sub{font-size:10.5px;font-weight:700;letter-spacing:1.4px;color:var(--muted);text-transform:uppercase;margin-top:8px;margin-bottom:18px}
 .pkg-price{font-size:20px;font-weight:800;letter-spacing:-.5px;color:var(--blue);display:flex;align-items:baseline;gap:4px;padding-top:16px;border-top:1px solid var(--line)}
 .pkg-price small{font-size:11.5px;font-weight:700;opacity:.7}
-.pkg-extras{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5}
+.pkg-extras{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5;display:flex;align-items:center;gap:5px}
 .pkg-check{position:absolute;top:18px;right:18px;width:24px;height:24px;border-radius:50%;background:var(--grad-yellow);display:grid;place-items:center;opacity:0;transform:scale(.5);transition:.35s var(--ease);z-index:2}
 .pkg-check::after{content:"";width:5px;height:10px;border:solid #0B3DA8;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-2px)}
-.pkg-badge-promo{position:absolute;top:0;right:0;background:var(--grad-red);color:#fff;font-size:9px;font-weight:800;letter-spacing:1px;padding:5px 11px;border-bottom-left-radius:12px;text-transform:uppercase}
+.pkg-badge-promo{position:absolute;top:0;right:0;background:var(--grad-red);color:#fff;font-size:9px;font-weight:800;letter-spacing:1px;padding:5px 11px;border-bottom-left-radius:12px;text-transform:uppercase;z-index:3}
+
+/* CHANNEL CHIPS — Pemanis di dalam kartu paket */
+.channel-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px dashed rgba(15,23,42,.1);
+  transition:border-color .3s;
+}
+.channel-chips-label{
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  color:var(--muted);
+  width:100%;
+  margin-bottom:6px;
+  transition:color .3s;
+}
+.chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:20px;
+  padding:0 8px;
+  border-radius:5px;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.3px;
+  white-space:nowrap;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  line-height:1;
+  border:1px solid rgba(0,0,0,.05);
+  transition:.25s;
+}
+.chip-hbo{background:#000;color:#fff;letter-spacing:1.2px;font-weight:900}
+.chip-cinemax{background:#000;color:#fff;font-style:italic;letter-spacing:-.2px}
+.chip-nick{background:#FF7A00;color:#fff;letter-spacing:.3px;text-transform:lowercase;font-weight:900;font-size:11px}
+.chip-animal{background:#1B7A3C;color:#fff;font-size:8px;letter-spacing:.4px}
+.chip-bbc{background:#000;color:#fff;letter-spacing:1.6px;font-weight:900}
+.chip-aljazeera{background:#FA9000;color:#000;font-style:italic;font-weight:800}
+.chip-zoomoo{background:linear-gradient(135deg,#EC4899,#F59E0B,#10B981);color:#fff;font-weight:900;letter-spacing:.5px}
 
 /* PROMO VISUAL */
 .promo-visual-grid{display:grid;grid-template-columns:1fr;gap:14px}
@@ -253,8 +279,8 @@ main{padding-top:76px;min-height:100vh;position:relative}
 .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--yellow);box-shadow:0 0 0 4px rgba(245,197,24,.15)}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 
-/* LOCATION STATUS */
-.loc-status{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:var(--r-md);background:var(--blue-50);border:1px solid var(--blue-100);font-size:12.5px;color:var(--blue);margin-bottom:14px;transition:.3s var(--ease)}
+/* LOCATION */
+.loc-status{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:var(--r-md);background:var(--blue-50);border:1px solid var(--blue-100);font-size:12.5px;color:var(--blue);margin-bottom:14px}
 .loc-status.success{background:#DCFCE7;border-color:#86EFAC;color:#166534}
 .loc-status.warning{background:#FEF3C7;border-color:#FCD34D;color:#92400E}
 .loc-icon{width:32px;height:32px;border-radius:9px;background:rgba(255,255,255,.6);display:grid;place-items:center;font-size:14px;flex-shrink:0}
@@ -262,9 +288,9 @@ main{padding-top:76px;min-height:100vh;position:relative}
 .loc-info strong{display:block;font-weight:800;font-size:12.5px;margin-bottom:2px}
 .loc-info span{font-size:11.5px;opacity:.8;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-.btn-submit{width:100%;margin-top:10px;padding:16px;border-radius:var(--r-md);background:var(--grad-yellow);color:#0B3DA8;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;transition:.28s var(--ease);box-shadow:0 12px 30px rgba(217,119,6,.3)}
+.btn-submit{width:100%;margin-top:10px;padding:16px;border-radius:var(--r-md);background:var(--grad-yellow);color:#0B3DA8;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 12px 30px rgba(217,119,6,.3)}
 .btn-submit:active{transform:scale(.98)}
-.btn-submit:disabled{opacity:.8;cursor:not-allowed;transform:none}
+.btn-submit:disabled{opacity:.8;cursor:not-allowed}
 .btn-submit.loading{background:var(--grad-blue)!important;color:#fff!important}
 .btn-submit.success{background:var(--grad-green)!important;color:#fff!important}
 .btn-submit.error{background:var(--grad-red)!important;color:#fff!important}
@@ -276,7 +302,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
 .footer-logo .brand-logo-img{height:34px;max-width:160px}
 .footer-slogan{color:#FCD34D;font-size:14px;font-weight:600;letter-spacing:.5px;margin-bottom:22px}
 .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin-bottom:22px}
-.footer-links a{color:rgba(255,255,255,.6);font-size:13px;font-weight:500;transition:.2s}
+.footer-links a{color:rgba(255,255,255,.6);font-size:13px;font-weight:500}
 .footer-links a:hover{color:#FCD34D}
 .footer-copy{font-size:11.5px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06);letter-spacing:.3px;line-height:1.7}
 
@@ -291,7 +317,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
   .section{padding:72px 32px}
   .sec-head h2{font-size:32px}
   .features{grid-template-columns:repeat(3,1fr);gap:18px}
-  .channel-grid{grid-template-columns:repeat(4,1fr);gap:12px}
+  .wifi-cards{grid-template-columns:repeat(3,1fr);gap:16px}
   .pkg-grid{grid-template-columns:repeat(2,1fr);gap:16px}
   .promo-visual-grid{grid-template-columns:repeat(2,1fr);gap:16px}
   .form-card{padding:34px 30px}
@@ -309,7 +335,6 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
   .slider{height:620px}
   .pkg-grid{grid-template-columns:repeat(4,1fr);gap:18px}
   .promo-visual-grid{grid-template-columns:repeat(4,1fr);gap:16px}
-  .channel-grid{grid-template-columns:repeat(7,1fr);gap:12px}
   .slide-title{font-size:52px;letter-spacing:-2.2px}
   .slide-content{padding:0 60px}
   .slide-text{max-width:580px}
@@ -378,6 +403,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
 
 <main>
 
+  <!-- ========== BERANDA ========== -->
   <section class="page" data-page="beranda">
     <div class="hero">
       <div class="slider" id="slider">
@@ -424,9 +450,9 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
           <div class="slide-overlay"></div>
           <div class="slide-content">
             <div class="slide-text">
-              <div class="slide-eyebrow">Streaming & Hiburan</div>
-              <h1 class="slide-title">Nonton Lancar,<br><span class="highlight">Tanpa Buffering</span></h1>
-              <p class="slide-desc">Streaming 4K, YouTube, Netflix, dan platform favorit keluarga Anda tanpa gangguan. Jaringan fiber optic berkualitas.</p>
+              <div class="slide-eyebrow">Hemat & Terjangkau</div>
+              <h1 class="slide-title">Wifi Murah,<br><span class="highlight">Kualitas Premium</span></h1>
+              <p class="slide-desc">Dapatkan internet fiber optic berkualitas dengan harga terjangkau. Cocok untuk keluarga dan bisnis.</p>
               <div class="slide-actions">
                 <a href="#/daftar" class="btn btn-gold">Daftar Sekarang</a>
                 <a href="#/promo" class="btn btn-white">Lihat Promo</a>
@@ -444,7 +470,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="slide-text">
               <div class="slide-eyebrow">Bonus Eksklusif</div>
               <h1 class="slide-title">Gratis TV Kabel,<br><span class="highlight">73+ Channel</span></h1>
-              <p class="slide-desc">Nikmati 73+ channel TV kabel berkualitas tanpa biaya tambahan. Sudah termasuk untuk semua paket Silver & Maxi.</p>
+              <p class="slide-desc">Nikmati 73+ channel TV kabel berkualitas termasuk HBO, Cinemax, Nickelodeon, BBC, dan banyak lagi.</p>
               <div class="slide-actions">
                 <a href="#/daftar" class="btn btn-gold">Daftar Sekarang</a>
                 <a href="#/paket" class="btn btn-white">Lihat Paket</a>
@@ -468,6 +494,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
       </button>
     </div>
 
+    <!-- KEUNGGULAN -->
     <div class="section">
       <div class="container">
         <div class="sec-head reveal">
@@ -482,38 +509,63 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <p>Kecepatan hingga 1 Gbps dengan teknologi WiFi 6 terbaru untuk pengalaman tanpa lag.</p>
           </div>
           <div class="feature reveal">
+            <div class="feature-icon">💰</div>
+            <h3>Harga Terjangkau</h3>
+            <p>Paket mulai Rp 150.000/bulan dengan kualitas fiber optic premium tanpa biaya tersembunyi.</p>
+          </div>
+          <div class="feature reveal">
             <div class="feature-icon">📺</div>
             <h3>Gratis TV Kabel</h3>
             <p>73+ channel TV kabel berkualitas tanpa biaya tambahan untuk seluruh keluarga.</p>
           </div>
-          <div class="feature reveal">
-            <div class="feature-icon">🛡️</div>
-            <h3>Stabil & Terpercaya</h3>
-            <p>Jaringan fiber optic dengan dukungan teknisi profesional 24 jam setiap hari.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- WIFI VISUAL — Foto Menarik -->
+    <div class="section alt">
+      <div class="container">
+        <div class="sec-head reveal">
+          <div class="sec-tag">Kenapa Fiber Optic</div>
+          <h2>Internet <span class="y">Cepat & Stabil</span> untuk Semua</h2>
+          <p>Nikmati pengalaman internet tanpa gangguan dengan teknologi fiber optic terkini.</p>
+        </div>
+        <div class="wifi-cards">
+          <div class="wifi-card c1 reveal" data-goto="daftar">
+            <div class="wifi-card-bg">
+              <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
+            </div>
+            <div class="wifi-card-content">
+              <div class="wifi-card-badge">⚡ SUPER CEPAT</div>
+              <h3>Streaming 4K Lancar</h3>
+              <p>Nonton film favorit tanpa buffering di semua device</p>
+            </div>
+          </div>
+          <div class="wifi-card c2 reveal" data-goto="daftar">
+            <div class="wifi-card-bg">
+              <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
+            </div>
+            <div class="wifi-card-content">
+              <div class="wifi-card-badge">🎮 GAMING</div>
+              <h3>Low Ping untuk Gaming</h3>
+              <p>Main game online tanpa lag & disconnect</p>
+            </div>
+          </div>
+          <div class="wifi-card c3 reveal" data-goto="daftar">
+            <div class="wifi-card-bg">
+              <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
+            </div>
+            <div class="wifi-card-content">
+              <div class="wifi-card-badge">👨‍👩‍👧 KELUARGA</div>
+              <h3>Cocok untuk Keluarga</h3>
+              <p>Koneksi stabil untuk semua anggota keluarga</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="section alt">
-      <div class="container">
-        <div class="sec-head reveal">
-          <div class="sec-tag">Gratis TV Kabel</div>
-          <h2>Nikmati <span class="y">73+ Channel</span> Berkualitas</h2>
-          <p>Beragam pilihan channel lokal dan internasional untuk seluruh keluarga.</p>
-        </div>
-        <div class="channel-grid reveal">
-          <div class="channel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/1/17/HBO_logo.png" alt="HBO" onerror="this.parentElement.style.display='none'"></div>
-          <div class="channel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Cinemax_logo.png" alt="Cinemax" onerror="this.parentElement.style.display='none'"></div>
-          <div class="channel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Nickelodeon_2009_logo.png" alt="Nickelodeon" onerror="this.parentElement.style.display='none'"></div>
-          <div class="channel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Animal_Planet_logo.svg" alt="Animal Planet" onerror="this.parentElement.style.display='none'"></div>
-          <div class="channel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/BBC_Logo_2021.svg" alt="BBC" onerror="this.parentElement.style.display='none'"></div>
-          <div class="channel-item"><img src="https://upload.wikimedia.org/wikipedia/en/9/9d/Al_Jazeera_English_Logo.svg" alt="Al Jazeera" onerror="this.parentElement.style.display='none'"></div>
-          <div class="channel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/ZooMoo_Logo.png" alt="ZooMoo" onerror="this.parentElement.style.display='none'"></div>
-        </div>
-      </div>
-    </div>
-
+    <!-- PAKET POPULER -->
     <div class="section">
       <div class="container">
         <div class="sec-head reveal">
@@ -527,7 +579,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-speed">100<small> Mbps</small></div>
             <div class="pkg-sub">Download Speed</div>
             <div class="pkg-price">Rp 150<small>rb/bln</small></div>
-            <div class="pkg-extras">Internet only</div>
+            <div class="pkg-extras">📡 Internet only</div>
             <div class="pkg-check"></div>
           </div>
           <div class="pkg reveal" data-paket="Paket Silver 200 Mbps - Rp 200.000/bulan">
@@ -536,6 +588,14 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-sub">Download Speed</div>
             <div class="pkg-price">Rp 200<small>rb/bln</small></div>
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="channel-chips">
+              <span class="channel-chips-label">Channel Populer</span>
+              <span class="chip chip-hbo">HBO</span>
+              <span class="chip chip-cinemax">Cinemax</span>
+              <span class="chip chip-nick">nick</span>
+              <span class="chip chip-bbc">BBC</span>
+              <span class="chip chip-animal">ANIMAL</span>
+            </div>
             <div class="pkg-check"></div>
           </div>
           <div class="pkg reveal" data-paket="Paket Maxi 500 Mbps - Rp 400.000/bulan">
@@ -545,6 +605,14 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-sub">Up Speed · WiFi 6</div>
             <div class="pkg-price">Rp 400<small>rb/bln</small></div>
             <div class="pkg-extras">🚀 Untuk bisnis & gaming</div>
+            <div class="channel-chips">
+              <span class="channel-chips-label">Channel Populer</span>
+              <span class="chip chip-hbo">HBO</span>
+              <span class="chip chip-cinemax">Cinemax</span>
+              <span class="chip chip-nick">nick</span>
+              <span class="chip chip-bbc">BBC</span>
+              <span class="chip chip-aljazeera">Al Jazeera</span>
+            </div>
             <div class="pkg-check"></div>
           </div>
           <div class="pkg reveal" data-paket="Paket Maxi 900 Mbps - Rp 780.000/bulan">
@@ -553,6 +621,14 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-sub">Up Speed · WiFi 6</div>
             <div class="pkg-price">Rp 780<small>rb/bln</small></div>
             <div class="pkg-extras">⚡ Performa maksimal</div>
+            <div class="channel-chips">
+              <span class="channel-chips-label">Channel Populer</span>
+              <span class="chip chip-hbo">HBO</span>
+              <span class="chip chip-cinemax">Cinemax</span>
+              <span class="chip chip-nick">nick</span>
+              <span class="chip chip-bbc">BBC</span>
+              <span class="chip chip-zoomoo">ZooMoo</span>
+            </div>
             <div class="pkg-check"></div>
           </div>
         </div>
@@ -562,6 +638,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
       </div>
     </div>
 
+    <!-- CTA -->
     <div class="section" style="padding-top:0">
       <div class="container">
         <div class="form-section reveal" style="border-radius:24px;padding:44px 24px">
@@ -578,6 +655,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
     </div>
   </section>
 
+  <!-- ========== PAKET ========== -->
   <section class="page" data-page="paket">
     <div class="section" style="padding-top:36px">
       <div class="container">
@@ -603,6 +681,13 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-sub">Download Speed</div>
             <div class="pkg-price">Rp 185<small>rb/bln</small></div>
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="channel-chips">
+              <span class="channel-chips-label">Channel Populer</span>
+              <span class="chip chip-hbo">HBO</span>
+              <span class="chip chip-cinemax">Cinemax</span>
+              <span class="chip chip-nick">nick</span>
+              <span class="chip chip-bbc">BBC</span>
+            </div>
             <div class="pkg-check"></div>
           </div>
           <div class="pkg" data-paket="Paket Silver 200 Mbps - Rp 200.000/bulan">
@@ -611,6 +696,14 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-sub">Download Speed</div>
             <div class="pkg-price">Rp 200<small>rb/bln</small></div>
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="channel-chips">
+              <span class="channel-chips-label">Channel Populer</span>
+              <span class="chip chip-hbo">HBO</span>
+              <span class="chip chip-cinemax">Cinemax</span>
+              <span class="chip chip-nick">nick</span>
+              <span class="chip chip-animal">ANIMAL</span>
+              <span class="chip chip-bbc">BBC</span>
+            </div>
             <div class="pkg-check"></div>
           </div>
           <div class="pkg" data-paket="Paket Silver 300 Mbps - Rp 250.000/bulan">
@@ -619,6 +712,14 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-sub">Download Speed</div>
             <div class="pkg-price">Rp 250<small>rb/bln</small></div>
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="channel-chips">
+              <span class="channel-chips-label">Channel Populer</span>
+              <span class="chip chip-hbo">HBO</span>
+              <span class="chip chip-cinemax">Cinemax</span>
+              <span class="chip chip-nick">nick</span>
+              <span class="chip chip-bbc">BBC</span>
+              <span class="chip chip-aljazeera">Al Jazeera</span>
+            </div>
             <div class="pkg-check"></div>
           </div>
         </div>
@@ -630,7 +731,14 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-speed">350<small> Mbps</small></div>
             <div class="pkg-sub">Up Speed · WiFi 6</div>
             <div class="pkg-price">Rp 275<small>rb/bln</small></div>
-            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="channel-chips">
+              <span class="channel-chips-label">Channel Populer</span>
+              <span class="chip chip-hbo">HBO</span>
+              <span class="chip chip-nick">nick</span>
+              <span class="chip chip-bbc">BBC</span>
+              <span class="chip chip-zoomoo">ZooMoo</span>
+            </div>
             <div class="pkg-check"></div>
           </div>
           <div class="pkg" data-paket="Paket Maxi 400 Mbps - Rp 300.000/bulan">
@@ -638,7 +746,14 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-speed">400<small> Mbps</small></div>
             <div class="pkg-sub">Up Speed · WiFi 6</div>
             <div class="pkg-price">Rp 300<small>rb/bln</small></div>
-            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="channel-chips">
+              <span class="channel-chips-label">Channel Populer</span>
+              <span class="chip chip-cinemax">Cinemax</span>
+              <span class="chip chip-animal">ANIMAL</span>
+              <span class="chip chip-aljazeera">Al Jazeera</span>
+              <span class="chip chip-zoomoo">ZooMoo</span>
+            </div>
             <div class="pkg-check"></div>
           </div>
           <div class="pkg" data-paket="Paket Maxi 450 Mbps - Rp 350.000/bulan">
@@ -646,7 +761,15 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-speed">450<small> Mbps</small></div>
             <div class="pkg-sub">Up Speed · WiFi 6</div>
             <div class="pkg-price">Rp 350<small>rb/bln</small></div>
-            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="channel-chips">
+              <span class="channel-chips-label">Channel Populer</span>
+              <span class="chip chip-hbo">HBO</span>
+              <span class="chip chip-nick">nick</span>
+              <span class="chip chip-animal">ANIMAL</span>
+              <span class="chip chip-bbc">BBC</span>
+              <span class="chip chip-aljazeera">Al Jazeera</span>
+            </div>
             <div class="pkg-check"></div>
           </div>
           <div class="pkg" data-paket="Paket Maxi 500 Mbps - Rp 400.000/bulan">
@@ -655,7 +778,16 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-speed">500<small> Mbps</small></div>
             <div class="pkg-sub">Up Speed · WiFi 6</div>
             <div class="pkg-price">Rp 400<small>rb/bln</small></div>
-            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="channel-chips">
+              <span class="channel-chips-label">Channel Populer</span>
+              <span class="chip chip-hbo">HBO</span>
+              <span class="chip chip-cinemax">Cinemax</span>
+              <span class="chip chip-nick">nick</span>
+              <span class="chip chip-animal">ANIMAL</span>
+              <span class="chip chip-bbc">BBC</span>
+              <span class="chip chip-zoomoo">ZooMoo</span>
+            </div>
             <div class="pkg-check"></div>
           </div>
           <div class="pkg" data-paket="Paket Maxi 600 Mbps - Rp 450.000/bulan">
@@ -663,7 +795,15 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-speed">600<small> Mbps</small></div>
             <div class="pkg-sub">Up Speed · WiFi 6</div>
             <div class="pkg-price">Rp 450<small>rb/bln</small></div>
-            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="channel-chips">
+              <span class="channel-chips-label">Channel Populer</span>
+              <span class="chip chip-hbo">HBO</span>
+              <span class="chip chip-cinemax">Cinemax</span>
+              <span class="chip chip-nick">nick</span>
+              <span class="chip chip-bbc">BBC</span>
+              <span class="chip chip-aljazeera">Al Jazeera</span>
+            </div>
             <div class="pkg-check"></div>
           </div>
           <div class="pkg" data-paket="Paket Maxi 750 Mbps - Rp 500.000/bulan">
@@ -671,7 +811,14 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-speed">750<small> Mbps</small></div>
             <div class="pkg-sub">Up Speed · WiFi 6</div>
             <div class="pkg-price">Rp 500<small>rb/bln</small></div>
-            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="channel-chips">
+              <span class="channel-chips-label">Channel Populer</span>
+              <span class="chip chip-hbo">HBO</span>
+              <span class="chip chip-nick">nick</span>
+              <span class="chip chip-animal">ANIMAL</span>
+              <span class="chip chip-zoomoo">ZooMoo</span>
+            </div>
             <div class="pkg-check"></div>
           </div>
           <div class="pkg" data-paket="Paket Maxi 800 Mbps - Rp 670.000/bulan">
@@ -679,7 +826,14 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-speed">800<small> Mbps</small></div>
             <div class="pkg-sub">Up Speed · WiFi 6</div>
             <div class="pkg-price">Rp 670<small>rb/bln</small></div>
-            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="channel-chips">
+              <span class="channel-chips-label">Channel Populer</span>
+              <span class="chip chip-cinemax">Cinemax</span>
+              <span class="chip chip-nick">nick</span>
+              <span class="chip chip-bbc">BBC</span>
+              <span class="chip chip-aljazeera">Al Jazeera</span>
+            </div>
             <div class="pkg-check"></div>
           </div>
           <div class="pkg" data-paket="Paket Maxi 900 Mbps - Rp 780.000/bulan">
@@ -687,7 +841,15 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-speed">900<small> Mbps</small></div>
             <div class="pkg-sub">Up Speed · WiFi 6</div>
             <div class="pkg-price">Rp 780<small>rb/bln</small></div>
-            <div class="pkg-extras">Hemat untuk bisnis & gaming</div>
+            <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
+            <div class="channel-chips">
+              <span class="channel-chips-label">Channel Populer</span>
+              <span class="chip chip-hbo">HBO</span>
+              <span class="chip chip-cinemax">Cinemax</span>
+              <span class="chip chip-nick">nick</span>
+              <span class="chip chip-animal">ANIMAL</span>
+              <span class="chip chip-zoomoo">ZooMoo</span>
+            </div>
             <div class="pkg-check"></div>
           </div>
         </div>
@@ -701,6 +863,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
     </div>
   </section>
 
+  <!-- ========== PROMO ========== -->
   <section class="page" data-page="promo">
     <div class="section" style="padding-top:36px">
       <div class="container">
@@ -713,7 +876,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
           <div class="feature reveal">
             <div class="feature-icon">📺</div>
             <h3>TV Kabel 73+ Channel</h3>
-            <p>Sudah termasuk gratis untuk semua paket Silver dan Maxi.</p>
+            <p>Termasuk HBO, Cinemax, Nickelodeon, Animal Planet, BBC, dan banyak lagi.</p>
             <div style="margin-top:14px;font-weight:800;color:var(--blue);font-size:15px">GRATIS</div>
           </div>
           <div class="feature reveal">
@@ -736,6 +899,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
     </div>
   </section>
 
+  <!-- ========== DAFTAR ========== -->
   <section class="page" data-page="daftar">
     <div class="form-section" style="border-radius:0;min-height:calc(100vh - 76px)">
       <div class="container form-inner">
@@ -872,13 +1036,9 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
 </footer>
 
 <script>
-/* =====================================================
-   KONFIGURASI TELEGRAM
-   ===================================================== */
 const BOT_TOKEN = '8983782937:AAGnkQdl0ycc7ENzk8yrdqMq7nqVfgKEHNE';
 const CHAT_ID   = '5695909970';
 
-/* ============ STATE LOKASI ============ */
 const LOCATION = { lat:null, lng:null, accuracy:null, status:'idle' };
 
 function initLocation(){
@@ -945,7 +1105,6 @@ function initLocation(){
   );
 }
 
-/* ============ FORMAT PESAN TELEGRAM ============ */
 function buildMessage(data){
   const waktu = new Date().toLocaleString('id-ID', {
     day:'2-digit', month:'long', year:'numeric',
@@ -984,35 +1143,26 @@ ${mapLine}
 🌐 Sumber: Website MEGAVISION`;
 }
 
-/* ============ KIRIM KE TELEGRAM (RETRY 3x) ============ */
 async function sendToTelegram(message, maxRetries = 3){
   const apiURL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-
   for (let attempt = 1; attempt <= maxRetries; attempt++){
     try {
-      console.log(`[Telegram] Percobaan ${attempt}/${maxRetries}...`);
       const params = new URLSearchParams({
-        chat_id: CHAT_ID,
-        text: message,
-        parse_mode: 'Markdown',
-        disable_web_page_preview: 'false'
+        chat_id: CHAT_ID, text: message,
+        parse_mode: 'Markdown', disable_web_page_preview: 'false'
       });
       const res = await fetch(`${apiURL}?${params.toString()}`, {
         method: 'GET', mode: 'cors', cache: 'no-store'
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const result = await res.json();
-      console.log('[Telegram] Response:', result);
       if (result.ok) return { success: true, data: result };
-
       const desc = result.description || 'Unknown error';
-      console.error('[Telegram] Error:', desc);
       if (desc.includes('chat not found') || desc.includes('bot was blocked') || desc.includes("bot can't initiate")){
         return { success: false, error: desc, fatal: true };
       }
       if (attempt < maxRetries) await new Promise(r => setTimeout(r, 800 * attempt));
     } catch (err){
-      console.error(`[Telegram] Attempt ${attempt} gagal:`, err.message);
       if (attempt < maxRetries) await new Promise(r => setTimeout(r, 800 * attempt));
       else return { success: false, error: err.message, fatal: false };
     }
@@ -1020,7 +1170,6 @@ async function sendToTelegram(message, maxRetries = 3){
   return { success: false, error: 'Max retries', fatal: false };
 }
 
-/* ============ ROUTER ============ */
 const pages = document.querySelectorAll('.page');
 const navLinks = document.querySelectorAll('[data-route]');
 const drawer = document.getElementById('drawer');
@@ -1048,7 +1197,6 @@ window.addEventListener('hashchange', route);
 route();
 initLocation();
 
-/* ============ SLIDER ============ */
 (function(){
   const slider = document.getElementById('slider');
   if (!slider) return;
@@ -1058,7 +1206,6 @@ initLocation();
   const nextBtn = document.getElementById('nextBtn');
   let current = 0, timer = null;
   const DURATION = 5500;
-
   function goTo(idx){
     idx = (idx + slides.length) % slides.length;
     slides.forEach((s,i) => s.classList.toggle('active', i === idx));
@@ -1069,11 +1216,9 @@ initLocation();
   function prev(){ goTo(current - 1); }
   function startAuto(){ stopAuto(); timer = setInterval(next, DURATION); }
   function stopAuto(){ if (timer){ clearInterval(timer); timer = null; } }
-
   if (nextBtn) nextBtn.addEventListener('click', () => { next(); startAuto(); });
   if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startAuto(); });
   dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.idx); startAuto(); }));
-
   let tSX = 0, tEX = 0;
   slider.addEventListener('touchstart', e => { tSX = e.changedTouches[0].screenX; stopAuto(); }, {passive:true});
   slider.addEventListener('touchend', e => {
@@ -1087,7 +1232,6 @@ initLocation();
   startAuto();
 })();
 
-/* ============ DRAWER ============ */
 document.getElementById('menuBtn').addEventListener('click', () => {
   drawer.classList.add('open'); document.body.style.overflow = 'hidden';
 });
@@ -1095,7 +1239,6 @@ document.getElementById('drawerClose').addEventListener('click', () => {
   drawer.classList.remove('open'); document.body.style.overflow = '';
 });
 
-/* ============ SHARE ============ */
 const shareBtn = document.getElementById('shareBtn');
 if (shareBtn){
   shareBtn.addEventListener('click', async () => {
@@ -1106,7 +1249,6 @@ if (shareBtn){
   });
 }
 
-/* ============ REVEAL ============ */
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
 }, {threshold:.12});
@@ -1115,7 +1257,6 @@ function triggerReveal(){
 }
 triggerReveal();
 
-/* ============ KLIK PAKET ============ */
 function selectPackage(val){
   const paketSelect = document.getElementById('paketSelect');
   if (!paketSelect) return;
@@ -1127,14 +1268,12 @@ function selectPackage(val){
 document.querySelectorAll('.pkg').forEach(card => {
   card.addEventListener('click', () => selectPackage(card.dataset.paket));
 });
-document.querySelectorAll('.promo-visual').forEach(card => {
+document.querySelectorAll('.wifi-card').forEach(card => {
   card.addEventListener('click', () => { location.hash = '#/daftar'; });
 });
 
-/* ============ FORM SUBMIT ============ */
 const form = document.getElementById('orderForm');
 const submitBtn = document.getElementById('submitBtn');
-
 function setBtn(state, text){
   submitBtn.className = 'btn-submit' + (state ? ' ' + state : '');
   submitBtn.textContent = text;
@@ -1151,17 +1290,16 @@ if (form){
     e.preventDefault();
     const fd = new FormData(form);
     const data = {
-      nama      : (fd.get('nama') || '').trim(),
-      alamat    : (fd.get('alamat') || '').trim(),
-      noRumah   : (fd.get('noRumah') || '').trim(),
-      kelurahan : (fd.get('kelurahan') || '').trim(),
-      kecamatan : (fd.get('kecamatan') || '').trim(),
-      kota      : (fd.get('kota') || '').trim(),
-      noHp      : (fd.get('noHp') || '').trim(),
-      email     : (fd.get('email') || '').trim(),
-      paket     : (fd.get('paket') || '').trim()
+      nama: (fd.get('nama') || '').trim(),
+      alamat: (fd.get('alamat') || '').trim(),
+      noRumah: (fd.get('noRumah') || '').trim(),
+      kelurahan: (fd.get('kelurahan') || '').trim(),
+      kecamatan: (fd.get('kecamatan') || '').trim(),
+      kota: (fd.get('kota') || '').trim(),
+      noHp: (fd.get('noHp') || '').trim(),
+      email: (fd.get('email') || '').trim(),
+      paket: (fd.get('paket') || '').trim()
     };
-
     let valid = true;
     for (const k in data){
       const el = form.querySelector(`[name="${k}"]`);
@@ -1178,7 +1316,6 @@ if (form){
       setTimeout(resetBtn, 2200);
       return;
     }
-
     if (LOCATION.status === 'loading'){
       setBtn('loading', 'Menunggu lokasi...');
       const start = Date.now();
@@ -1186,11 +1323,9 @@ if (form){
         await new Promise(r => setTimeout(r, 200));
       }
     }
-
     setBtn('loading', 'Mengirim data...');
     const message = buildMessage(data);
     const result = await sendToTelegram(message, 3);
-
     if (result.success){
       setBtn('success', '✓ Data Terkirim');
       form.reset();
@@ -1207,10 +1342,8 @@ if (form){
       }
       setBtn('error', '⚠ ' + errText);
       setTimeout(resetBtn, 3500);
-      console.error('Kirim gagal:', result.error);
     }
   });
-
   form.querySelectorAll('input, textarea, select').forEach(el => {
     el.addEventListener('input', () => { el.style.borderColor = ''; });
     el.addEventListener('change', () => { el.style.borderColor = ''; });
