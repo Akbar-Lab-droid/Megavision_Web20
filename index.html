@@ -7,7 +7,7 @@
 <title>MEGAVISION — Internet Cepat, Hidup Lebih Seru</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --white:#FFFFFF; --bg:#F5F7FB; --bg-2:#EEF2FA;
@@ -35,8 +35,10 @@ button,input,select,textarea{font:inherit;color:inherit}
 a{color:inherit;text-decoration:none}
 button{cursor:pointer;border:none;background:none}
 
-/* NAVBAR */
-.topbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--white);border-bottom:1px solid var(--line);box-shadow:0 2px 12px rgba(15,23,42,.04)}
+/* ============================================
+   NAVBAR
+   ============================================ */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.88);backdrop-filter:blur(20px) saturate(1.6);-webkit-backdrop-filter:blur(20px) saturate(1.6);border-bottom:1px solid var(--line);box-shadow:0 2px 12px rgba(15,23,42,.04)}
 .topbar-inner{max-width:1280px;margin:0 auto;padding:10px 16px;display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:8px}
 .icon-btn{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;color:var(--ink);transition:.22s var(--ease);position:relative}
 .icon-btn:active{background:rgba(15,23,42,.06);transform:scale(.94)}
@@ -52,7 +54,6 @@ button{cursor:pointer;border:none;background:none}
 .brand-fallback{display:none;flex-direction:column;align-items:center;gap:4px}
 .brand-fallback.show{display:flex}
 .bf-mark{display:inline-flex;align-items:center;gap:6px;padding:5px 16px;background:var(--grad-yellow);border-radius:100px;box-shadow:0 4px 14px rgba(217,119,6,.3);transform:skewX(-5deg);position:relative}
-.bf-mark::after{content:"";position:absolute;inset:0;border-radius:100px;background:linear-gradient(180deg,rgba(255,255,255,.28),transparent 45%);pointer-events:none}
 .bf-text{font-size:18px;font-weight:800;letter-spacing:1.6px;color:#0B3DA8;transform:skewX(5deg);line-height:1}
 .bf-dot{width:13px;height:13px;border-radius:50%;background:#DC2626;box-shadow:inset 0 0 0 2px #FFF,0 0 0 1.5px #DC2626;transform:skewX(5deg);position:relative;flex-shrink:0}
 .bf-dot::after{content:"";position:absolute;inset:3.5px;border-radius:50%;background:#FFF}
@@ -61,7 +62,7 @@ button{cursor:pointer;border:none;background:none}
 .nav-desktop a:hover{color:var(--blue);background:var(--blue-50)}
 .nav-desktop a.active{color:var(--blue);background:var(--blue-100)}
 .nav-desktop a.active::before{content:"";position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:14px;height:2px;background:var(--blue);border-radius:2px}
-.nav-cta-desk{margin-left:8px;padding:9px 20px!important;background:var(--grad-yellow)!important;color:#0B3DA8!important;font-weight:800!important}
+.nav-cta-desk{margin-left:8px;padding:9px 20px!important;background:var(--grad-yellow)!important;color:#0B3DA8!important;font-weight:800!important;box-shadow:0 6px 18px rgba(217,119,6,.25)}
 
 /* DRAWER */
 .drawer{position:fixed;inset:0;z-index:1100;background:var(--white);padding:16px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateX(-16px);transition:.35s var(--ease)}
@@ -137,35 +138,69 @@ main{padding-top:76px;min-height:100vh;position:relative}
 
 /* FEATURES */
 .features{display:grid;grid-template-columns:1fr;gap:14px}
-.feature{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;transition:.3s var(--ease);box-shadow:var(--sh-sm);position:relative;overflow:hidden}
+.feature{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;transition:.3s var(--ease);box-shadow:var(--sh-sm)}
 .feature-icon{width:44px;height:44px;border-radius:12px;background:var(--blue-50);display:grid;place-items:center;font-size:20px;margin-bottom:14px;border:1px solid var(--blue-100);color:var(--blue)}
 .feature h3{font-size:16px;font-weight:700;margin-bottom:6px}
 .feature p{color:var(--muted);font-size:13.5px;line-height:1.6}
 
-/* WIFI VISUAL CARDS */
-.wifi-cards{display:grid;grid-template-columns:1fr;gap:14px}
-.wifi-card{
+/* CHANNEL SHOWCASE — PREMIUM */
+.channel-showcase{
+  background:linear-gradient(160deg,#0A1330 0%,#0F172A 60%,#1E1B4B 100%);
+  border-radius:var(--r-xl);
+  padding:32px 20px;
   position:relative;
-  border-radius:var(--r-lg);
   overflow:hidden;
-  min-height:170px;
-  display:flex;
-  align-items:flex-end;
-  box-shadow:var(--sh-md);
-  transition:.3s var(--ease);
-  background:var(--grad-blue);
+  box-shadow:0 24px 60px rgba(15,23,42,.25);
 }
-.wifi-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
-.wifi-card-bg{position:absolute;inset:0;z-index:0}
-.wifi-card-bg img{width:100%;height:100%;object-fit:cover;transition:.5s var(--ease)}
-.wifi-card:hover .wifi-card-bg img{transform:scale(1.06)}
-.wifi-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,61,168,.95) 0%,rgba(11,61,168,.6) 55%,rgba(11,61,168,.15) 100%);z-index:1}
-.wifi-card.c2::after{background:linear-gradient(0deg,rgba(217,119,6,.95) 0%,rgba(217,119,6,.55) 55%,transparent 100%)}
-.wifi-card.c3::after{background:linear-gradient(0deg,rgba(220,38,38,.95) 0%,rgba(220,38,38,.55) 55%,transparent 100%)}
-.wifi-card-content{position:relative;z-index:2;padding:20px;color:#fff;width:100%}
-.wifi-card-badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;letter-spacing:1.2px;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);padding:5px 10px;border-radius:100px;text-transform:uppercase;margin-bottom:10px;border:1px solid rgba(255,255,255,.25)}
-.wifi-card h3{font-size:17px;font-weight:800;line-height:1.25;margin-bottom:4px;color:#fff}
-.wifi-card p{font-size:12.5px;color:rgba(255,255,255,.85);line-height:1.5}
+.channel-showcase::before{
+  content:"";position:absolute;
+  top:-50%;right:-20%;width:500px;height:500px;
+  background:radial-gradient(circle,rgba(37,99,235,.35),transparent 65%);
+  border-radius:50%;pointer-events:none;
+}
+.channel-showcase::after{
+  content:"";position:absolute;
+  bottom:-50%;left:-20%;width:500px;height:500px;
+  background:radial-gradient(circle,rgba(217,119,6,.25),transparent 65%);
+  border-radius:50%;pointer-events:none;
+}
+.channel-head{position:relative;z-index:2;text-align:center;margin-bottom:24px}
+.channel-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:100px;background:rgba(252,211,77,.12);border:1px solid rgba(252,211,77,.3);color:#FCD34D;font-size:10.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.channel-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:#FCD34D;box-shadow:0 0 0 3px rgba(252,211,77,.35);animation:pulseDot 2s infinite}
+.channel-head h3{font-size:22px;font-weight:800;letter-spacing:-.6px;color:#fff;line-height:1.2;margin-bottom:8px}
+.channel-head h3 span{background:var(--grad-yellow);-webkit-background-clip:text;background-clip:text;color:transparent}
+.channel-head p{color:rgba(255,255,255,.6);font-size:13.5px;max-width:480px;margin:0 auto}
+
+.channel-grid{
+  position:relative;z-index:2;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+.channel-logo{
+  background:rgba(255,255,255,.96);
+  border-radius:14px;
+  height:72px;
+  padding:12px;
+  display:grid;
+  place-items:center;
+  transition:.35s var(--ease);
+  cursor:default;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+.channel-logo::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.8),rgba(255,255,255,.4));
+  opacity:0;transition:.35s;pointer-events:none;
+}
+.channel-logo:hover{
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:0 12px 28px rgba(37,99,235,.35),0 4px 12px rgba(0,0,0,.2);
+}
+.channel-logo:hover::before{opacity:1}
+.channel-logo svg{width:100%;height:100%;max-height:44px;max-width:100%;display:block}
 
 /* PACKAGES */
 .pkg-grid{display:grid;grid-template-columns:1fr;gap:14px}
@@ -184,8 +219,10 @@ main{padding-top:76px;min-height:100vh;position:relative}
 .pkg.selected .pkg-price{color:#FCD34D;border-top-color:rgba(255,255,255,.15)}
 .pkg.selected .pkg-extras{color:rgba(255,255,255,.75)}
 .pkg.selected .pkg-check{opacity:1;transform:scale(1)}
-.pkg.selected .channel-chips{border-top-color:rgba(255,255,255,.15)}
 .pkg.selected .channel-chips-label{color:rgba(255,255,255,.6)}
+.pkg.selected .channel-chips{border-top-color:rgba(255,255,255,.15)}
+.pkg.selected .chip-mini{filter:brightness(1.15) drop-shadow(0 2px 6px rgba(0,0,0,.2))}
+
 .pkg-tag{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:1.6px;padding:5px 11px;border-radius:100px;background:var(--blue-50);color:var(--blue);border:1px solid var(--blue-100);text-transform:uppercase;margin-bottom:16px;align-self:flex-start}
 .pkg-speed{font-size:42px;font-weight:800;letter-spacing:-1.5px;line-height:1;color:var(--ink)}
 .pkg-speed small{font-size:14px;font-weight:700;color:var(--muted);margin-left:2px}
@@ -197,49 +234,42 @@ main{padding-top:76px;min-height:100vh;position:relative}
 .pkg-check::after{content:"";width:5px;height:10px;border:solid #0B3DA8;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-2px)}
 .pkg-badge-promo{position:absolute;top:0;right:0;background:var(--grad-red);color:#fff;font-size:9px;font-weight:800;letter-spacing:1px;padding:5px 11px;border-bottom-left-radius:12px;text-transform:uppercase;z-index:3}
 
-/* CHANNEL CHIPS — Pemanis di dalam kartu paket */
+/* CHANNEL MINI LOGOS dalam kartu paket */
 .channel-chips{
-  display:flex;
-  flex-wrap:wrap;
-  gap:5px;
-  margin-top:12px;
-  padding-top:12px;
-  border-top:1px dashed rgba(15,23,42,.1);
-  transition:border-color .3s;
+  display:flex;flex-wrap:wrap;gap:6px;
+  margin-top:14px;padding-top:12px;
+  border-top:1px dashed rgba(15,23,42,.12);
+  transition:.3s;
 }
 .channel-chips-label{
-  font-size:9px;
-  font-weight:800;
-  letter-spacing:1.4px;
-  text-transform:uppercase;
-  color:var(--muted);
-  width:100%;
-  margin-bottom:6px;
-  transition:color .3s;
+  font-size:9px;font-weight:800;letter-spacing:1.4px;
+  text-transform:uppercase;color:var(--muted);
+  width:100%;margin-bottom:4px;
 }
-.chip{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  height:20px;
-  padding:0 8px;
-  border-radius:5px;
-  font-size:9px;
-  font-weight:800;
-  letter-spacing:.3px;
-  white-space:nowrap;
-  font-family:'Plus Jakarta Sans',sans-serif;
-  line-height:1;
-  border:1px solid rgba(0,0,0,.05);
-  transition:.25s;
+.chip-mini{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:22px;padding:0 6px;
+  border-radius:6px;
+  background:#0A0A0A;
+  transition:.25s var(--ease);
+  overflow:hidden;
 }
-.chip-hbo{background:#000;color:#fff;letter-spacing:1.2px;font-weight:900}
-.chip-cinemax{background:#000;color:#fff;font-style:italic;letter-spacing:-.2px}
-.chip-nick{background:#FF7A00;color:#fff;letter-spacing:.3px;text-transform:lowercase;font-weight:900;font-size:11px}
-.chip-animal{background:#1B7A3C;color:#fff;font-size:8px;letter-spacing:.4px}
-.chip-bbc{background:#000;color:#fff;letter-spacing:1.6px;font-weight:900}
-.chip-aljazeera{background:#FA9000;color:#000;font-style:italic;font-weight:800}
-.chip-zoomoo{background:linear-gradient(135deg,#EC4899,#F59E0B,#10B981);color:#fff;font-weight:900;letter-spacing:.5px}
+.chip-mini svg{height:12px;width:auto;display:block}
+
+/* WIFI VISUAL */
+.wifi-cards{display:grid;grid-template-columns:1fr;gap:14px}
+.wifi-card{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:170px;display:flex;align-items:flex-end;box-shadow:var(--sh-md);transition:.3s var(--ease);background:var(--grad-blue);cursor:pointer}
+.wifi-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.wifi-card-bg{position:absolute;inset:0;z-index:0}
+.wifi-card-bg img{width:100%;height:100%;object-fit:cover;transition:.5s var(--ease)}
+.wifi-card:hover .wifi-card-bg img{transform:scale(1.06)}
+.wifi-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,61,168,.95) 0%,rgba(11,61,168,.6) 55%,rgba(11,61,168,.15) 100%);z-index:1}
+.wifi-card.c2::after{background:linear-gradient(0deg,rgba(217,119,6,.95) 0%,rgba(217,119,6,.55) 55%,transparent 100%)}
+.wifi-card.c3::after{background:linear-gradient(0deg,rgba(220,38,38,.95) 0%,rgba(220,38,38,.55) 55%,transparent 100%)}
+.wifi-card-content{position:relative;z-index:2;padding:20px;color:#fff;width:100%}
+.wifi-card-badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;letter-spacing:1.2px;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);padding:5px 10px;border-radius:100px;text-transform:uppercase;margin-bottom:10px;border:1px solid rgba(255,255,255,.25)}
+.wifi-card h3{font-size:17px;font-weight:800;line-height:1.25;margin-bottom:4px;color:#fff}
+.wifi-card p{font-size:12.5px;color:rgba(255,255,255,.85);line-height:1.5}
 
 /* PROMO VISUAL */
 .promo-visual-grid{display:grid;grid-template-columns:1fr;gap:14px}
@@ -254,7 +284,7 @@ main{padding-top:76px;min-height:100vh;position:relative}
 .promo-visual h3{font-size:18px;font-weight:800;line-height:1.25;margin-bottom:6px}
 .promo-visual p{font-size:13px;opacity:.85;line-height:1.5}
 
-/* FORM SECTION */
+/* FORM */
 .form-section{background:var(--grad-blue);color:#fff;border-radius:24px 24px 0 0;padding:48px 20px 60px;position:relative;overflow:hidden}
 .form-section::before{content:"";position:absolute;top:-100px;right:-100px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(252,211,77,.15),transparent 70%)}
 .form-inner{position:relative;z-index:2}
@@ -279,7 +309,6 @@ main{padding-top:76px;min-height:100vh;position:relative}
 .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--yellow);box-shadow:0 0 0 4px rgba(245,197,24,.15)}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 
-/* LOCATION */
 .loc-status{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:var(--r-md);background:var(--blue-50);border:1px solid var(--blue-100);font-size:12.5px;color:var(--blue);margin-bottom:14px}
 .loc-status.success{background:#DCFCE7;border-color:#86EFAC;color:#166534}
 .loc-status.warning{background:#FEF3C7;border-color:#FCD34D;color:#92400E}
@@ -295,7 +324,6 @@ main{padding-top:76px;min-height:100vh;position:relative}
 .btn-submit.success{background:var(--grad-green)!important;color:#fff!important}
 .btn-submit.error{background:var(--grad-red)!important;color:#fff!important}
 
-/* FOOTER */
 footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;text-align:center}
 .footer-inner{max-width:1200px;margin:0 auto}
 .footer-logo{display:inline-block;margin-bottom:16px;padding:10px 20px;background:rgba(255,255,255,.05);border-radius:12px;border:1px solid rgba(255,255,255,.08)}
@@ -326,6 +354,11 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
   .slider-arrow{display:grid}
   .dot{width:10px;height:10px}
   .dot.active{width:32px}
+  .channel-grid{grid-template-columns:repeat(4,1fr);gap:12px}
+  .channel-showcase{padding:40px 32px}
+  .channel-logo{height:82px;padding:16px}
+  .channel-logo svg{max-height:52px}
+  .channel-head h3{font-size:26px}
 }
 @media (min-width:900px){
   .topbar-inner{padding:14px 32px;grid-template-columns:44px auto 44px}
@@ -340,6 +373,11 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
   .slide-text{max-width:580px}
   .form-inner{display:grid;grid-template-columns:1fr 1.15fr;gap:50px;align-items:start}
   .form-card{margin-top:0}
+  .channel-grid{grid-template-columns:repeat(7,1fr);gap:14px}
+  .channel-showcase{padding:48px 40px}
+  .channel-logo{height:92px;padding:18px}
+  .channel-logo svg{max-height:56px}
+  .channel-head h3{font-size:30px}
 }
 </style>
 </head>
@@ -403,14 +441,11 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
 
 <main>
 
-  <!-- ========== BERANDA ========== -->
   <section class="page" data-page="beranda">
     <div class="hero">
       <div class="slider" id="slider">
         <div class="slide slide-1 active">
-          <div class="slide-bg">
-            <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=1200&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
-          </div>
+          <div class="slide-bg"><img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=1200&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></div>
           <div class="slide-overlay"></div>
           <div class="slide-content">
             <div class="slide-text">
@@ -424,11 +459,8 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             </div>
           </div>
         </div>
-
         <div class="slide slide-2">
-          <div class="slide-bg">
-            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
-          </div>
+          <div class="slide-bg"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></div>
           <div class="slide-overlay"></div>
           <div class="slide-content">
             <div class="slide-text">
@@ -442,11 +474,8 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             </div>
           </div>
         </div>
-
         <div class="slide slide-3">
-          <div class="slide-bg">
-            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
-          </div>
+          <div class="slide-bg"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></div>
           <div class="slide-overlay"></div>
           <div class="slide-content">
             <div class="slide-text">
@@ -460,11 +489,8 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             </div>
           </div>
         </div>
-
         <div class="slide slide-4">
-          <div class="slide-bg">
-            <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=1200&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
-          </div>
+          <div class="slide-bg"><img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=1200&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></div>
           <div class="slide-overlay"></div>
           <div class="slide-content">
             <div class="slide-text">
@@ -479,22 +505,14 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
           </div>
         </div>
       </div>
-
       <div class="slider-dots" id="dots">
-        <div class="dot active" data-idx="0"></div>
-        <div class="dot" data-idx="1"></div>
-        <div class="dot" data-idx="2"></div>
-        <div class="dot" data-idx="3"></div>
+        <div class="dot active" data-idx="0"></div><div class="dot" data-idx="1"></div>
+        <div class="dot" data-idx="2"></div><div class="dot" data-idx="3"></div>
       </div>
-      <button class="slider-arrow prev" id="prevBtn" aria-label="Sebelumnya">
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <button class="slider-arrow next" id="nextBtn" aria-label="Berikutnya">
-        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
+      <button class="slider-arrow prev" id="prevBtn" aria-label="Sebelumnya"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button class="slider-arrow next" id="nextBtn" aria-label="Berikutnya"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
     </div>
 
-    <!-- KEUNGGULAN -->
     <div class="section">
       <div class="container">
         <div class="sec-head reveal">
@@ -522,8 +540,94 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
       </div>
     </div>
 
-    <!-- WIFI VISUAL — Foto Menarik -->
+    <!-- ====== CHANNEL SHOWCASE PREMIUM ====== -->
     <div class="section alt">
+      <div class="container">
+        <div class="channel-showcase reveal">
+          <div class="channel-head">
+            <div class="channel-eyebrow">Gratis TV Kabel</div>
+            <h3>73+ Channel <span>Berkualitas</span></h3>
+            <p>Termasuk channel internasional favorit keluarga — film, kartun, dokumenter, dan berita dunia.</p>
+          </div>
+          <div class="channel-grid">
+            <!-- HBO -->
+            <div class="channel-logo" aria-label="HBO">
+              <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                <text x="60" y="30" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="30" letter-spacing="1" fill="#000">HBO</text>
+                <circle cx="108" cy="26" r="3.5" fill="#000"/>
+              </svg>
+            </div>
+            <!-- Cinemax -->
+            <div class="channel-logo" aria-label="Cinemax">
+              <svg viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+                <text x="70" y="28" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="24" fill="#000">Cinemax</text>
+              </svg>
+            </div>
+            <!-- Nickelodeon -->
+            <div class="channel-logo" aria-label="Nickelodeon">
+              <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                <text x="60" y="31" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="30" fill="#FF6D00">nick</text>
+              </svg>
+            </div>
+            <!-- Animal Planet -->
+            <div class="channel-logo" aria-label="Animal Planet">
+              <svg viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(8,8)">
+                  <ellipse cx="14" cy="14" rx="11" ry="9" fill="#1B7A3C"/>
+                  <circle cx="6" cy="6" r="4" fill="#1B7A3C"/>
+                  <circle cx="22" cy="6" r="4" fill="#1B7A3C"/>
+                  <circle cx="6" cy="22" r="4" fill="#1B7A3C"/>
+                  <circle cx="22" cy="22" r="4" fill="#1B7A3C"/>
+                  <circle cx="11" cy="12" r="1.5" fill="#FFF"/>
+                  <circle cx="17" cy="12" r="1.5" fill="#FFF"/>
+                </g>
+                <text x="42" y="18" font-family="Arial, sans-serif" font-weight="800" font-size="11" fill="#1B7A3C">ANIMAL</text>
+                <text x="42" y="32" font-family="Arial, sans-serif" font-weight="800" font-size="11" fill="#1B7A3C">PLANET</text>
+              </svg>
+            </div>
+            <!-- BBC -->
+            <div class="channel-logo" aria-label="BBC">
+              <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(6,4)">
+                  <rect x="0" y="0" width="20" height="20" fill="#000"/>
+                  <rect x="22" y="0" width="20" height="20" fill="#000"/>
+                  <rect x="44" y="0" width="20" height="20" fill="#000"/>
+                  <text x="10" y="16" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="14" fill="#FFF">B</text>
+                  <text x="32" y="16" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="14" fill="#FFF">B</text>
+                  <text x="54" y="16" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="14" fill="#FFF">C</text>
+                  <text x="34" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-weight="600" font-size="6" fill="#000" letter-spacing="1">NEWS</text>
+                </g>
+              </svg>
+            </div>
+            <!-- Al Jazeera -->
+            <div class="channel-logo" aria-label="Al Jazeera">
+              <svg viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(10,10)">
+                  <path d="M2 16 Q10 2 18 16 Q10 12 2 16 Z" fill="#FA9000"/>
+                  <path d="M2 16 L8 12 L10 16 L8 20 Z" fill="#FA9000" opacity=".7"/>
+                </g>
+                <text x="36" y="20" font-family="Georgia, serif" font-weight="800" font-style="italic" font-size="13" fill="#FA9000">Al Jazeera</text>
+                <text x="36" y="32" font-family="Arial, sans-serif" font-weight="700" font-size="7" fill="#FA9000" letter-spacing="1.5">ENGLISH</text>
+              </svg>
+            </div>
+            <!-- ZooMoo -->
+            <div class="channel-logo" aria-label="ZooMoo">
+              <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg">
+                <text x="12" y="30" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="26" fill="#EC4899">Z</text>
+                <text x="34" y="30" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="26" fill="#F59E0B">o</text>
+                <text x="52" y="30" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="26" fill="#10B981">o</text>
+                <text x="70" y="30" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="26" fill="#3B82F6">M</text>
+                <text x="94" y="30" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="26" fill="#8B5CF6">o</text>
+                <text x="112" y="30" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="26" fill="#EC4899">o</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WIFI VISUAL -->
+    <div class="section">
       <div class="container">
         <div class="sec-head reveal">
           <div class="sec-tag">Kenapa Fiber Optic</div>
@@ -531,30 +635,24 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
           <p>Nikmati pengalaman internet tanpa gangguan dengan teknologi fiber optic terkini.</p>
         </div>
         <div class="wifi-cards">
-          <div class="wifi-card c1 reveal" data-goto="daftar">
-            <div class="wifi-card-bg">
-              <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
-            </div>
+          <div class="wifi-card c1 reveal">
+            <div class="wifi-card-bg"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></div>
             <div class="wifi-card-content">
               <div class="wifi-card-badge">⚡ SUPER CEPAT</div>
               <h3>Streaming 4K Lancar</h3>
               <p>Nonton film favorit tanpa buffering di semua device</p>
             </div>
           </div>
-          <div class="wifi-card c2 reveal" data-goto="daftar">
-            <div class="wifi-card-bg">
-              <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
-            </div>
+          <div class="wifi-card c2 reveal">
+            <div class="wifi-card-bg"><img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></div>
             <div class="wifi-card-content">
               <div class="wifi-card-badge">🎮 GAMING</div>
               <h3>Low Ping untuk Gaming</h3>
               <p>Main game online tanpa lag & disconnect</p>
             </div>
           </div>
-          <div class="wifi-card c3 reveal" data-goto="daftar">
-            <div class="wifi-card-bg">
-              <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
-            </div>
+          <div class="wifi-card c3 reveal">
+            <div class="wifi-card-bg"><img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></div>
             <div class="wifi-card-content">
               <div class="wifi-card-badge">👨‍👩‍👧 KELUARGA</div>
               <h3>Cocok untuk Keluarga</h3>
@@ -566,7 +664,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
     </div>
 
     <!-- PAKET POPULER -->
-    <div class="section">
+    <div class="section alt">
       <div class="container">
         <div class="sec-head reveal">
           <div class="sec-tag">Paket Populer</div>
@@ -590,11 +688,10 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
             <div class="channel-chips">
               <span class="channel-chips-label">Channel Populer</span>
-              <span class="chip chip-hbo">HBO</span>
-              <span class="chip chip-cinemax">Cinemax</span>
-              <span class="chip chip-nick">nick</span>
-              <span class="chip chip-bbc">BBC</span>
-              <span class="chip chip-animal">ANIMAL</span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="16" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FFF">HBO</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 80 20"><text x="40" y="14" text-anchor="middle" font-family="Georgia" font-style="italic" font-weight="700" font-size="11" fill="#FFF">Cinemax</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 50 20"><text x="25" y="15" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FF6D00">nick</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="14" text-anchor="middle" font-family="Arial" font-weight="900" font-size="10" fill="#FFF">BBC</text></svg></span>
             </div>
             <div class="pkg-check"></div>
           </div>
@@ -604,14 +701,13 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-speed">500<small> Mbps</small></div>
             <div class="pkg-sub">Up Speed · WiFi 6</div>
             <div class="pkg-price">Rp 400<small>rb/bln</small></div>
-            <div class="pkg-extras">🚀 Untuk bisnis & gaming</div>
+            <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
             <div class="channel-chips">
               <span class="channel-chips-label">Channel Populer</span>
-              <span class="chip chip-hbo">HBO</span>
-              <span class="chip chip-cinemax">Cinemax</span>
-              <span class="chip chip-nick">nick</span>
-              <span class="chip chip-bbc">BBC</span>
-              <span class="chip chip-aljazeera">Al Jazeera</span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="16" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FFF">HBO</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 80 20"><text x="40" y="14" text-anchor="middle" font-family="Georgia" font-style="italic" font-weight="700" font-size="11" fill="#FFF">Cinemax</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 50 20"><text x="25" y="15" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FF6D00">nick</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 70 20"><text x="35" y="14" text-anchor="middle" font-family="Georgia" font-style="italic" font-weight="700" font-size="10" fill="#FA9000">Al Jazeera</text></svg></span>
             </div>
             <div class="pkg-check"></div>
           </div>
@@ -620,14 +716,13 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-speed">900<small> Mbps</small></div>
             <div class="pkg-sub">Up Speed · WiFi 6</div>
             <div class="pkg-price">Rp 780<small>rb/bln</small></div>
-            <div class="pkg-extras">⚡ Performa maksimal</div>
+            <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
             <div class="channel-chips">
               <span class="channel-chips-label">Channel Populer</span>
-              <span class="chip chip-hbo">HBO</span>
-              <span class="chip chip-cinemax">Cinemax</span>
-              <span class="chip chip-nick">nick</span>
-              <span class="chip chip-bbc">BBC</span>
-              <span class="chip chip-zoomoo">ZooMoo</span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="16" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FFF">HBO</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 50 20"><text x="25" y="15" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FF6D00">nick</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="14" text-anchor="middle" font-family="Arial" font-weight="900" font-size="10" fill="#FFF">BBC</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 70 20"><text x="35" y="14" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="10" fill="#FFF">ZooMoo</text></svg></span>
             </div>
             <div class="pkg-check"></div>
           </div>
@@ -638,8 +733,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
       </div>
     </div>
 
-    <!-- CTA -->
-    <div class="section" style="padding-top:0">
+    <div class="section">
       <div class="container">
         <div class="form-section reveal" style="border-radius:24px;padding:44px 24px">
           <div style="position:relative;z-index:2;text-align:center;max-width:520px;margin:0 auto">
@@ -655,7 +749,6 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
     </div>
   </section>
 
-  <!-- ========== PAKET ========== -->
   <section class="page" data-page="paket">
     <div class="section" style="padding-top:36px">
       <div class="container">
@@ -683,10 +776,9 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
             <div class="channel-chips">
               <span class="channel-chips-label">Channel Populer</span>
-              <span class="chip chip-hbo">HBO</span>
-              <span class="chip chip-cinemax">Cinemax</span>
-              <span class="chip chip-nick">nick</span>
-              <span class="chip chip-bbc">BBC</span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="16" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FFF">HBO</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 80 20"><text x="40" y="14" text-anchor="middle" font-family="Georgia" font-style="italic" font-weight="700" font-size="11" fill="#FFF">Cinemax</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 50 20"><text x="25" y="15" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FF6D00">nick</text></svg></span>
             </div>
             <div class="pkg-check"></div>
           </div>
@@ -698,11 +790,10 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
             <div class="channel-chips">
               <span class="channel-chips-label">Channel Populer</span>
-              <span class="chip chip-hbo">HBO</span>
-              <span class="chip chip-cinemax">Cinemax</span>
-              <span class="chip chip-nick">nick</span>
-              <span class="chip chip-animal">ANIMAL</span>
-              <span class="chip chip-bbc">BBC</span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="16" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FFF">HBO</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 80 20"><text x="40" y="14" text-anchor="middle" font-family="Georgia" font-style="italic" font-weight="700" font-size="11" fill="#FFF">Cinemax</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 50 20"><text x="25" y="15" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FF6D00">nick</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="14" text-anchor="middle" font-family="Arial" font-weight="900" font-size="10" fill="#FFF">BBC</text></svg></span>
             </div>
             <div class="pkg-check"></div>
           </div>
@@ -714,11 +805,10 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
             <div class="channel-chips">
               <span class="channel-chips-label">Channel Populer</span>
-              <span class="chip chip-hbo">HBO</span>
-              <span class="chip chip-cinemax">Cinemax</span>
-              <span class="chip chip-nick">nick</span>
-              <span class="chip chip-bbc">BBC</span>
-              <span class="chip chip-aljazeera">Al Jazeera</span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="16" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FFF">HBO</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 50 20"><text x="25" y="15" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FF6D00">nick</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="14" text-anchor="middle" font-family="Arial" font-weight="900" font-size="10" fill="#FFF">BBC</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 70 20"><text x="35" y="14" text-anchor="middle" font-family="Georgia" font-style="italic" font-weight="700" font-size="10" fill="#FA9000">Al Jazeera</text></svg></span>
             </div>
             <div class="pkg-check"></div>
           </div>
@@ -734,10 +824,10 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
             <div class="channel-chips">
               <span class="channel-chips-label">Channel Populer</span>
-              <span class="chip chip-hbo">HBO</span>
-              <span class="chip chip-nick">nick</span>
-              <span class="chip chip-bbc">BBC</span>
-              <span class="chip chip-zoomoo">ZooMoo</span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="16" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FFF">HBO</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 50 20"><text x="25" y="15" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FF6D00">nick</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="14" text-anchor="middle" font-family="Arial" font-weight="900" font-size="10" fill="#FFF">BBC</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 70 20"><text x="35" y="14" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="10" fill="#FFF">ZooMoo</text></svg></span>
             </div>
             <div class="pkg-check"></div>
           </div>
@@ -749,10 +839,9 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
             <div class="channel-chips">
               <span class="channel-chips-label">Channel Populer</span>
-              <span class="chip chip-cinemax">Cinemax</span>
-              <span class="chip chip-animal">ANIMAL</span>
-              <span class="chip chip-aljazeera">Al Jazeera</span>
-              <span class="chip chip-zoomoo">ZooMoo</span>
+              <span class="chip-mini"><svg viewBox="0 0 80 20"><text x="40" y="14" text-anchor="middle" font-family="Georgia" font-style="italic" font-weight="700" font-size="11" fill="#FFF">Cinemax</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="14" text-anchor="middle" font-family="Arial" font-weight="900" font-size="10" fill="#FFF">BBC</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 70 20"><text x="35" y="14" text-anchor="middle" font-family="Georgia" font-style="italic" font-weight="700" font-size="10" fill="#FA9000">Al Jazeera</text></svg></span>
             </div>
             <div class="pkg-check"></div>
           </div>
@@ -764,11 +853,10 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
             <div class="channel-chips">
               <span class="channel-chips-label">Channel Populer</span>
-              <span class="chip chip-hbo">HBO</span>
-              <span class="chip chip-nick">nick</span>
-              <span class="chip chip-animal">ANIMAL</span>
-              <span class="chip chip-bbc">BBC</span>
-              <span class="chip chip-aljazeera">Al Jazeera</span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="16" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FFF">HBO</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 50 20"><text x="25" y="15" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FF6D00">nick</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="14" text-anchor="middle" font-family="Arial" font-weight="900" font-size="10" fill="#FFF">BBC</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 70 20"><text x="35" y="14" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="10" fill="#FFF">ZooMoo</text></svg></span>
             </div>
             <div class="pkg-check"></div>
           </div>
@@ -781,12 +869,10 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
             <div class="channel-chips">
               <span class="channel-chips-label">Channel Populer</span>
-              <span class="chip chip-hbo">HBO</span>
-              <span class="chip chip-cinemax">Cinemax</span>
-              <span class="chip chip-nick">nick</span>
-              <span class="chip chip-animal">ANIMAL</span>
-              <span class="chip chip-bbc">BBC</span>
-              <span class="chip chip-zoomoo">ZooMoo</span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="16" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FFF">HBO</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 80 20"><text x="40" y="14" text-anchor="middle" font-family="Georgia" font-style="italic" font-weight="700" font-size="11" fill="#FFF">Cinemax</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 50 20"><text x="25" y="15" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FF6D00">nick</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 70 20"><text x="35" y="14" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="10" fill="#FFF">ZooMoo</text></svg></span>
             </div>
             <div class="pkg-check"></div>
           </div>
@@ -798,11 +884,9 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
             <div class="channel-chips">
               <span class="channel-chips-label">Channel Populer</span>
-              <span class="chip chip-hbo">HBO</span>
-              <span class="chip chip-cinemax">Cinemax</span>
-              <span class="chip chip-nick">nick</span>
-              <span class="chip chip-bbc">BBC</span>
-              <span class="chip chip-aljazeera">Al Jazeera</span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="16" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FFF">HBO</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 80 20"><text x="40" y="14" text-anchor="middle" font-family="Georgia" font-style="italic" font-weight="700" font-size="11" fill="#FFF">Cinemax</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="14" text-anchor="middle" font-family="Arial" font-weight="900" font-size="10" fill="#FFF">BBC</text></svg></span>
             </div>
             <div class="pkg-check"></div>
           </div>
@@ -814,10 +898,9 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
             <div class="channel-chips">
               <span class="channel-chips-label">Channel Populer</span>
-              <span class="chip chip-hbo">HBO</span>
-              <span class="chip chip-nick">nick</span>
-              <span class="chip chip-animal">ANIMAL</span>
-              <span class="chip chip-zoomoo">ZooMoo</span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="16" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FFF">HBO</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 50 20"><text x="25" y="15" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FF6D00">nick</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 70 20"><text x="35" y="14" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="10" fill="#FFF">ZooMoo</text></svg></span>
             </div>
             <div class="pkg-check"></div>
           </div>
@@ -829,10 +912,9 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
             <div class="channel-chips">
               <span class="channel-chips-label">Channel Populer</span>
-              <span class="chip chip-cinemax">Cinemax</span>
-              <span class="chip chip-nick">nick</span>
-              <span class="chip chip-bbc">BBC</span>
-              <span class="chip chip-aljazeera">Al Jazeera</span>
+              <span class="chip-mini"><svg viewBox="0 0 80 20"><text x="40" y="14" text-anchor="middle" font-family="Georgia" font-style="italic" font-weight="700" font-size="11" fill="#FFF">Cinemax</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 50 20"><text x="25" y="15" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FF6D00">nick</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 70 20"><text x="35" y="14" text-anchor="middle" font-family="Georgia" font-style="italic" font-weight="700" font-size="10" fill="#FA9000">Al Jazeera</text></svg></span>
             </div>
             <div class="pkg-check"></div>
           </div>
@@ -844,11 +926,10 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             <div class="pkg-extras">📺 Gratis 73 Channel TV</div>
             <div class="channel-chips">
               <span class="channel-chips-label">Channel Populer</span>
-              <span class="chip chip-hbo">HBO</span>
-              <span class="chip chip-cinemax">Cinemax</span>
-              <span class="chip chip-nick">nick</span>
-              <span class="chip chip-animal">ANIMAL</span>
-              <span class="chip chip-zoomoo">ZooMoo</span>
+              <span class="chip-mini"><svg viewBox="0 0 60 20"><text x="30" y="16" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FFF">HBO</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 80 20"><text x="40" y="14" text-anchor="middle" font-family="Georgia" font-style="italic" font-weight="700" font-size="11" fill="#FFF">Cinemax</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 50 20"><text x="25" y="15" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="13" fill="#FF6D00">nick</text></svg></span>
+              <span class="chip-mini"><svg viewBox="0 0 70 20"><text x="35" y="14" text-anchor="middle" font-family="Arial Black" font-weight="900" font-size="10" fill="#FFF">ZooMoo</text></svg></span>
             </div>
             <div class="pkg-check"></div>
           </div>
@@ -863,7 +944,6 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
     </div>
   </section>
 
-  <!-- ========== PROMO ========== -->
   <section class="page" data-page="promo">
     <div class="section" style="padding-top:36px">
       <div class="container">
@@ -899,7 +979,6 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
     </div>
   </section>
 
-  <!-- ========== DAFTAR ========== -->
   <section class="page" data-page="daftar">
     <div class="form-section" style="border-radius:0;min-height:calc(100vh - 76px)">
       <div class="container form-inner">
@@ -998,9 +1077,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
                 </optgroup>
               </select>
             </div>
-            <button type="submit" class="btn-submit" id="submitBtn">
-              Kirim Data Pendaftaran
-            </button>
+            <button type="submit" class="btn-submit" id="submitBtn">Kirim Data Pendaftaran</button>
           </form>
         </div>
       </div>
@@ -1047,7 +1124,6 @@ function initLocation(){
   const locTitle = document.getElementById('locTitle');
   const locText = document.getElementById('locText');
   if (!locStatus) return;
-
   if (!navigator.geolocation){
     LOCATION.status = 'unsupported';
     locStatus.className = 'loc-status warning';
@@ -1056,13 +1132,11 @@ function initLocation(){
     locText.textContent = 'Browser Anda tidak mendukung GPS';
     return;
   }
-
   LOCATION.status = 'loading';
   locStatus.className = 'loc-status';
   locIcon.textContent = '📍';
   locTitle.textContent = 'Mengambil lokasi...';
   locText.textContent = 'Mohon izinkan akses lokasi';
-
   const timeoutId = setTimeout(() => {
     if (LOCATION.status === 'loading'){
       LOCATION.status = 'timeout';
@@ -1072,7 +1146,6 @@ function initLocation(){
       locText.textContent = 'Tetap lanjutkan pendaftaran';
     }
   }, 12000);
-
   navigator.geolocation.getCurrentPosition(
     (pos) => {
       clearTimeout(timeoutId);
@@ -1110,7 +1183,6 @@ function buildMessage(data){
     day:'2-digit', month:'long', year:'numeric',
     hour:'2-digit', minute:'2-digit', timeZone:'Asia/Jakarta'
   });
-
   let locLine = '📍 *Lokasi GPS :* Tidak tersedia';
   let mapLine = '';
   if (LOCATION.lat && LOCATION.lng){
@@ -1121,7 +1193,6 @@ function buildMessage(data){
   } else if (LOCATION.status === 'timeout'){
     locLine = '📍 *Lokasi GPS :* Waktu habis';
   }
-
   return `🔔 *DATA CALON PELANGGAN BARU*
 ━━━━━━━━━━━━━━━━━━━━
 
