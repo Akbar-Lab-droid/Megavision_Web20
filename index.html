@@ -94,7 +94,6 @@ main{padding-top:76px;min-height:100vh;position:relative}
 .slide-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
 .slide-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.05);animation:kenburns 14s ease-in-out infinite alternate}
 @keyframes kenburns{from{transform:scale(1.05)}to{transform:scale(1.15)}}
-/* Fallback gradient bg */
 .slide-1 .slide-bg{background:linear-gradient(135deg,#0B3DA8 0%,#1D4ED8 55%,#2563EB 100%)}
 .slide-2 .slide-bg{background:linear-gradient(135deg,#0F172A 0%,#1E293B 55%,#334155 100%)}
 .slide-3 .slide-bg{background:linear-gradient(135deg,#7C2D12 0%,#B45309 50%,#D97706 100%)}
@@ -147,6 +146,46 @@ main{padding-top:76px;min-height:100vh;position:relative}
 .feature-icon{width:44px;height:44px;border-radius:12px;background:var(--blue-50);display:grid;place-items:center;font-size:20px;margin-bottom:14px;border:1px solid var(--blue-100);color:var(--blue)}
 .feature h3{font-size:16px;font-weight:700;margin-bottom:6px}
 .feature p{color:var(--muted);font-size:13.5px;line-height:1.6}
+
+/* CHANNEL LOGOS */
+.channel-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  padding:20px;
+  background:var(--white);
+  border-radius:var(--r-lg);
+  border:1px solid var(--line);
+  box-shadow:var(--sh-sm);
+}
+.channel-item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 8px;
+  border-radius:10px;
+  background:#FAFBFC;
+  border:1px solid var(--line);
+  transition:.25s var(--ease);
+  min-height:60px;
+}
+.channel-item:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 16px rgba(15,23,42,.08);
+  border-color:var(--blue-100);
+}
+.channel-item img{
+  max-width:100%;
+  max-height:32px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  filter:grayscale(0);
+  transition:.25s var(--ease);
+}
+.channel-item:hover img{
+  transform:scale(1.05);
+}
 
 /* PACKAGES */
 .pkg-grid{display:grid;grid-template-columns:1fr;gap:14px}
@@ -252,6 +291,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
   .section{padding:72px 32px}
   .sec-head h2{font-size:32px}
   .features{grid-template-columns:repeat(3,1fr);gap:18px}
+  .channel-grid{grid-template-columns:repeat(4,1fr);gap:12px}
   .pkg-grid{grid-template-columns:repeat(2,1fr);gap:16px}
   .promo-visual-grid{grid-template-columns:repeat(2,1fr);gap:16px}
   .form-card{padding:34px 30px}
@@ -269,6 +309,7 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
   .slider{height:620px}
   .pkg-grid{grid-template-columns:repeat(4,1fr);gap:18px}
   .promo-visual-grid{grid-template-columns:repeat(4,1fr);gap:16px}
+  .channel-grid{grid-template-columns:repeat(7,1fr);gap:12px}
   .slide-title{font-size:52px;letter-spacing:-2.2px}
   .slide-content{padding:0 60px}
   .slide-text{max-width:580px}
@@ -337,11 +378,9 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
 
 <main>
 
-  <!-- ========== BERANDA ========== -->
   <section class="page" data-page="beranda">
     <div class="hero">
       <div class="slider" id="slider">
-
         <div class="slide slide-1 active">
           <div class="slide-bg">
             <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=1200&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
@@ -413,7 +452,6 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="slider-dots" id="dots">
@@ -460,51 +498,18 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
     <div class="section alt">
       <div class="container">
         <div class="sec-head reveal">
-          <div class="sec-tag">Promo & Penawaran</div>
-          <h2>Nikmati <span class="y">Keuntungan</span> Bergabung</h2>
-          <p>Berbagai promo menarik untuk Anda yang mendaftar hari ini.</p>
+          <div class="sec-tag">Gratis TV Kabel</div>
+          <h2>Nikmati <span class="y">73+ Channel</span> Berkualitas</h2>
+          <p>Beragam pilihan channel lokal dan internasional untuk seluruh keluarga.</p>
         </div>
-        <div class="promo-visual-grid">
-          <div class="promo-visual reveal" data-goto="daftar">
-            <div class="promo-visual-img">
-              <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
-            </div>
-            <div class="promo-visual-content">
-              <div class="promo-visual-tag">GRATIS</div>
-              <h3>TV Kabel 73+ Channel</h3>
-              <p>Sudah termasuk untuk paket Silver & Maxi</p>
-            </div>
-          </div>
-          <div class="promo-visual reveal" data-goto="daftar">
-            <div class="promo-visual-img">
-              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
-            </div>
-            <div class="promo-visual-content">
-              <div class="promo-visual-tag">PRIORITAS</div>
-              <h3>Pemasangan Cepat</h3>
-              <p>Proses pendaftaran cepat, teknisi datang sesuai jadwal</p>
-            </div>
-          </div>
-          <div class="promo-visual reveal" data-goto="daftar">
-            <div class="promo-visual-img">
-              <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
-            </div>
-            <div class="promo-visual-content">
-              <div class="promo-visual-tag">PROFESIONAL</div>
-              <h3>Teknisi Ramah</h3>
-              <p>Pemasangan rapi dan cepat sesuai jadwal Anda</p>
-            </div>
-          </div>
-          <div class="promo-visual reveal" data-goto="daftar">
-            <div class="promo-visual-img">
-              <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
-            </div>
-            <div class="promo-visual-content">
-              <div class="promo-visual-tag">DUKUNGAN</div>
-              <h3>Support 24/7</h3>
-              <p>Tim kami siap membantu kapan pun dibutuhkan</p>
-            </div>
-          </div>
+        <div class="channel-grid reveal">
+          <div class="channel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/1/17/HBO_logo.png" alt="HBO" onerror="this.parentElement.style.display='none'"></div>
+          <div class="channel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Cinemax_logo.png" alt="Cinemax" onerror="this.parentElement.style.display='none'"></div>
+          <div class="channel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Nickelodeon_2009_logo.png" alt="Nickelodeon" onerror="this.parentElement.style.display='none'"></div>
+          <div class="channel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Animal_Planet_logo.svg" alt="Animal Planet" onerror="this.parentElement.style.display='none'"></div>
+          <div class="channel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/BBC_Logo_2021.svg" alt="BBC" onerror="this.parentElement.style.display='none'"></div>
+          <div class="channel-item"><img src="https://upload.wikimedia.org/wikipedia/en/9/9d/Al_Jazeera_English_Logo.svg" alt="Al Jazeera" onerror="this.parentElement.style.display='none'"></div>
+          <div class="channel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/ZooMoo_Logo.png" alt="ZooMoo" onerror="this.parentElement.style.display='none'"></div>
         </div>
       </div>
     </div>
@@ -573,7 +578,6 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
     </div>
   </section>
 
-  <!-- ========== PAKET ========== -->
   <section class="page" data-page="paket">
     <div class="section" style="padding-top:36px">
       <div class="container">
@@ -697,7 +701,6 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
     </div>
   </section>
 
-  <!-- ========== PROMO ========== -->
   <section class="page" data-page="promo">
     <div class="section" style="padding-top:36px">
       <div class="container">
@@ -733,7 +736,6 @@ footer{background:#0F172A;color:rgba(255,255,255,.55);padding:40px 20px 26px;tex
     </div>
   </section>
 
-  <!-- ========== DAFTAR ========== -->
   <section class="page" data-page="daftar">
     <div class="form-section" style="border-radius:0;min-height:calc(100vh - 76px)">
       <div class="container form-inner">
@@ -1160,14 +1162,12 @@ if (form){
       paket     : (fd.get('paket') || '').trim()
     };
 
-    // Validasi
     let valid = true;
     for (const k in data){
       const el = form.querySelector(`[name="${k}"]`);
       if (!data[k]){ valid = false; if (el){ el.style.borderColor = '#DC2626'; } }
       else if (el){ el.style.borderColor = ''; }
     }
-    // Validasi email format
     if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){
       valid = false;
       const emailEl = form.querySelector('[name="email"]');
@@ -1179,7 +1179,6 @@ if (form){
       return;
     }
 
-    // Tunggu lokasi max 3 detik
     if (LOCATION.status === 'loading'){
       setBtn('loading', 'Menunggu lokasi...');
       const start = Date.now();
