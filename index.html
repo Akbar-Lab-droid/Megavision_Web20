@@ -3,882 +3,865 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<meta name="theme-color" content="#0A0E1F">
+<meta name="theme-color" content="#FFFFFF">
 <title>MEGAVISION — Internet Cepat, Hidup Lebih Seru</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   DESIGN SYSTEM — DEWA EDITION
+   DESIGN TOKENS — CERAH & ENERGETIK
    ============================================================ */
 :root{
-  /* Neutrals */
-  --ink-0:#05070F;
-  --ink-1:#0A0E1F;
-  --ink-2:#131830;
-  --ink-3:#1E2545;
-  --ink-4:#2A3357;
-  --cream:#FAF7F0;
-  --paper:#FFFFFF;
-  --paper-2:#F5F3EC;
-  --paper-3:#EBE7DC;
+  /* Base */
+  --white:#FFFFFF;
+  --bg:#F8FAFF;
+  --bg-2:#EFF4FF;
 
-  /* Brand */
-  --blue:#1E40AF;
-  --blue-bright:#3B82F6;
-  --blue-glow:rgba(59,130,246,.35);
-  --gold:#C9A961;
-  --gold-bright:#F2D77B;
-  --gold-deep:#8B6F2E;
-  --red:#DC2626;
-  --green:#16A34A;
+  /* Blue — Vivid & Trustworthy */
+  --blue:#0052FF;
+  --blue-2:#3B82F6;
+  --blue-3:#1E40AF;
+  --blue-100:#DBEAFE;
+  --blue-50:#EFF6FF;
+
+  /* Yellow — Bright & Cheerful */
+  --yellow:#FFC107;
+  --yellow-2:#FFD54F;
+  --yellow-deep:#F59E0B;
+  --yellow-100:#FFF8E1;
+
+  /* Red — Urgency */
+  --red:#EF4444;
+  --red-2:#DC2626;
+
+  /* Green — Success */
+  --green:#10B981;
+  --green-2:#059669;
 
   /* Text */
-  --text-1:#0A0E1F;
-  --text-2:#3F4457;
-  --text-3:#7A8095;
-  --text-4:#A5AAB8;
-  --text-inv-1:#FFFFFF;
-  --text-inv-2:rgba(255,255,255,.72);
-  --text-inv-3:rgba(255,255,255,.45);
+  --ink:#0F172A;
+  --ink-2:#334155;
+  --muted:#64748B;
+  --muted-2:#94A3B8;
 
-  /* Surfaces */
-  --line:rgba(10,14,31,.08);
-  --line-2:rgba(10,14,31,.16);
-  --line-inv:rgba(255,255,255,.08);
-  --line-inv-2:rgba(255,255,255,.16);
+  --line:rgba(15,23,42,.08);
+  --line-2:rgba(15,23,42,.14);
 
   /* Gradients */
-  --grad-ink:linear-gradient(160deg,#05070F 0%,#0A0E1F 40%,#131830 75%,#1E2545 100%);
-  --grad-ink-soft:linear-gradient(160deg,#0A0E1F 0%,#131830 100%);
-  --grad-gold:linear-gradient(120deg,#F2D77B 0%,#C9A961 45%,#8B6F2E 100%);
-  --grad-blue:linear-gradient(120deg,#1E40AF 0%,#3B82F6 100%);
-  --grad-shine:linear-gradient(180deg,rgba(255,255,255,.14),transparent 40%);
-
-  /* Shadows */
-  --sh-xs:0 1px 2px rgba(10,14,31,.04);
-  --sh-sm:0 1px 2px rgba(10,14,31,.04),0 4px 12px rgba(10,14,31,.05);
-  --sh-md:0 2px 8px rgba(10,14,31,.05),0 16px 40px rgba(10,14,31,.08);
-  --sh-lg:0 4px 16px rgba(10,14,31,.07),0 32px 80px rgba(10,14,31,.12);
-  --sh-xl:0 8px 24px rgba(10,14,31,.10),0 48px 120px rgba(10,14,31,.16);
-  --sh-gold:0 16px 48px rgba(201,169,97,.28);
-  --sh-blue:0 16px 48px rgba(30,64,175,.30);
+  --grad-blue:linear-gradient(135deg,#0052FF 0%,#3B82F6 100%);
+  --grad-yellow:linear-gradient(135deg,#FFD54F 0%,#FFC107 50%,#F59E0B 100%);
+  --grad-hero:linear-gradient(160deg,#0052FF 0%,#1E40AF 55%,#0F172A 100%);
+  --grad-red:linear-gradient(135deg,#EF4444 0%,#DC2626 100%);
+  --grad-green:linear-gradient(135deg,#10B981 0%,#059669 100%);
+  --grad-shine:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);
 
   /* Radii */
-  --r-xs:6px; --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:28px; --r-2xl:36px;
+  --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:28px; --r-2xl:36px;
 
-  /* Motion */
+  /* Shadows */
+  --sh-sm:0 1px 3px rgba(15,23,42,.06),0 4px 12px rgba(15,23,42,.04);
+  --sh-md:0 4px 12px rgba(15,23,42,.06),0 16px 32px rgba(15,23,42,.08);
+  --sh-lg:0 8px 24px rgba(15,23,42,.08),0 32px 64px rgba(15,23,42,.12);
+  --sh-xl:0 16px 48px rgba(15,23,42,.12),0 48px 96px rgba(15,23,42,.16);
+  --sh-blue:0 16px 48px rgba(0,82,255,.28);
+  --sh-yellow:0 16px 48px rgba(255,193,7,.35);
+  --sh-red:0 12px 32px rgba(239,68,68,.28);
+
   --ease:cubic-bezier(.22,1,.36,1);
-  --ease-2:cubic-bezier(.65,0,.35,1);
+  --ease-2:cubic-bezier(.34,1.56,.64,1);
 }
 
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px}
 body{
   font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
-  background:var(--cream);
-  color:var(--text-1);
+  background:var(--bg);
+  color:var(--ink);
   font-size:15px;line-height:1.6;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  font-feature-settings:'ss01','cv11';
 }
 img{max-width:100%;display:block}
 button,input,select,textarea{font:inherit;color:inherit}
 a{color:inherit;text-decoration:none}
 button{cursor:pointer;border:none;background:none}
+::selection{background:var(--yellow);color:var(--ink)}
 
 /* ============================================================
    SCROLL PROGRESS
    ============================================================ */
-.scroll-progress{
-  position:fixed;top:0;left:0;height:2px;
-  background:var(--grad-gold);
-  z-index:9999;width:0;
-  transition:width .1s linear;
-  box-shadow:0 0 12px rgba(201,169,97,.6);
+.scroll-bar{
+  position:fixed;top:0;left:0;height:3px;z-index:9999;
+  background:var(--grad-yellow);
+  width:0;transition:width .08s linear;
+  box-shadow:0 0 12px rgba(255,193,7,.6);
 }
 
 /* ============================================================
-   NOISE TEXTURE (subtle)
-   ============================================================ */
-body::before{
-  content:"";position:fixed;inset:0;z-index:9998;
-  pointer-events:none;opacity:.025;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  mix-blend-mode:multiply;
-}
-
-/* ============================================================
-   NAVBAR — GLASS PREMIUM
+   NAVBAR
    ============================================================ */
 .topbar{
   position:fixed;top:0;left:0;right:0;z-index:1000;
-  background:rgba(250,247,240,.72);
-  backdrop-filter:blur(28px) saturate(1.8);
-  -webkit-backdrop-filter:blur(28px) saturate(1.8);
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(20px) saturate(1.8);
+  -webkit-backdrop-filter:blur(20px) saturate(1.8);
   border-bottom:1px solid var(--line);
-  transition:transform .4s var(--ease),background .3s;
+  transition:.3s var(--ease);
 }
+.topbar.scrolled{box-shadow:0 4px 20px rgba(15,23,42,.06)}
 .topbar-inner{
-  max-width:1400px;margin:0 auto;
-  padding:12px 20px;
+  max-width:1280px;margin:0 auto;
+  padding:10px 16px;
   display:grid;grid-template-columns:44px 1fr 44px;
-  align-items:center;gap:12px;
+  align-items:center;gap:10px;
 }
 .icon-btn{
   width:42px;height:42px;border-radius:12px;
   display:grid;place-items:center;
-  color:var(--text-1);
-  transition:.25s var(--ease);
-  position:relative;
+  color:var(--ink);transition:.22s var(--ease);
 }
-.icon-btn:hover{background:rgba(10,14,31,.05)}
+.icon-btn:hover{background:var(--blue-50);color:var(--blue)}
 .icon-btn:active{transform:scale(.94)}
-.icon-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.icon-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .hamburger span{
-  position:absolute;left:50%;top:50%;width:20px;height:1.6px;
-  background:var(--text-1);border-radius:2px;
+  position:absolute;left:50%;top:50%;
+  width:20px;height:2px;
+  background:var(--ink);border-radius:2px;
   transform:translate(-50%,-50%);
   transition:.3s var(--ease);
 }
 .hamburger span:nth-child(1){transform:translate(-50%,calc(-50% - 6px))}
 .hamburger span:nth-child(2){transform:translate(-50%,calc(-50%))}
 .hamburger span:nth-child(3){transform:translate(-50%,calc(-50% + 6px))}
+.hamburger{position:relative}
 
 .brand{display:flex;align-items:center;justify-content:center;min-height:52px;padding:4px}
 .brand-inner{display:flex;flex-direction:column;align-items:center;gap:3px}
-.brand-logo-img{height:42px;width:auto;max-width:200px;object-fit:contain;transition:.3s var(--ease)}
-.brand-sub{font-size:9.5px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--text-3);line-height:1}
+.brand-logo-img{height:42px;width:auto;max-width:200px;object-fit:contain}
+.brand-sub{font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);line-height:1}
 .brand-fallback{display:none;flex-direction:column;align-items:center;gap:4px}
 .brand-fallback.show{display:flex}
-.bf-mark{display:inline-flex;align-items:center;gap:6px;padding:5px 16px;background:var(--grad-gold);border-radius:100px;box-shadow:0 4px 14px rgba(139,111,46,.35);transform:skewX(-5deg)}
-.bf-text{font-size:18px;font-weight:800;letter-spacing:1.6px;color:#05070F;transform:skewX(5deg);line-height:1}
+.bf-mark{display:inline-flex;align-items:center;gap:6px;padding:5px 16px;background:var(--grad-yellow);border-radius:100px;box-shadow:0 4px 14px rgba(245,158,11,.35);transform:skewX(-5deg)}
+.bf-text{font-size:18px;font-weight:800;letter-spacing:1.6px;color:#0F172A;transform:skewX(5deg);line-height:1}
 .bf-dot{width:13px;height:13px;border-radius:50%;background:#DC2626;box-shadow:inset 0 0 0 2px #FFF,0 0 0 1.5px #DC2626;transform:skewX(5deg);position:relative;flex-shrink:0}
 .bf-dot::after{content:"";position:absolute;inset:3.5px;border-radius:50%;background:#FFF}
 
-.nav-desktop{max-width:1400px;margin:0 auto;padding:0 24px 12px;display:none;align-items:center;justify-content:center;gap:4px}
+.nav-desktop{max-width:1280px;margin:0 auto;padding:0 20px 12px;display:none;align-items:center;justify-content:center;gap:4px}
 .nav-desktop a{
-  padding:8px 16px;border-radius:100px;
-  font-size:13.5px;font-weight:600;color:var(--text-2);
-  transition:.25s var(--ease);position:relative;
+  padding:9px 16px;border-radius:100px;
+  font-size:13.5px;font-weight:600;color:var(--ink-2);
+  transition:.22s var(--ease);position:relative;
 }
-.nav-desktop a:hover{color:var(--text-1);background:rgba(10,14,31,.05)}
-.nav-desktop a.active{color:var(--text-1);background:rgba(201,169,97,.14)}
+.nav-desktop a:hover{color:var(--blue);background:var(--blue-50)}
+.nav-desktop a.active{color:var(--blue);background:var(--blue-100)}
 .nav-cta-desk{
-  margin-left:10px;
-  padding:9px 22px!important;
-  background:var(--ink-1)!important;
-  color:#fff!important;
-  font-weight:700!important;
-  box-shadow:0 4px 16px rgba(10,14,31,.25);
+  margin-left:10px;padding:11px 24px!important;
+  background:var(--grad-yellow)!important;
+  color:#0F172A!important;
+  font-weight:800!important;
+  box-shadow:0 8px 24px rgba(245,158,11,.35);
   transition:.3s var(--ease);
 }
-.nav-cta-desk:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(10,14,31,.35)}
+.nav-cta-desk:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,158,11,.45);background:var(--grad-yellow)!important}
 
-/* DRAWER */
-.drawer{position:fixed;inset:0;z-index:1100;background:var(--cream);padding:16px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateX(-16px);transition:.4s var(--ease)}
+/* ============================================================
+   DRAWER
+   ============================================================ */
+.drawer{
+  position:fixed;inset:0;z-index:1100;
+  background:var(--white);padding:16px;
+  display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;transform:translateX(-16px);
+  transition:.35s var(--ease);
+}
 .drawer.open{opacity:1;visibility:visible;transform:translateX(0)}
-.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:6px 4px 20px;border-bottom:1px solid var(--line);margin-bottom:20px}
+.drawer-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:6px 4px 20px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:20px;
+}
 .drawer .brand{justify-content:flex-start}
-.drawer-close{width:42px;height:42px;border-radius:12px;background:rgba(10,14,31,.05);color:var(--text-1);font-size:22px;font-weight:300;display:grid;place-items:center;transition:.25s}
-.drawer-close:hover{background:rgba(10,14,31,.1)}
+.drawer-close{
+  width:42px;height:42px;border-radius:12px;
+  background:var(--bg-2);color:var(--ink);
+  font-size:22px;font-weight:300;
+  display:grid;place-items:center;transition:.22s;
+}
+.drawer-close:hover{background:var(--blue-100)}
 .drawer-links{display:flex;flex-direction:column;gap:4px;flex:1}
 .drawer-links a{
   padding:16px 18px;border-radius:14px;
-  color:var(--text-1);font-size:16px;font-weight:600;
+  color:var(--ink);font-size:16px;font-weight:600;
   display:flex;align-items:center;justify-content:space-between;
-  transition:.25s var(--ease);
+  transition:.22s var(--ease);
 }
-.drawer-links a::after{content:"→";color:var(--gold-deep);opacity:0;transform:translateX(-6px);transition:.25s;font-weight:700}
-.drawer-links a:hover{background:rgba(10,14,31,.04)}
-.drawer-links a.active{background:rgba(201,169,97,.12);color:var(--gold-deep)}
+.drawer-links a:hover{background:var(--blue-50);color:var(--blue)}
+.drawer-links a.active{background:var(--blue-100);color:var(--blue)}
+.drawer-links a::after{content:"→";color:var(--blue);opacity:0;transform:translateX(-6px);transition:.22s;font-weight:700}
 .drawer-links a.active::after{opacity:1;transform:translateX(0)}
-.drawer-cta{margin-top:12px;background:var(--ink-1)!important;color:#fff!important;font-weight:700!important;justify-content:center!important}
+.drawer-cta{margin-top:14px;background:var(--grad-yellow)!important;color:#0F172A!important;font-weight:800!important;justify-content:center!important;box-shadow:0 10px 24px rgba(245,158,11,.3)}
 .drawer-cta::after{display:none!important}
-.drawer-foot{padding-top:16px;border-top:1px solid var(--line);color:var(--text-3);font-size:12px;text-align:center}
+.drawer-foot{padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;text-align:center}
 
 /* ============================================================
    ROUTER
    ============================================================ */
 main{padding-top:80px;min-height:100vh;position:relative}
-.page{display:none;animation:pageIn .6s var(--ease)}
+.page{display:none;animation:pageIn .5s var(--ease)}
 .page.active{display:block}
-@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pageIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
 /* ============================================================
-   HERO — BENTO PREMIUM
+   HERO — CERAH & ENERGETIK
    ============================================================ */
 .hero{
-  position:relative;overflow:hidden;
-  background:var(--grad-ink);
+  position:relative;
+  background:var(--grad-hero);
   color:#fff;
+  padding:56px 20px 64px;
+  overflow:hidden;
   border-radius:0 0 40px 40px;
-  padding:64px 20px 48px;
 }
 .hero::before{
   content:"";position:absolute;
-  top:-20%;right:-15%;width:700px;height:700px;
-  background:radial-gradient(circle,rgba(59,130,246,.28),transparent 60%);
+  top:-30%;right:-20%;width:600px;height:600px;
+  background:radial-gradient(circle,rgba(255,193,7,.28),transparent 60%);
   border-radius:50%;pointer-events:none;
-  animation:floatBlob 18s ease-in-out infinite;
+  animation:floatBlob 16s ease-in-out infinite;
 }
 .hero::after{
   content:"";position:absolute;
-  bottom:-20%;left:-15%;width:600px;height:600px;
-  background:radial-gradient(circle,rgba(201,169,97,.22),transparent 60%);
+  bottom:-40%;left:-15%;width:500px;height:500px;
+  background:radial-gradient(circle,rgba(255,255,255,.10),transparent 65%);
   border-radius:50%;pointer-events:none;
-  animation:floatBlob 22s ease-in-out infinite reverse;
+  animation:floatBlob 20s ease-in-out infinite reverse;
 }
 @keyframes floatBlob{
   0%,100%{transform:translate(0,0) scale(1)}
-  50%{transform:translate(40px,-40px) scale(1.1)}
+  50%{transform:translate(30px,-30px) scale(1.08)}
 }
+.hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
 
-.hero-inner{max-width:1400px;margin:0 auto;position:relative;z-index:2}
-
-/* Hero top — eyebrow + title */
-.hero-eyebrow{
+.hero-promo{
   display:inline-flex;align-items:center;gap:8px;
-  padding:7px 16px;border-radius:100px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
+  padding:8px 16px;border-radius:100px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.28);
   backdrop-filter:blur(10px);
-  color:var(--gold-bright);
-  font-size:10.5px;font-weight:800;letter-spacing:1.8px;
-  text-transform:uppercase;
-  margin-bottom:24px;
-}
-.hero-eyebrow::before{
-  content:"";width:5px;height:5px;border-radius:50%;
-  background:var(--gold-bright);
-  box-shadow:0 0 0 3px rgba(242,215,123,.25);
-  animation:pulseDot 2.2s infinite;
-}
-@keyframes pulseDot{50%{box-shadow:0 0 0 10px rgba(242,215,123,0)}}
-
-.hero-title{
-  font-size:44px;line-height:1.02;
-  font-weight:800;letter-spacing:-2px;
+  color:#fff;
+  font-size:11px;font-weight:800;
+  letter-spacing:1.4px;text-transform:uppercase;
   margin-bottom:20px;
-  text-shadow:0 4px 40px rgba(0,0,0,.4);
-  max-width:900px;
 }
-.hero-title em{
+.hero-promo::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--yellow);
+  box-shadow:0 0 0 4px rgba(255,193,7,.4);
+  animation:pulseDot 1.8s infinite;
+}
+@keyframes pulseDot{50%{box-shadow:0 0 0 10px rgba(255,193,7,0)}}
+
+.hero h1{
+  font-size:38px;line-height:1.06;
+  font-weight:800;letter-spacing:-1.4px;
+  margin-bottom:16px;
+  max-width:800px;
+}
+.hero h1 em{
   font-family:'Instrument Serif',serif;
   font-style:italic;
   font-weight:400;
-  background:var(--grad-gold);
-  -webkit-background-clip:text;background-clip:text;
-  color:transparent;
+  color:var(--yellow);
   letter-spacing:-1px;
 }
 .hero-sub{
-  font-size:16px;line-height:1.65;
-  color:rgba(255,255,255,.68);
+  font-size:15px;line-height:1.65;
+  color:rgba(255,255,255,.82);
   max-width:540px;
-  margin-bottom:32px;
+  margin-bottom:28px;
 }
 
-/* Hero actions */
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:56px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   padding:15px 28px;border-radius:100px;
-  font-size:14.5px;font-weight:700;letter-spacing:.1px;
-  border:none;cursor:pointer;
+  font-size:14.5px;font-weight:800;letter-spacing:.2px;
   transition:.3s var(--ease);
   white-space:nowrap;position:relative;
   overflow:hidden;
 }
 .btn-gold{
-  background:var(--grad-gold);color:#05070F;
-  box-shadow:0 12px 32px rgba(201,169,97,.35),inset 0 1px 0 rgba(255,255,255,.4);
+  background:var(--grad-yellow);color:#0F172A;
+  box-shadow:var(--sh-yellow);
 }
 .btn-gold::before{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);
+  background:var(--grad-shine);
   transform:translateX(-100%);
   transition:.6s;
 }
 .btn-gold:hover::before{transform:translateX(100%)}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(201,169,97,.45)}
-.btn-ghost{
-  background:rgba(255,255,255,.06);
-  color:#fff;
-  border:1px solid rgba(255,255,255,.14);
-  backdrop-filter:blur(10px);
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 20px 52px rgba(255,193,7,.45)}
+.btn-gold:active{transform:scale(.97)}
+.btn-white{
+  background:#fff;color:var(--blue);
+  box-shadow:0 8px 24px rgba(0,0,0,.15);
 }
-.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25)}
-.btn-dark{background:var(--ink-1);color:#fff;box-shadow:0 12px 30px rgba(10,14,31,.25)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,.2)}
+.btn-dark{background:var(--ink);color:#fff;box-shadow:0 12px 30px rgba(15,23,42,.25)}
+.btn-dark:hover{transform:translateY(-2px)}
 
-/* ====== BENTO GRID ====== */
-.bento{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:14px;
+/* Hero stats */
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  padding-top:28px;
+  border-top:1px solid rgba(255,255,255,.14);
 }
-.bento-card{
-  position:relative;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:24px;
-  padding:24px;
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  overflow:hidden;
-  transition:.4s var(--ease);
-}
-.bento-card::before{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(255,255,255,.06),transparent 55%);
-  pointer-events:none;
-}
-.bento-card:hover{
-  transform:translateY(-3px);
-  border-color:rgba(242,215,123,.35);
-  box-shadow:0 24px 56px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.12);
-}
-
-.bento-hero{
-  grid-column:1;
-  background:linear-gradient(155deg,rgba(59,130,246,.18),rgba(201,169,97,.12));
-  border-color:rgba(59,130,246,.25);
-}
-.bento-hero h3{
+.hero-stat .num{
   font-family:'Instrument Serif',serif;
-  font-size:56px;line-height:.95;font-weight:400;
-  letter-spacing:-1.5px;
-  margin-bottom:12px;
-  color:#fff;
+  font-size:26px;font-weight:400;
+  color:var(--yellow);
+  line-height:1;
+  letter-spacing:-.5px;
 }
-.bento-hero .label{
-  font-size:10.5px;font-weight:800;letter-spacing:2px;
-  text-transform:uppercase;color:var(--gold-bright);
-  margin-bottom:10px;
-}
-.bento-hero p{font-size:13px;color:rgba(255,255,255,.62);line-height:1.5}
-
-.bento-icon{
-  width:44px;height:44px;border-radius:12px;
-  background:rgba(242,215,123,.14);
-  border:1px solid rgba(242,215,123,.28);
-  display:grid;place-items:center;
-  font-size:20px;margin-bottom:16px;
-  color:var(--gold-bright);
-}
-.bento-card h4{
-  font-size:15px;font-weight:700;color:#fff;
-  margin-bottom:6px;letter-spacing:-.2px;
-}
-.bento-card .stat{
-  font-family:'Instrument Serif',serif;
-  font-size:38px;font-weight:400;line-height:1;
-  letter-spacing:-1px;
-  color:#fff;margin-bottom:8px;
-}
-.bento-card .stat-label{
-  font-size:11px;color:rgba(255,255,255,.5);
-  letter-spacing:1.4px;text-transform:uppercase;
-}
-
-/* Live badge */
-.live-badge{
-  position:absolute;top:20px;right:20px;
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:9.5px;font-weight:800;letter-spacing:1.4px;
-  color:#fff;text-transform:uppercase;
-  padding:5px 10px;border-radius:100px;
-  background:rgba(220,38,38,.9);
-  border:1px solid rgba(255,255,255,.2);
-}
-.live-badge::before{
-  content:"";width:6px;height:6px;border-radius:50%;
-  background:#fff;
-  animation:pulseDot 1.8s infinite;
+.hero-stat .lbl{
+  font-size:10.5px;font-weight:600;
+  color:rgba(255,255,255,.6);
+  letter-spacing:1.2px;text-transform:uppercase;
+  margin-top:6px;
 }
 
 /* ============================================================
-   SECTION
+   TRUST STRIP
    ============================================================ */
-.section{padding:72px 20px}
-.section.dark{background:var(--grad-ink);color:#fff}
-.section.cream{background:var(--paper-2)}
-.container{max-width:1280px;margin:0 auto}
-
-.sec-head{margin-bottom:44px;max-width:720px}
-.sec-tag{
-  display:inline-block;font-size:10.5px;font-weight:800;
-  letter-spacing:2.4px;color:var(--gold-deep);
-  background:rgba(201,169,97,.12);
-  padding:6px 14px;border-radius:100px;
-  text-transform:uppercase;margin-bottom:18px;
+.trust-strip{
+  background:#fff;
+  padding:20px 16px;
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
 }
-.section.dark .sec-tag{color:var(--gold-bright);background:rgba(242,215,123,.12)}
+.trust-strip-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  gap:24px;flex-wrap:wrap;
+}
+.trust-item{
+  display:flex;align-items:center;gap:8px;
+  font-size:12.5px;font-weight:700;
+  color:var(--ink-2);
+  letter-spacing:.2px;
+}
+.trust-item .dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 0 3px rgba(16,185,129,.2);
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section{padding:64px 20px}
+.section.alt{background:var(--white)}
+.section.cream{background:var(--yellow-100)}
+.section.dark{background:linear-gradient(160deg,#0F172A 0%,#1E293B 100%);color:#fff}
+.container{max-width:1200px;margin:0 auto}
+
+.sec-head{margin-bottom:40px;max-width:680px}
+.sec-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:10.5px;font-weight:800;
+  letter-spacing:2px;
+  color:var(--blue);
+  background:var(--blue-100);
+  padding:6px 14px;border-radius:100px;
+  text-transform:uppercase;
+  margin-bottom:16px;
+}
+.sec-tag.yellow{color:var(--yellow-deep);background:var(--yellow-100)}
+.section.dark .sec-tag{color:var(--yellow);background:rgba(255,193,7,.14)}
 .sec-head h2{
-  font-size:32px;font-weight:800;
-  letter-spacing:-1.2px;line-height:1.08;
-  color:var(--text-1);
+  font-size:28px;font-weight:800;
+  letter-spacing:-1px;line-height:1.14;
+  color:var(--ink);
 }
 .sec-head h2 em{
   font-family:'Instrument Serif',serif;
-  font-style:italic;
-  font-weight:400;
-  background:var(--grad-gold);
-  -webkit-background-clip:text;background-clip:text;
-  color:transparent;
-  letter-spacing:-1px;
+  font-style:italic;font-weight:400;
+  color:var(--blue);
+  letter-spacing:-.5px;
 }
 .section.dark .sec-head h2{color:#fff}
-.sec-head p{color:var(--text-3);margin-top:14px;font-size:15px;line-height:1.7}
-.section.dark .sec-head p{color:rgba(255,255,255,.6)}
+.section.dark .sec-head h2 em{color:var(--yellow)}
+.sec-head p{
+  color:var(--muted);
+  margin-top:14px;
+  font-size:15px;line-height:1.7;
+}
+.section.dark .sec-head p{color:rgba(255,255,255,.65)}
 
 /* ============================================================
-   MARQUEE — CHANNEL LOGOS SCROLLING
+   BENEFITS
    ============================================================ */
-.marquee-wrap{
-  position:relative;
-  overflow:hidden;
-  padding:32px 0;
-  mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
-}
-.marquee{
-  display:flex;gap:44px;
-  animation:scroll 40s linear infinite;
-  width:max-content;
-}
-.marquee.rev{animation-direction:reverse;animation-duration:48s;margin-top:20px}
-@keyframes scroll{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
-.marquee-logo{
-  display:flex;align-items:center;justify-content:center;
-  height:48px;padding:0 20px;
-  border-radius:12px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  transition:.3s var(--ease);
-}
-.marquee-logo:hover{
-  background:rgba(255,255,255,.08);
-  border-color:rgba(242,215,123,.35);
-  transform:translateY(-2px);
-}
-.marquee-logo svg{height:26px;width:auto;display:block}
-
-/* ============================================================
-   FEATURES BENTO
-   ============================================================ */
-.features-bento{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:14px;
-}
-.feat-card{
-  background:var(--paper);
+.benefits{display:grid;grid-template-columns:1fr;gap:16px}
+.benefit{
+  background:#fff;
   border:1px solid var(--line);
   border-radius:24px;
-  padding:28px;
+  padding:28px 24px;
   transition:.35s var(--ease);
-  position:relative;
-  overflow:hidden;
+  position:relative;overflow:hidden;
 }
-.feat-card::before{
+.benefit::before{
   content:"";position:absolute;
-  top:-60%;right:-30%;width:340px;height:340px;
-  background:radial-gradient(circle,rgba(201,169,97,.10),transparent 65%);
-  border-radius:50%;pointer-events:none;
-  transition:.6s var(--ease);
+  top:0;right:0;width:120px;height:120px;
+  background:radial-gradient(circle at top right,rgba(255,193,7,.10),transparent 70%);
+  border-radius:0 24px 0 100%;
+  transition:.4s var(--ease);
 }
-.feat-card:hover{
-  border-color:rgba(201,169,97,.4);
+.benefit:hover{
+  border-color:var(--yellow);
+  transform:translateY(-4px);
   box-shadow:var(--sh-lg);
-  transform:translateY(-3px);
 }
-.feat-card:hover::before{top:-40%;right:-10%}
-.feat-icon{
-  width:52px;height:52px;border-radius:15px;
-  background:var(--ink-1);
+.benefit:hover::before{
+  width:160px;height:160px;
+}
+.benefit-icon{
+  width:56px;height:56px;border-radius:16px;
+  background:var(--grad-blue);
   display:grid;place-items:center;
-  font-size:22px;margin-bottom:20px;
-  color:var(--gold-bright);
-  box-shadow:0 8px 24px rgba(10,14,31,.2);
+  font-size:24px;margin-bottom:20px;
+  box-shadow:0 8px 20px rgba(0,82,255,.25);
 }
-.feat-card h3{
-  font-size:19px;font-weight:800;
-  letter-spacing:-.4px;margin-bottom:8px;
-  color:var(--text-1);
+.benefit.yellow .benefit-icon{background:var(--grad-yellow);box-shadow:0 8px 20px rgba(245,158,11,.3)}
+.benefit.green .benefit-icon{background:var(--grad-green);box-shadow:0 8px 20px rgba(16,185,129,.3)}
+.benefit h3{
+  font-size:18px;font-weight:800;
+  letter-spacing:-.3px;margin-bottom:8px;
+  color:var(--ink);
 }
-.feat-card p{color:var(--text-3);font-size:14px;line-height:1.65}
-.feat-number{
-  position:absolute;top:20px;right:24px;
-  font-family:'Instrument Serif',serif;
-  font-size:56px;font-weight:400;
-  color:rgba(10,14,31,.06);
-  line-height:1;
-  letter-spacing:-2px;
-}
+.benefit p{color:var(--muted);font-size:14px;line-height:1.65}
 
 /* ============================================================
-   PACKAGES — PREMIUM CARDS
+   PACKAGES
    ============================================================ */
 .pkg-grid{display:grid;grid-template-columns:1fr;gap:16px}
 .pkg-group-title{
   display:flex;align-items:center;gap:14px;
-  margin:56px 0 24px;
+  margin:44px 0 20px;
 }
 .pkg-group-title h3{
   font-size:11px;font-weight:800;
-  letter-spacing:2.6px;text-transform:uppercase;
-  color:var(--gold-deep);
-  background:rgba(201,169,97,.12);
+  letter-spacing:2.4px;text-transform:uppercase;
+  color:var(--blue);
+  background:var(--blue-100);
   padding:6px 14px;border-radius:100px;
   white-space:nowrap;
 }
 .pkg-group-title::after{
   content:"";flex:1;height:1px;
-  background:linear-gradient(90deg,rgba(201,169,97,.4),transparent);
+  background:linear-gradient(90deg,rgba(0,82,255,.25),transparent);
 }
+
 .pkg{
   position:relative;
-  background:var(--paper);
-  border:1px solid var(--line);
+  background:#fff;
+  border:2px solid var(--line);
   border-radius:24px;
-  padding:26px 22px;
-  transition:.4s var(--ease);
+  padding:24px 22px;
+  transition:.35s var(--ease);
   cursor:pointer;
   overflow:hidden;
   display:flex;flex-direction:column;
 }
 .pkg::before{
   content:"";position:absolute;inset:0;
-  background:var(--grad-ink);
-  opacity:0;transition:.4s var(--ease);
+  background:var(--grad-blue);
+  opacity:0;transition:.35s var(--ease);
   z-index:0;
 }
-.pkg::after{
-  content:"";position:absolute;
-  top:-50%;right:-50%;width:200px;height:200px;
-  background:radial-gradient(circle,rgba(201,169,97,.15),transparent 65%);
-  border-radius:50%;pointer-events:none;
-  opacity:0;transition:.4s;
-}
-.pkg > *{position:relative;z-index:1;transition:color .35s}
+.pkg > *{position:relative;z-index:1;transition:color .3s}
 .pkg:hover{
-  border-color:rgba(201,169,97,.5);
-  box-shadow:var(--sh-lg);
+  border-color:var(--yellow);
+  box-shadow:0 20px 48px rgba(255,193,7,.20);
   transform:translateY(-4px);
 }
 .pkg.selected{
-  border-color:var(--gold);
-  box-shadow:0 20px 48px rgba(201,169,97,.22);
+  border-color:var(--yellow);
+  box-shadow:0 24px 56px rgba(255,193,7,.28);
 }
 .pkg.selected::before{opacity:1}
-.pkg.selected::after{opacity:1}
-.pkg.selected .pkg-tag{background:rgba(242,215,123,.15);color:var(--gold-bright);border-color:rgba(242,215,123,.35)}
+.pkg.selected .pkg-tag{background:rgba(255,193,7,.15);color:var(--yellow);border-color:rgba(255,193,7,.35)}
 .pkg.selected .pkg-speed{color:#fff}
-.pkg.selected .pkg-speed small{color:rgba(255,255,255,.5)}
-.pkg.selected .pkg-sub{color:rgba(255,255,255,.45)}
-.pkg.selected .pkg-price{color:var(--gold-bright);border-top-color:rgba(255,255,255,.1)}
-.pkg.selected .pkg-extras{color:rgba(255,255,255,.6)}
+.pkg.selected .pkg-speed small{color:rgba(255,255,255,.6)}
+.pkg.selected .pkg-sub{color:rgba(255,255,255,.5)}
+.pkg.selected .pkg-price{color:var(--yellow);border-top-color:rgba(255,255,255,.1)}
+.pkg.selected .pkg-extras{color:rgba(255,255,255,.65)}
 .pkg.selected .pkg-check{opacity:1;transform:scale(1)}
-.pkg.selected .channel-chips-label{color:rgba(255,255,255,.5)}
-.pkg.selected .channel-chips{border-top-color:rgba(255,255,255,.1)}
-.pkg.selected .chip-mini{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15)}
+.pkg.selected .channel-chips-label{color:rgba(255,255,255,.55)}
+.pkg.selected .channel-chips{border-top-color:rgba(255,255,255,.12)}
+.pkg.selected .chip-mini{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15)}
 
 .pkg-tag{
   display:inline-block;
   font-size:9.5px;font-weight:800;
-  letter-spacing:1.8px;padding:5px 12px;
+  letter-spacing:1.6px;padding:6px 12px;
   border-radius:100px;
-  background:rgba(10,14,31,.05);
-  color:var(--text-2);
-  border:1px solid var(--line);
+  background:var(--blue-50);
+  color:var(--blue);
+  border:1px solid var(--blue-100);
   text-transform:uppercase;
-  margin-bottom:22px;
+  margin-bottom:20px;
   align-self:flex-start;
 }
 .pkg-speed{
   font-family:'Instrument Serif',serif;
-  font-size:56px;font-weight:400;
-  letter-spacing:-2px;line-height:.9;
-  color:var(--text-1);
+  font-size:54px;font-weight:400;
+  letter-spacing:-1.5px;line-height:.9;
+  color:var(--ink);
 }
 .pkg-speed small{
   font-family:'Plus Jakarta Sans',sans-serif;
   font-size:14px;font-weight:700;
-  letter-spacing:.5px;
-  color:var(--text-3);
+  color:var(--muted);
   margin-left:4px;
 }
 .pkg-sub{
   font-size:10px;font-weight:800;
   letter-spacing:1.6px;
-  color:var(--text-3);
+  color:var(--muted);
   text-transform:uppercase;
-  margin-top:10px;margin-bottom:22px;
+  margin-top:8px;margin-bottom:20px;
 }
 .pkg-price{
   font-size:22px;font-weight:800;
   letter-spacing:-.6px;
-  color:var(--gold-deep);
+  color:var(--blue);
   display:flex;align-items:baseline;gap:4px;
   padding-top:18px;
   border-top:1px solid var(--line);
 }
-.pkg-price small{font-size:11.5px;font-weight:700;opacity:.7}
+.pkg-price small{font-size:11.5px;font-weight:700;opacity:.75}
 .pkg-extras{
-  font-size:12px;color:var(--text-3);
+  font-size:12.5px;color:var(--muted);
   margin-top:12px;line-height:1.5;
-  display:flex;align-items:center;gap:5px;
+  display:flex;align-items:center;gap:6px;
 }
 .pkg-check{
   position:absolute;top:20px;right:20px;
-  width:26px;height:26px;border-radius:50%;
-  background:var(--grad-gold);
+  width:28px;height:28px;border-radius:50%;
+  background:var(--grad-yellow);
   display:grid;place-items:center;
   opacity:0;transform:scale(.5);
-  transition:.4s var(--ease);
+  transition:.4s var(--ease-2);
   z-index:2;
+  box-shadow:0 4px 12px rgba(245,158,11,.4);
 }
 .pkg-check::after{
-  content:"";width:5px;height:10px;
-  border:solid #05070F;border-width:0 2px 2px 0;
+  content:"";width:6px;height:11px;
+  border:solid #0F172A;border-width:0 2.5px 2.5px 0;
   transform:rotate(45deg) translate(-1px,-2px);
 }
 .pkg-badge-promo{
   position:absolute;top:0;right:0;
-  background:var(--grad-gold);
-  color:#05070F;
-  font-size:9px;font-weight:800;letter-spacing:1.2px;
-  padding:6px 12px;
-  border-bottom-left-radius:12px;
+  background:var(--grad-red);
+  color:#fff;
+  font-size:9.5px;font-weight:800;letter-spacing:1px;
+  padding:7px 14px;
+  border-bottom-left-radius:14px;
   text-transform:uppercase;
 }
 
-/* Channel mini logos in package */
+/* Channel mini logos */
 .channel-chips{
   display:flex;flex-wrap:wrap;gap:5px;
   margin-top:16px;padding-top:14px;
-  border-top:1px dashed rgba(10,14,31,.1);
+  border-top:1px dashed rgba(15,23,42,.1);
   transition:.3s;
 }
 .channel-chips-label{
   font-size:9px;font-weight:800;
   letter-spacing:1.6px;
   text-transform:uppercase;
-  color:var(--text-3);
+  color:var(--muted);
   width:100%;margin-bottom:6px;
 }
 .chip-mini{
   display:inline-flex;align-items:center;justify-content:center;
   height:24px;padding:0 8px;
   border-radius:6px;
-  background:#F2F0E8;
-  border:1px solid rgba(10,14,31,.06);
+  background:#F1F5F9;
+  border:1px solid rgba(15,23,42,.06);
   transition:.3s var(--ease);
   overflow:hidden;
 }
 .chip-mini svg{height:12px;width:auto;display:block}
 
 /* ============================================================
-   WIFI VISUAL — EDITORIAL CARDS
+   CHANNEL SHOWCASE — BRIGHT
    ============================================================ */
-.wifi-grid{display:grid;grid-template-columns:1fr;gap:16px}
-.wifi-card{
-  position:relative;border-radius:24px;
-  overflow:hidden;min-height:280px;
-  display:flex;align-items:flex-end;
-  box-shadow:var(--sh-md);
-  transition:.5s var(--ease);
-  cursor:pointer;
-  background:var(--grad-ink);
+.channel-showcase{
+  background:linear-gradient(160deg,#0052FF 0%,#1E40AF 60%,#0F172A 100%);
+  border-radius:32px;
+  padding:40px 24px;
+  position:relative;
+  overflow:hidden;
+  color:#fff;
 }
-.wifi-card:hover{transform:translateY(-6px);box-shadow:var(--sh-xl)}
-.wifi-card-bg{position:absolute;inset:0;z-index:0}
-.wifi-card-bg img{width:100%;height:100%;object-fit:cover;transition:.6s var(--ease);opacity:.55}
-.wifi-card:hover .wifi-card-bg img{transform:scale(1.08);opacity:.65}
-.wifi-card::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(0deg,rgba(5,7,15,.95) 0%,rgba(5,7,15,.7) 45%,rgba(5,7,15,.25) 100%);
-  z-index:1;
+.channel-showcase::before{
+  content:"";position:absolute;
+  top:-30%;right:-15%;width:500px;height:500px;
+  background:radial-gradient(circle,rgba(255,193,7,.30),transparent 60%);
+  border-radius:50%;pointer-events:none;
 }
-.wifi-card-content{position:relative;z-index:2;padding:28px;color:#fff;width:100%}
-.wifi-card-num{
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;font-weight:500;
-  letter-spacing:2px;
-  color:var(--gold-bright);
+.channel-showcase::after{
+  content:"";position:absolute;
+  bottom:-30%;left:-15%;width:400px;height:400px;
+  background:radial-gradient(circle,rgba(255,255,255,.10),transparent 65%);
+  border-radius:50%;pointer-events:none;
+}
+.channel-head{position:relative;z-index:2;text-align:center;margin-bottom:32px}
+.channel-head .sec-tag{color:var(--yellow);background:rgba(255,193,7,.14)}
+.channel-head h3{
+  font-size:26px;font-weight:800;
+  letter-spacing:-.9px;line-height:1.14;
   margin-bottom:12px;
-  display:block;
 }
-.wifi-card h3{
+.channel-head h3 em{
   font-family:'Instrument Serif',serif;
-  font-size:30px;font-weight:400;
-  letter-spacing:-.5px;line-height:1.05;
-  margin-bottom:10px;color:#fff;
+  font-style:italic;font-weight:400;
+  color:var(--yellow);
+  letter-spacing:-.5px;
 }
-.wifi-card p{font-size:13.5px;color:rgba(255,255,255,.7);line-height:1.6;max-width:340px}
+.channel-head p{color:rgba(255,255,255,.7);font-size:14px;max-width:520px;margin:0 auto;line-height:1.65}
+
+.channel-grid{
+  position:relative;z-index:2;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  max-width:900px;margin:0 auto;
+}
+.channel-item{
+  background:#fff;
+  border-radius:14px;
+  height:70px;padding:14px;
+  display:grid;place-items:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  transition:.3s var(--ease);
+  cursor:default;
+}
+.channel-item:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 32px rgba(255,193,7,.35);
+}
+.channel-item svg{width:100%;height:100%;max-height:42px;max-width:100%;display:block}
 
 /* ============================================================
    TESTIMONIALS
    ============================================================ */
 .testi-grid{display:grid;grid-template-columns:1fr;gap:16px}
 .testi-card{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
+  background:#fff;
+  border:1px solid var(--line);
   border-radius:24px;
-  padding:28px;
-  backdrop-filter:blur(12px);
+  padding:28px 24px;
   transition:.35s var(--ease);
+  position:relative;
+}
+.testi-card::before{
+  content:"“";
+  position:absolute;top:16px;right:24px;
+  font-family:'Instrument Serif',serif;
+  font-size:80px;line-height:1;
+  color:var(--yellow);
+  opacity:.35;
 }
 .testi-card:hover{
-  border-color:rgba(242,215,123,.25);
-  background:rgba(255,255,255,.06);
-  transform:translateY(-3px);
+  border-color:var(--yellow);
+  transform:translateY(-4px);
+  box-shadow:var(--sh-lg);
 }
-.testi-stars{
-  display:flex;gap:2px;margin-bottom:16px;
-  color:var(--gold-bright);font-size:14px;
-}
+.testi-stars{display:flex;gap:2px;margin-bottom:16px;color:var(--yellow-deep);font-size:16px}
 .testi-text{
   font-size:14.5px;line-height:1.7;
-  color:rgba(255,255,255,.85);
+  color:var(--ink-2);
   margin-bottom:20px;
-  font-weight:400;
+  position:relative;z-index:1;
 }
-.testi-text::before{content:"“";font-family:'Instrument Serif',serif;font-size:32px;line-height:0;vertical-align:-8px;margin-right:2px;color:var(--gold-bright)}
 .testi-person{display:flex;align-items:center;gap:12px}
 .testi-avatar{
-  width:40px;height:40px;border-radius:50%;
-  background:var(--grad-gold);
+  width:44px;height:44px;border-radius:50%;
+  background:var(--grad-blue);
+  color:#fff;
   display:grid;place-items:center;
-  font-weight:800;color:#05070F;font-size:14px;
+  font-weight:800;font-size:14px;
   flex-shrink:0;
 }
-.testi-name{font-size:13.5px;font-weight:700;color:#fff}
-.testi-role{font-size:11.5px;color:rgba(255,255,255,.5);margin-top:2px}
+.testi-avatar.y{background:var(--grad-yellow);color:#0F172A}
+.testi-avatar.g{background:var(--grad-green)}
+.testi-name{font-size:14px;font-weight:800;color:var(--ink)}
+.testi-role{font-size:12px;color:var(--muted);margin-top:2px}
 
 /* ============================================================
-   FORM
+   FAQ
+   ============================================================ */
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:800px;margin:0 auto}
+.faq-item{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  transition:.3s var(--ease);
+}
+.faq-item:hover{border-color:var(--blue-100)}
+.faq-item.open{border-color:var(--blue);box-shadow:0 12px 32px rgba(0,82,255,.1)}
+.faq-q{
+  width:100%;
+  padding:20px 22px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;
+  text-align:left;
+  font-size:15px;font-weight:700;color:var(--ink);
+  cursor:pointer;
+  transition:.2s;
+}
+.faq-q:hover{background:var(--blue-50)}
+.faq-icon{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--blue-50);color:var(--blue);
+  display:grid;place-items:center;
+  font-size:18px;font-weight:300;
+  flex-shrink:0;transition:.3s var(--ease);
+}
+.faq-item.open .faq-icon{background:var(--blue);color:#fff;transform:rotate(45deg)}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:.4s var(--ease);
+  padding:0 22px;
+  color:var(--muted);font-size:14px;line-height:1.7;
+}
+.faq-item.open .faq-a{max-height:300px;padding:0 22px 22px}
+
+/* ============================================================
+   FORM SECTION
    ============================================================ */
 .form-section{
-  background:var(--grad-ink);
+  background:var(--grad-hero);
   color:#fff;
-  border-radius:32px 32px 0 0;
+  border-radius:40px 40px 0 0;
   padding:56px 20px 72px;
   position:relative;overflow:hidden;
 }
 .form-section::before{
   content:"";position:absolute;
   top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;
-  background:radial-gradient(circle,rgba(242,215,123,.12),transparent 70%);
+  background:radial-gradient(circle,rgba(255,193,7,.20),transparent 70%);
   pointer-events:none;
 }
-.form-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto}
-.form-section .sec-tag{color:var(--gold-bright);background:rgba(242,215,123,.12)}
+.form-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto}
+.form-section .sec-tag{color:var(--yellow);background:rgba(255,193,7,.15)}
 .form-left h2{
-  font-size:34px;font-weight:800;
-  letter-spacing:-1.2px;color:#fff;
-  line-height:1.08;margin:16px 0 18px;
+  font-size:32px;font-weight:800;
+  letter-spacing:-1.1px;color:#fff;
+  line-height:1.1;margin:14px 0 18px;
 }
 .form-left h2 em{
   font-family:'Instrument Serif',serif;
   font-style:italic;font-weight:400;
-  background:var(--grad-gold);
-  -webkit-background-clip:text;background-clip:text;
-  color:transparent;letter-spacing:-1px;
+  color:var(--yellow);
+  letter-spacing:-.5px;
 }
-.form-left p{color:rgba(255,255,255,.65);font-size:15px;line-height:1.7;margin-bottom:32px;max-width:480px}
-.trust-list{display:flex;flex-direction:column;gap:14px}
-.trust-item{
+.form-left p{color:rgba(255,255,255,.7);font-size:15px;line-height:1.7;margin-bottom:32px;max-width:480px}
+
+.trust-list{display:flex;flex-direction:column;gap:12px}
+.trust-card{
   display:flex;gap:14px;align-items:flex-start;
   padding:16px 18px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
   border-radius:16px;
-  backdrop-filter:blur(8px);
+  backdrop-filter:blur(10px);
   transition:.3s var(--ease);
 }
-.trust-item:hover{background:rgba(255,255,255,.06);border-color:rgba(242,215,123,.25)}
-.trust-icon{
-  width:38px;height:38px;border-radius:11px;
-  background:rgba(242,215,123,.15);
+.trust-card:hover{background:rgba(255,255,255,.09);border-color:rgba(255,193,7,.3)}
+.trust-card-icon{
+  width:40px;height:40px;border-radius:12px;
+  background:rgba(255,193,7,.15);
   display:grid;place-items:center;
-  font-size:16px;flex-shrink:0;
-  border:1px solid rgba(242,215,123,.25);
-  color:var(--gold-bright);
+  font-size:18px;flex-shrink:0;
+  border:1px solid rgba(255,193,7,.25);
 }
-.trust-item strong{display:block;font-size:14px;color:#fff;font-weight:700;margin-bottom:3px}
-.trust-item span{font-size:12.5px;color:rgba(255,255,255,.6)}
+.trust-card strong{display:block;font-size:14px;color:#fff;font-weight:700;margin-bottom:3px}
+.trust-card span{font-size:12.5px;color:rgba(255,255,255,.65)}
 
 .form-card{
-  background:var(--paper);
-  color:var(--text-1);
+  background:#fff;
+  color:var(--ink);
   border-radius:28px;
   padding:32px 24px;
-  box-shadow:0 40px 100px rgba(0,0,0,.5);
+  box-shadow:0 40px 100px rgba(0,0,0,.4);
   margin-top:28px;
-  border:1px solid rgba(242,215,123,.2);
-  position:relative;
-  overflow:hidden;
+  position:relative;overflow:hidden;
 }
 .form-card::before{
   content:"";position:absolute;
-  top:0;left:0;right:0;height:3px;
-  background:var(--grad-gold);
+  top:0;left:0;right:0;height:4px;
+  background:var(--grad-yellow);
 }
+.form-card-head{margin-bottom:24px}
 .form-card h3{
-  font-size:20px;font-weight:800;
+  font-size:22px;font-weight:800;
   letter-spacing:-.4px;margin-bottom:6px;
-  color:var(--text-1);
+  color:var(--ink);
 }
-.form-card > p{color:var(--text-3);font-size:13px;margin-bottom:26px}
+.form-card > p,
+.form-card-head p{color:var(--muted);font-size:13px;line-height:1.6}
 
-.field{margin-bottom:16px}
+.field{margin-bottom:14px}
 .field label{
   display:block;font-size:11px;font-weight:800;
   letter-spacing:1px;text-transform:uppercase;
-  color:var(--text-2);margin-bottom:8px;
+  color:var(--ink-2);margin-bottom:8px;
 }
 .field label .req{color:var(--red)}
 .field input,.field textarea,.field select{
   width:100%;padding:14px 16px;
   border-radius:14px;
   border:1.5px solid var(--line-2);
-  background:var(--paper-2);
-  font-size:14.5px;
+  background:#F8FAFF;
+  font-size:15px;
   transition:.25s var(--ease);
   outline:none;
-  color:var(--text-1);
+  color:var(--ink);
   font-family:inherit;
 }
-.field textarea{resize:vertical;min-height:76px}
+.field textarea{resize:vertical;min-height:80px}
 .field input:focus,.field textarea:focus,.field select:focus{
-  border-color:var(--gold);
+  border-color:var(--blue);
   background:#fff;
-  box-shadow:0 0 0 4px rgba(201,169,97,.15);
+  box-shadow:0 0 0 4px rgba(0,82,255,.12);
 }
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 
 .loc-status{
   display:flex;align-items:center;gap:12px;
   padding:14px 16px;border-radius:14px;
-  background:rgba(59,130,246,.08);
-  border:1px solid rgba(59,130,246,.18);
+  background:var(--blue-50);
+  border:1px solid var(--blue-100);
   font-size:12.5px;color:var(--blue);
-  margin-bottom:16px;
+  margin-bottom:18px;
   transition:.3s var(--ease);
 }
-.loc-status.success{background:rgba(22,163,74,.1);border-color:rgba(22,163,74,.25);color:var(--green)}
-.loc-status.warning{background:rgba(217,119,6,.1);border-color:rgba(217,119,6,.25);color:#B45309}
+.loc-status.success{background:#DCFCE7;border-color:#86EFAC;color:#166534}
+.loc-status.warning{background:var(--yellow-100);border-color:var(--yellow);color:#92400E}
 .loc-icon{
   width:34px;height:34px;border-radius:10px;
-  background:rgba(255,255,255,.6);
+  background:rgba(255,255,255,.65);
   display:grid;place-items:center;
   font-size:15px;flex-shrink:0;
 }
@@ -887,78 +870,93 @@ main{padding-top:80px;min-height:100vh;position:relative}
 .loc-info span{font-size:11.5px;opacity:.85;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 .btn-submit{
-  width:100%;margin-top:12px;padding:18px;
-  border-radius:14px;
-  background:var(--ink-1);
-  color:#fff;
-  font-weight:800;font-size:15px;
+  width:100%;margin-top:14px;padding:18px;
+  border-radius:16px;
+  background:var(--grad-yellow);
+  color:#0F172A;
+  font-weight:800;font-size:16px;
   letter-spacing:.2px;
   display:flex;align-items:center;justify-content:center;gap:8px;
   transition:.3s var(--ease);
-  box-shadow:0 12px 32px rgba(10,14,31,.3);
-  position:relative;
-  overflow:hidden;
+  box-shadow:var(--sh-yellow);
+  position:relative;overflow:hidden;
 }
 .btn-submit::before{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.15) 50%,transparent 70%);
+  background:var(--grad-shine);
   transform:translateX(-100%);
   transition:.6s;
 }
 .btn-submit:hover::before{transform:translateX(100%)}
-.btn-submit:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(10,14,31,.4)}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 20px 48px rgba(255,193,7,.4)}
 .btn-submit:active{transform:scale(.98)}
-.btn-submit:disabled{opacity:.8;cursor:not-allowed;transform:none}
-.btn-submit.loading{background:var(--grad-blue)!important;color:#fff!important}
-.btn-submit.success{background:var(--green)!important;color:#fff!important}
-.btn-submit.error{background:var(--red)!important;color:#fff!important}
+.btn-submit:disabled{opacity:.85;cursor:not-allowed;transform:none}
+.btn-submit.loading{background:var(--grad-blue)!important;color:#fff!important;box-shadow:var(--sh-blue)}
+.btn-submit.success{background:var(--grad-green)!important;color:#fff!important;box-shadow:0 12px 32px rgba(16,185,129,.35)}
+.btn-submit.error{background:var(--grad-red)!important;color:#fff!important;box-shadow:var(--sh-red)}
 
 /* ============================================================
    FOOTER
    ============================================================ */
 footer{
-  background:var(--ink-0);
-  color:rgba(255,255,255,.5);
-  padding:56px 20px 32px;
-  position:relative;
-  overflow:hidden;
+  background:#0F172A;
+  color:rgba(255,255,255,.6);
+  padding:48px 20px 28px;
+  text-align:center;
 }
-footer::before{
-  content:"";position:absolute;
-  top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(201,169,97,.4),transparent);
-}
-.footer-inner{max-width:1280px;margin:0 auto;text-align:center}
+.footer-inner{max-width:1200px;margin:0 auto}
 .footer-logo{
-  display:inline-block;margin-bottom:20px;
+  display:inline-block;margin-bottom:18px;
   padding:12px 24px;
-  background:rgba(255,255,255,.03);
+  background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.08);
   border-radius:14px;
 }
 .footer-logo .brand-logo-img{
   height:36px;max-width:180px;
-  filter:brightness(0) invert(1) drop-shadow(0 0 10px rgba(201,169,97,.3));
+  filter:brightness(0) invert(1) drop-shadow(0 0 12px rgba(255,193,7,.3));
 }
 .footer-slogan{
-  color:var(--gold-bright);
+  color:var(--yellow);
   font-family:'Instrument Serif',serif;
   font-style:italic;font-size:20px;font-weight:400;
-  letter-spacing:.5px;margin-bottom:28px;
+  letter-spacing:.4px;margin-bottom:26px;
 }
 .footer-links{
   display:flex;flex-wrap:wrap;justify-content:center;gap:8px 24px;
-  margin-bottom:28px;
+  margin-bottom:26px;
 }
 .footer-links a{
-  color:rgba(255,255,255,.55);font-size:13px;font-weight:500;
+  color:rgba(255,255,255,.6);font-size:13.5px;font-weight:500;
   transition:.2s;
 }
-.footer-links a:hover{color:var(--gold-bright)}
+.footer-links a:hover{color:var(--yellow)}
 .footer-copy{
-  font-size:11.5px;padding-top:26px;
+  font-size:12px;padding-top:24px;
   border-top:1px solid rgba(255,255,255,.06);
   letter-spacing:.3px;line-height:1.7;
+}
+
+/* ============================================================
+   FLOATING WHATSAPP
+   ============================================================ */
+.wa-float{
+  position:fixed;bottom:92px;right:18px;z-index:900;
+  width:56px;height:56px;border-radius:50%;
+  background:#25D366;
+  display:grid;place-items:center;
+  box-shadow:0 12px 32px rgba(37,211,102,.4);
+  transition:.3s var(--ease);
+}
+.wa-float:active{transform:scale(.92)}
+.wa-float::before{
+  content:"";position:absolute;inset:-4px;border-radius:50%;
+  border:2px solid rgba(37,211,102,.4);
+  animation:pulseWA 2.4s infinite;
+}
+@keyframes pulseWA{
+  0%,100%{transform:scale(1);opacity:.9}
+  50%{transform:scale(1.2);opacity:0}
 }
 
 /* ============================================================
@@ -967,29 +965,62 @@ footer::before{
 .sticky-cta{
   position:fixed;bottom:0;left:0;right:0;
   padding:12px 16px calc(12px + env(safe-area-inset-bottom));
-  background:rgba(5,7,15,.92);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
-  border-top:1px solid rgba(255,255,255,.08);
-  z-index:900;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(20px) saturate(1.8);
+  -webkit-backdrop-filter:blur(20px) saturate(1.8);
+  border-top:1px solid var(--line);
+  z-index:950;
   transform:translateY(100%);
   transition:transform .4s var(--ease);
+  box-shadow:0 -8px 32px rgba(15,23,42,.08);
 }
 .sticky-cta.show{transform:translateY(0)}
 .sticky-cta a{
   display:flex;align-items:center;justify-content:center;gap:8px;
-  padding:16px;border-radius:14px;
-  background:var(--grad-gold);
-  color:#05070F;
-  font-weight:800;font-size:14.5px;
-  box-shadow:0 12px 32px rgba(201,169,97,.35);
+  padding:16px;border-radius:16px;
+  background:var(--grad-yellow);
+  color:#0F172A;
+  font-weight:800;font-size:15px;
+  box-shadow:var(--sh-yellow);
+  transition:.3s var(--ease);
+  position:relative;overflow:hidden;
 }
+.sticky-cta a::before{
+  content:"";position:absolute;inset:0;
+  background:var(--grad-shine);
+  transform:translateX(-100%);
+  transition:.6s;
+}
+.sticky-cta a:hover::before{transform:translateX(100%)}
 .sticky-cta a:active{transform:scale(.98)}
+
+/* ============================================================
+   URGENCY BANNER
+   ============================================================ */
+.urgency{
+  background:var(--grad-red);
+  color:#fff;
+  padding:12px 20px;
+  text-align:center;
+  font-size:13px;font-weight:700;
+  letter-spacing:.2px;
+  position:relative;overflow:hidden;
+}
+.urgency::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);
+  animation:shimmer 3s infinite;
+}
+@keyframes shimmer{
+  0%{transform:translateX(-100%)}
+  100%{transform:translateX(100%)}
+}
+.urgency span{position:relative;z-index:1}
 
 /* ============================================================
    REVEAL
    ============================================================ */
-.reveal{opacity:0;transform:translateY(24px);transition:.9s var(--ease)}
+.reveal{opacity:0;transform:translateY(20px);transition:.7s var(--ease)}
 .reveal.in{opacity:1;transform:translateY(0)}
 .reveal-d1{transition-delay:.08s}
 .reveal-d2{transition-delay:.16s}
@@ -1000,51 +1031,46 @@ footer::before{
    ============================================================ */
 @media (min-width:640px){
   body{font-size:15.5px}
-  .hero{padding:88px 32px 64px}
-  .hero-title{font-size:64px;letter-spacing:-2.5px}
-  .hero-sub{font-size:17px}
-  .section{padding:96px 32px}
-  .sec-head h2{font-size:44px;letter-spacing:-1.8px}
-  .bento{grid-template-columns:repeat(3,1fr);gap:16px}
-  .bento-hero{grid-column:span 2;grid-row:span 2}
-  .bento-hero h3{font-size:72px}
-  .features-bento{grid-template-columns:repeat(3,1fr);gap:18px}
+  .hero{padding:80px 32px 72px}
+  .hero h1{font-size:56px;letter-spacing:-2.2px}
+  .hero-sub{font-size:16.5px}
+  .hero-stats{gap:24px}
+  .hero-stat .num{font-size:34px}
+  .section{padding:88px 32px}
+  .sec-head h2{font-size:40px;letter-spacing:-1.5px}
+  .benefits{grid-template-columns:repeat(3,1fr);gap:20px}
   .pkg-grid{grid-template-columns:repeat(2,1fr);gap:18px}
-  .wifi-grid{grid-template-columns:repeat(3,1fr);gap:18px}
-  .testi-grid{grid-template-columns:repeat(3,1fr);gap:18px}
+  .testi-grid{grid-template-columns:repeat(3,1fr);gap:20px}
+  .channel-grid{grid-template-columns:repeat(4,1fr);gap:14px}
+  .channel-showcase{padding:56px 40px}
+  .channel-item{height:80px;padding:18px}
+  .channel-item svg{max-height:48px}
+  .channel-head h3{font-size:32px}
   .form-card{padding:40px 36px}
   .field-row{gap:16px}
   .brand-logo-img{height:50px;max-width:230px}
-  .marquee{gap:56px}
-  .marquee.rev{gap:56px}
 }
-
 @media (min-width:900px){
   .topbar-inner{padding:16px 32px;grid-template-columns:44px auto 44px}
   .nav-desktop{display:flex;padding:0 32px 16px}
   .hamburger{display:none!important}
   .share-btn{visibility:hidden}
   .pkg-grid{grid-template-columns:repeat(4,1fr);gap:20px}
-  .hero-title{font-size:88px;letter-spacing:-3.5px;max-width:1000px}
-  .hero{padding:100px 48px 72px}
+  .channel-grid{grid-template-columns:repeat(7,1fr);gap:14px}
+  .hero h1{font-size:72px;letter-spacing:-3px}
+  .hero{padding:100px 48px 88px}
   .form-inner{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
   .form-card{margin-top:0}
-  .bento-hero h3{font-size:88px}
+  .section{padding:104px 48px}
+  .sec-head h2{font-size:48px;letter-spacing:-2px}
   .sticky-cta{display:none}
-  .form-section{padding:80px 48px 96px}
-  .section{padding:112px 48px}
-}
-
-@media (min-width:1200px){
-  .marquee{gap:72px}
-  .marquee.rev{gap:72px}
+  .wa-float{bottom:24px;right:24px}
 }
 </style>
 </head>
 <body>
 
-<!-- SCROLL PROGRESS -->
-<div class="scroll-progress" id="scrollProgress"></div>
+<div class="scroll-bar" id="scrollBar"></div>
 
 <!-- ============================================================
      NAVBAR
@@ -1075,11 +1101,11 @@ footer::before{
     <a href="#/" data-route="beranda">Beranda</a>
     <a href="#/paket" data-route="paket">Paket</a>
     <a href="#/promo" data-route="promo">Promo</a>
+    <a href="#/faq" data-route="faq">FAQ</a>
     <a href="#/daftar" class="nav-cta-desk">Daftar Sekarang</a>
   </nav>
 </header>
 
-<!-- DRAWER -->
 <div class="drawer" id="drawer">
   <div class="drawer-head">
     <div class="brand" style="justify-content:flex-start">
@@ -1101,6 +1127,7 @@ footer::before{
     <a href="#/" data-route="beranda">Beranda</a>
     <a href="#/paket" data-route="paket">Paket Internet</a>
     <a href="#/promo" data-route="promo">Promo Spesial</a>
+    <a href="#/faq" data-route="faq">FAQ</a>
     <a href="#/daftar" data-route="daftar" class="drawer-cta">Daftar Sekarang</a>
   </nav>
   <div class="drawer-foot">Internet Cepat · Hidup Lebih Seru</div>
@@ -1113,180 +1140,150 @@ footer::before{
        ============================================================ -->
   <section class="page" data-page="beranda">
 
+    <!-- URGENCY BANNER -->
+    <div class="urgency">
+      <span>🔥 Promo spesial bulan ini — <b>Gratis biaya survey</b> untuk 50 pendaftar pertama!</span>
+    </div>
+
     <!-- HERO -->
     <div class="hero">
       <div class="hero-inner">
-        <div class="hero-eyebrow">Promo Double Speed · Terbatas</div>
-        <h1 class="hero-title">
-          Internet cepat,<br>
-          hidup lebih <em>seru.</em>
-        </h1>
-        <p class="hero-sub">
-          Streaming, gaming, bekerja, dan belajar tanpa hambatan. Nikmati jaringan fiber optic premium untuk seluruh keluarga Indonesia.
-        </p>
+        <div class="hero-promo">Promo Double Speed</div>
+        <h1>Internet cepat,<br>hidup lebih <em>seru.</em></h1>
+        <p class="hero-sub">Streaming, gaming, kerja, dan belajar lancar tanpa hambatan. Fiber optic berkualitas untuk seluruh keluarga Indonesia.</p>
         <div class="hero-actions">
           <a href="#/daftar" class="btn btn-gold">Daftar Sekarang</a>
-          <a href="#/paket" class="btn btn-ghost">Lihat Paket →</a>
+          <a href="#/paket" class="btn btn-white">Lihat Paket</a>
         </div>
-
-        <!-- BENTO GRID -->
-        <div class="bento">
-          <div class="bento-card bento-hero reveal">
-            <div class="live-badge">Live</div>
-            <div class="label">Kecepatan Maksimal</div>
-            <h3>1 Gbps</h3>
-            <p>Jaringan fiber optic dengan teknologi WiFi 6 terbaru. Streaming 4K, gaming online, dan WFH tanpa lag.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">1 Gbps</div>
+            <div class="lbl">Kecepatan Maks</div>
           </div>
-          <div class="bento-card reveal reveal-d1">
-            <div class="bento-icon">📺</div>
-            <h4>TV Kabel Gratis</h4>
-            <div class="stat">73+</div>
-            <div class="stat-label">Channel Berbayar</div>
+          <div class="hero-stat">
+            <div class="num">73+</div>
+            <div class="lbl">Channel TV</div>
           </div>
-          <div class="bento-card reveal reveal-d2">
-            <div class="bento-icon">⚡</div>
-            <h4>Uptime Jaringan</h4>
-            <div class="stat">99.9%</div>
-            <div class="stat-label">Stabil & Handal</div>
-          </div>
-          <div class="bento-card reveal reveal-d1">
-            <div class="bento-icon">🛡️</div>
-            <h4>Support 24/7</h4>
-            <div class="stat">24 Jam</div>
-            <div class="stat-label">Teknisi Siaga</div>
-          </div>
-          <div class="bento-card reveal reveal-d2">
-            <div class="bento-icon">💰</div>
-            <h4>Mulai Dari</h4>
-            <div class="stat">150rb</div>
-            <div class="stat-label">Per Bulan</div>
+          <div class="hero-stat">
+            <div class="num">24 Jam</div>
+            <div class="lbl">Support</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- KEUNGGULAN -->
+    <!-- TRUST STRIP -->
+    <div class="trust-strip">
+      <div class="trust-strip-inner">
+        <div class="trust-item"><span class="dot"></span> Tanpa Biaya Survey</div>
+        <div class="trust-item"><span class="dot"></span> Pemasangan Cepat</div>
+        <div class="trust-item"><span class="dot"></span> Support 24 Jam</div>
+        <div class="trust-item"><span class="dot"></span> Teknisi Profesional</div>
+      </div>
+    </div>
+
+    <!-- BENEFITS -->
     <div class="section">
       <div class="container">
         <div class="sec-head reveal">
-          <div class="sec-tag">Mengapa MEGAVISION</div>
+          <div class="sec-tag">Kenapa MEGAVISION</div>
           <h2>Tiga alasan keluarga<br>memilih <em>internet kami.</em></h2>
-          <p>Kami hadir dengan komitmen memberikan pengalaman internet terbaik — cepat, stabil, dan terjangkau untuk semua.</p>
+          <p>Kami hadir dengan komitmen memberikan pengalaman internet terbaik — cepat, stabil, dan terjangkau.</p>
         </div>
-        <div class="features-bento">
-          <div class="feat-card reveal">
-            <div class="feat-number">01</div>
-            <div class="feat-icon">⚡</div>
-            <h3>Kecepatan Tanpa Kompromi</h3>
-            <p>Hingga 1 Gbps dengan teknologi WiFi 6. Cocok untuk streaming 4K, gaming competitive, dan bekerja dari rumah tanpa hambatan.</p>
+        <div class="benefits">
+          <div class="benefit reveal">
+            <div class="benefit-icon">⚡</div>
+            <h3>Kecepatan Maksimal</h3>
+            <p>Hingga 1 Gbps dengan teknologi WiFi 6. Streaming 4K, gaming, dan WFH tanpa lag.</p>
           </div>
-          <div class="feat-card reveal reveal-d1">
-            <div class="feat-number">02</div>
-            <div class="feat-icon">🛡️</div>
+          <div class="benefit yellow reveal reveal-d1">
+            <div class="benefit-icon">💰</div>
+            <h3>Harga Jujur</h3>
+            <p>Mulai Rp 150.000/bulan tanpa biaya tersembunyi. Gratis TV kabel 73+ channel.</p>
+          </div>
+          <div class="benefit green reveal reveal-d2">
+            <div class="benefit-icon">🛡️</div>
             <h3>Stabil & Terpercaya</h3>
-            <p>Uptime 99.9% dengan dukungan teknisi profesional 24 jam. Jaringan fiber optic yang sudah terbukti di ribuan rumah.</p>
-          </div>
-          <div class="feat-card reveal reveal-d2">
-            <div class="feat-number">03</div>
-            <div class="feat-icon">💰</div>
-            <h3>Harga Jujur & Transparan</h3>
-            <p>Mulai Rp 150.000/bulan tanpa biaya tersembunyi. Gratis TV kabel 73+ channel untuk paket Silver ke atas.</p>
+            <p>Uptime 99.9% dengan dukungan teknisi profesional 24 jam setiap hari.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- CHANNEL SHOWCASE — DARK PREMIUM -->
-    <div class="section dark">
+    <!-- CHANNEL SHOWCASE -->
+    <div class="section alt">
       <div class="container">
-        <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
-          <div class="sec-tag">Gratis TV Kabel</div>
-          <h2>73+ channel premium,<br>tanpa biaya <em>tambahan.</em></h2>
-          <p style="margin-left:auto;margin-right:auto">Termasuk channel internasional favorit keluarga — film, kartun, dokumenter, dan berita dunia.</p>
-        </div>
-      </div>
-
-      <!-- MARQUEE 1 -->
-      <div class="marquee-wrap">
-        <div class="marquee">
-          <!-- HBO -->
-          <div class="marquee-logo"><svg viewBox="0 0 100 32" xmlns="http://www.w3.org/2000/svg"><text x="50" y="24" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="26" letter-spacing="1" fill="#fff">HBO</text></svg></div>
-          <!-- Cinemax -->
-          <div class="marquee-logo"><svg viewBox="0 0 130 32" xmlns="http://www.w3.org/2000/svg"><text x="65" y="24" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="22" fill="#fff">Cinemax</text></svg></div>
-          <!-- Nickelodeon -->
-          <div class="marquee-logo"><svg viewBox="0 0 100 32" xmlns="http://www.w3.org/2000/svg"><text x="50" y="26" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="26" fill="#FF6D00">nick</text></svg></div>
-          <!-- Animal Planet -->
-          <div class="marquee-logo"><svg viewBox="0 0 150 32" xmlns="http://www.w3.org/2000/svg"><g transform="translate(4,4)"><ellipse cx="12" cy="12" rx="10" ry="8" fill="#1B7A3C"/><circle cx="5" cy="5" r="3.5" fill="#1B7A3C"/><circle cx="19" cy="5" r="3.5" fill="#1B7A3C"/><circle cx="5" cy="19" r="3.5" fill="#1B7A3C"/><circle cx="19" cy="19" r="3.5" fill="#1B7A3C"/><circle cx="10" cy="10" r="1.3" fill="#FFF"/><circle cx="14" cy="10" r="1.3" fill="#FFF"/></g><text x="34" y="14" font-family="Arial, sans-serif" font-weight="800" font-size="10" fill="#1B7A3C">ANIMAL</text><text x="34" y="26" font-family="Arial, sans-serif" font-weight="800" font-size="10" fill="#1B7A3C">PLANET</text></svg></div>
-          <!-- BBC -->
-          <div class="marquee-logo"><svg viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg"><g transform="translate(4,4)"><rect x="0" y="0" width="16" height="16" fill="#fff"/><rect x="18" y="0" width="16" height="16" fill="#fff"/><rect x="36" y="0" width="16" height="16" fill="#fff"/><text x="8" y="13" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="11" fill="#000">B</text><text x="26" y="13" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="11" fill="#000">B</text><text x="44" y="13" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="11" fill="#000">C</text></g></svg></div>
-          <!-- Al Jazeera -->
-          <div class="marquee-logo"><svg viewBox="0 0 130 32" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 Q14 8 20 20 Q14 16 8 20 Z" fill="#FA9000"/><text x="28" y="20" font-family="Georgia, serif" font-weight="800" font-style="italic" font-size="15" fill="#FA9000">Al Jazeera</text></svg></div>
-          <!-- ZooMoo -->
-          <div class="marquee-logo"><svg viewBox="0 0 110 32" xmlns="http://www.w3.org/2000/svg"><text x="4" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#EC4899">Z</text><text x="22" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#F59E0B">o</text><text x="37" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#10B981">o</text><text x="52" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#3B82F6">M</text><text x="72" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#8B5CF6">o</text><text x="87" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#EC4899">o</text></svg></div>
-          <!-- Duplicate for seamless loop -->
-          <div class="marquee-logo"><svg viewBox="0 0 100 32" xmlns="http://www.w3.org/2000/svg"><text x="50" y="24" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="26" letter-spacing="1" fill="#fff">HBO</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 130 32" xmlns="http://www.w3.org/2000/svg"><text x="65" y="24" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="22" fill="#fff">Cinemax</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 100 32" xmlns="http://www.w3.org/2000/svg"><text x="50" y="26" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="26" fill="#FF6D00">nick</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 150 32" xmlns="http://www.w3.org/2000/svg"><g transform="translate(4,4)"><ellipse cx="12" cy="12" rx="10" ry="8" fill="#1B7A3C"/><circle cx="5" cy="5" r="3.5" fill="#1B7A3C"/><circle cx="19" cy="5" r="3.5" fill="#1B7A3C"/><circle cx="5" cy="19" r="3.5" fill="#1B7A3C"/><circle cx="19" cy="19" r="3.5" fill="#1B7A3C"/><circle cx="10" cy="10" r="1.3" fill="#FFF"/><circle cx="14" cy="10" r="1.3" fill="#FFF"/></g><text x="34" y="14" font-family="Arial, sans-serif" font-weight="800" font-size="10" fill="#1B7A3C">ANIMAL</text><text x="34" y="26" font-family="Arial, sans-serif" font-weight="800" font-size="10" fill="#1B7A3C">PLANET</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg"><g transform="translate(4,4)"><rect x="0" y="0" width="16" height="16" fill="#fff"/><rect x="18" y="0" width="16" height="16" fill="#fff"/><rect x="36" y="0" width="16" height="16" fill="#fff"/><text x="8" y="13" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="11" fill="#000">B</text><text x="26" y="13" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="11" fill="#000">B</text><text x="44" y="13" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="11" fill="#000">C</text></g></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 130 32" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 Q14 8 20 20 Q14 16 8 20 Z" fill="#FA9000"/><text x="28" y="20" font-family="Georgia, serif" font-weight="800" font-style="italic" font-size="15" fill="#FA9000">Al Jazeera</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 110 32" xmlns="http://www.w3.org/2000/svg"><text x="4" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#EC4899">Z</text><text x="22" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#F59E0B">o</text><text x="37" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#10B981">o</text><text x="52" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#3B82F6">M</text><text x="72" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#8B5CF6">o</text><text x="87" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#EC4899">o</text></svg></div>
-        </div>
-      </div>
-
-      <!-- MARQUEE 2 — REVERSE -->
-      <div class="marquee-wrap">
-        <div class="marquee rev">
-          <div class="marquee-logo"><svg viewBox="0 0 130 32" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 Q14 8 20 20 Q14 16 8 20 Z" fill="#FA9000"/><text x="28" y="20" font-family="Georgia, serif" font-weight="800" font-style="italic" font-size="15" fill="#FA9000">Al Jazeera</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 110 32" xmlns="http://www.w3.org/2000/svg"><text x="4" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#EC4899">Z</text><text x="22" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#F59E0B">o</text><text x="37" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#10B981">o</text><text x="52" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#3B82F6">M</text><text x="72" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#8B5CF6">o</text><text x="87" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#EC4899">o</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg"><g transform="translate(4,4)"><rect x="0" y="0" width="16" height="16" fill="#fff"/><rect x="18" y="0" width="16" height="16" fill="#fff"/><rect x="36" y="0" width="16" height="16" fill="#fff"/><text x="8" y="13" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="11" fill="#000">B</text><text x="26" y="13" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="11" fill="#000">B</text><text x="44" y="13" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="11" fill="#000">C</text></g></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 150 32" xmlns="http://www.w3.org/2000/svg"><g transform="translate(4,4)"><ellipse cx="12" cy="12" rx="10" ry="8" fill="#1B7A3C"/><circle cx="5" cy="5" r="3.5" fill="#1B7A3C"/><circle cx="19" cy="5" r="3.5" fill="#1B7A3C"/><circle cx="5" cy="19" r="3.5" fill="#1B7A3C"/><circle cx="19" cy="19" r="3.5" fill="#1B7A3C"/><circle cx="10" cy="10" r="1.3" fill="#FFF"/><circle cx="14" cy="10" r="1.3" fill="#FFF"/></g><text x="34" y="14" font-family="Arial, sans-serif" font-weight="800" font-size="10" fill="#1B7A3C">ANIMAL</text><text x="34" y="26" font-family="Arial, sans-serif" font-weight="800" font-size="10" fill="#1B7A3C">PLANET</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 100 32" xmlns="http://www.w3.org/2000/svg"><text x="50" y="26" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="26" fill="#FF6D00">nick</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 130 32" xmlns="http://www.w3.org/2000/svg"><text x="65" y="24" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="22" fill="#fff">Cinemax</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 100 32" xmlns="http://www.w3.org/2000/svg"><text x="50" y="24" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="26" letter-spacing="1" fill="#fff">HBO</text></svg></div>
-          <!-- Loop -->
-          <div class="marquee-logo"><svg viewBox="0 0 130 32" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 Q14 8 20 20 Q14 16 8 20 Z" fill="#FA9000"/><text x="28" y="20" font-family="Georgia, serif" font-weight="800" font-style="italic" font-size="15" fill="#FA9000">Al Jazeera</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 110 32" xmlns="http://www.w3.org/2000/svg"><text x="4" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#EC4899">Z</text><text x="22" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#F59E0B">o</text><text x="37" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#10B981">o</text><text x="52" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#3B82F6">M</text><text x="72" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#8B5CF6">o</text><text x="87" y="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#EC4899">o</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg"><g transform="translate(4,4)"><rect x="0" y="0" width="16" height="16" fill="#fff"/><rect x="18" y="0" width="16" height="16" fill="#fff"/><rect x="36" y="0" width="16" height="16" fill="#fff"/><text x="8" y="13" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="11" fill="#000">B</text><text x="26" y="13" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="11" fill="#000">B</text><text x="44" y="13" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="11" fill="#000">C</text></g></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 150 32" xmlns="http://www.w3.org/2000/svg"><g transform="translate(4,4)"><ellipse cx="12" cy="12" rx="10" ry="8" fill="#1B7A3C"/><circle cx="5" cy="5" r="3.5" fill="#1B7A3C"/><circle cx="19" cy="5" r="3.5" fill="#1B7A3C"/><circle cx="5" cy="19" r="3.5" fill="#1B7A3C"/><circle cx="19" cy="19" r="3.5" fill="#1B7A3C"/><circle cx="10" cy="10" r="1.3" fill="#FFF"/><circle cx="14" cy="10" r="1.3" fill="#FFF"/></g><text x="34" y="14" font-family="Arial, sans-serif" font-weight="800" font-size="10" fill="#1B7A3C">ANIMAL</text><text x="34" y="26" font-family="Arial, sans-serif" font-weight="800" font-size="10" fill="#1B7A3C">PLANET</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 100 32" xmlns="http://www.w3.org/2000/svg"><text x="50" y="26" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="26" fill="#FF6D00">nick</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 130 32" xmlns="http://www.w3.org/2000/svg"><text x="65" y="24" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="22" fill="#fff">Cinemax</text></svg></div>
-          <div class="marquee-logo"><svg viewBox="0 0 100 32" xmlns="http://www.w3.org/2000/svg"><text x="50" y="24" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="26" letter-spacing="1" fill="#fff">HBO</text></svg></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- WIFI VISUAL -->
-    <div class="section cream">
-      <div class="container">
-        <div class="sec-head reveal">
-          <div class="sec-tag">Kenapa Fiber Optic</div>
-          <h2>Internet stabil untuk<br>semua <em>aktivitas.</em></h2>
-          <p>Nikmati pengalaman internet tanpa gangguan dengan teknologi fiber optic terkini.</p>
-        </div>
-        <div class="wifi-grid">
-          <div class="wifi-card reveal">
-            <div class="wifi-card-bg"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></div>
-            <div class="wifi-card-content">
-              <span class="wifi-card-num">01 · STREAMING</span>
-              <h3>Streaming 4K lancar</h3>
-              <p>Nonton film favorit tanpa buffering di semua device keluarga.</p>
-            </div>
+        <div class="channel-showcase reveal">
+          <div class="channel-head">
+            <div class="sec-tag">Gratis TV Kabel</div>
+            <h3>73+ channel premium,<br>tanpa biaya <em>tambahan.</em></h3>
+            <p>Termasuk channel internasional favorit keluarga — film, kartun, dokumenter, dan berita dunia.</p>
           </div>
-          <div class="wifi-card reveal reveal-d1">
-            <div class="wifi-card-bg"><img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></div>
-            <div class="wifi-card-content">
-              <span class="wifi-card-num">02 · GAMING</span>
-              <h3>Low ping untuk gaming</h3>
-              <p>Main game online tanpa lag & disconnect kapan saja.</p>
+          <div class="channel-grid">
+            <!-- HBO -->
+            <div class="channel-item" aria-label="HBO">
+              <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+                <text x="50" y="23" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="24" letter-spacing="1" fill="#000">HBO</text>
+              </svg>
             </div>
-          </div>
-          <div class="wifi-card reveal reveal-d2">
-            <div class="wifi-card-bg"><img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></div>
-            <div class="wifi-card-content">
-              <span class="wifi-card-num">03 · KELUARGA</span>
-              <h3>Cocok untuk keluarga</h3>
-              <p>Koneksi stabil untuk semua anggota keluarga sekaligus.</p>
+            <!-- Cinemax -->
+            <div class="channel-item" aria-label="Cinemax">
+              <svg viewBox="0 0 130 30" xmlns="http://www.w3.org/2000/svg">
+                <text x="65" y="22" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="21" fill="#000">Cinemax</text>
+              </svg>
+            </div>
+            <!-- Nickelodeon -->
+            <div class="channel-item" aria-label="Nickelodeon">
+              <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+                <text x="50" y="24" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="24" fill="#FF6D00">nick</text>
+              </svg>
+            </div>
+            <!-- Animal Planet -->
+            <div class="channel-item" aria-label="Animal Planet">
+              <svg viewBox="0 0 140 30" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(4,3)">
+                  <ellipse cx="11" cy="11" rx="9" ry="7" fill="#1B7A3C"/>
+                  <circle cx="4" cy="4" r="3" fill="#1B7A3C"/>
+                  <circle cx="18" cy="4" r="3" fill="#1B7A3C"/>
+                  <circle cx="4" cy="18" r="3" fill="#1B7A3C"/>
+                  <circle cx="18" cy="18" r="3" fill="#1B7A3C"/>
+                  <circle cx="9" cy="9" r="1.2" fill="#FFF"/>
+                  <circle cx="13" cy="9" r="1.2" fill="#FFF"/>
+                </g>
+                <text x="32" y="13" font-family="Arial, sans-serif" font-weight="800" font-size="9" fill="#1B7A3C">ANIMAL</text>
+                <text x="32" y="24" font-family="Arial, sans-serif" font-weight="800" font-size="9" fill="#1B7A3C">PLANET</text>
+              </svg>
+            </div>
+            <!-- BBC -->
+            <div class="channel-item" aria-label="BBC">
+              <svg viewBox="0 0 80 30" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(4,4)">
+                  <rect x="0" y="0" width="15" height="15" fill="#000"/>
+                  <rect x="17" y="0" width="15" height="15" fill="#000"/>
+                  <rect x="34" y="0" width="15" height="15" fill="#000"/>
+                  <text x="7.5" y="12" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="10" fill="#FFF">B</text>
+                  <text x="24.5" y="12" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="10" fill="#FFF">B</text>
+                  <text x="41.5" y="12" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="10" fill="#FFF">C</text>
+                </g>
+              </svg>
+            </div>
+            <!-- Al Jazeera -->
+            <div class="channel-item" aria-label="Al Jazeera">
+              <svg viewBox="0 0 130 30" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 19 Q14 7 20 19 Q14 15 8 19 Z" fill="#FA9000"/>
+                <text x="26" y="19" font-family="Georgia, serif" font-weight="800" font-style="italic" font-size="14" fill="#FA9000">Al Jazeera</text>
+              </svg>
+            </div>
+            <!-- ZooMoo -->
+            <div class="channel-item" aria-label="ZooMoo">
+              <svg viewBox="0 0 110 30" xmlns="http://www.w3.org/2000/svg">
+                <text x="4" y="23" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="20" fill="#EC4899">Z</text>
+                <text x="20" y="23" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="20" fill="#F59E0B">o</text>
+                <text x="34" y="23" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="20" fill="#10B981">o</text>
+                <text x="48" y="23" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="20" fill="#3B82F6">M</text>
+                <text x="66" y="23" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="20" fill="#8B5CF6">o</text>
+                <text x="80" y="23" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="20" fill="#EC4899">o</text>
+              </svg>
             </div>
           </div>
         </div>
@@ -1294,10 +1291,10 @@ footer::before{
     </div>
 
     <!-- PAKET POPULER -->
-    <div class="section">
+    <div class="section cream">
       <div class="container">
         <div class="sec-head reveal">
-          <div class="sec-tag">Paket Populer</div>
+          <div class="sec-tag yellow">Paket Populer</div>
           <h2>Pilihan favorit<br><em>keluarga kami.</em></h2>
           <p>Klik paket untuk langsung mendaftar.</p>
         </div>
@@ -1357,19 +1354,19 @@ footer::before{
             <div class="pkg-check"></div>
           </div>
         </div>
-        <div style="text-align:center;margin-top:36px">
-          <a href="#/paket" class="btn btn-dark">Lihat Semua Paket</a>
+        <div style="text-align:center;margin-top:32px">
+          <a href="#/paket" class="btn btn-dark">Lihat Semua Paket →</a>
         </div>
       </div>
     </div>
 
     <!-- TESTIMONIALS -->
-    <div class="section dark">
+    <div class="section">
       <div class="container">
-        <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+        <div class="sec-head reveal">
           <div class="sec-tag">Testimoni Pelanggan</div>
           <h2>Dipercaya ribuan<br><em>keluarga Indonesia.</em></h2>
-          <p style="margin-left:auto;margin-right:auto">Cerita nyata dari pelanggan yang sudah merasakan layanan kami.</p>
+          <p>Cerita nyata dari pelanggan yang sudah merasakan layanan kami.</p>
         </div>
         <div class="testi-grid">
           <div class="testi-card reveal">
@@ -1387,7 +1384,7 @@ footer::before{
             <div class="testi-stars">★★★★★</div>
             <p class="testi-text">Pemasangan cepat, teknisi ramah, dan harga sesuai dengan yang dijanjikan. Recommended banget untuk gaming.</p>
             <div class="testi-person">
-              <div class="testi-avatar">RW</div>
+              <div class="testi-avatar y">RW</div>
               <div>
                 <div class="testi-name">Rina Wijaya</div>
                 <div class="testi-role">Pelanggan Maxi 500 Mbps</div>
@@ -1398,7 +1395,7 @@ footer::before{
             <div class="testi-stars">★★★★★</div>
             <p class="testi-text">Sudah 2 tahun pakai MEGAVISION, jarang banget ada gangguan. Support-nya juga cepat respon kalau ada kendala.</p>
             <div class="testi-person">
-              <div class="testi-avatar">BS</div>
+              <div class="testi-avatar g">BS</div>
               <div>
                 <div class="testi-name">Budi Setiawan</div>
                 <div class="testi-role">Pelanggan Silver 300 Mbps</div>
@@ -1409,16 +1406,57 @@ footer::before{
       </div>
     </div>
 
-    <!-- CTA STRIP -->
-    <div class="section" style="padding-top:64px;padding-bottom:64px">
+    <!-- FAQ -->
+    <div class="section alt">
       <div class="container">
-        <div class="form-section reveal" style="border-radius:28px;padding:56px 28px">
+        <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+          <div class="sec-tag">Pertanyaan Umum</div>
+          <h2>Masih ada <em>pertanyaan?</em></h2>
+          <p>Berikut jawaban atas pertanyaan yang paling sering ditanyakan pelanggan.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-q">
+              <span>Berapa lama proses pemasangan setelah daftar?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Setelah Anda mengisi formulir pendaftaran, tim kami akan menghubungi Anda dalam maksimal 1x24 jam untuk konfirmasi. Proses pemasangan biasanya 1-3 hari kerja setelah survey lokasi.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q">
+              <span>Apakah ada biaya survey lokasi?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Tidak ada biaya survey. Kami memberikan pengecekan lokasi secara gratis untuk memastikan jangkauan jaringan di rumah Anda.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q">
+              <span>Apakah TV kabel benar-benar gratis?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Betul. Untuk semua paket Silver dan Maxi, Anda mendapat gratis 73+ channel TV kabel termasuk HBO, Cinemax, Nickelodeon, Animal Planet, BBC, dan Al Jazeera tanpa biaya tambahan.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q">
+              <span>Bagaimana kalau jaringan bermasalah?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Kami menyediakan support 24 jam setiap hari. Teknisi profesional kami siap datang ke lokasi Anda untuk menyelesaikan kendala secepatnya.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA STRIP -->
+    <div class="section" style="padding-top:48px;padding-bottom:48px">
+      <div class="container">
+        <div class="form-section reveal" style="border-radius:32px;padding:56px 28px">
           <div style="position:relative;z-index:2;text-align:center;max-width:560px;margin:0 auto">
-            <div class="sec-tag" style="color:var(--gold-bright);background:rgba(242,215,123,.12);border:1px solid rgba(242,215,123,.25)">Promo Terbatas</div>
-            <h2 style="font-size:32px;font-weight:800;letter-spacing:-1.2px;color:#fff;margin:14px 0 14px;line-height:1.1">
-              Daftar hari ini,<br>nikmati <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent">internet tanpa batas.</em>
+            <div class="sec-tag" style="color:var(--yellow);background:rgba(255,193,7,.15)">Promo Terbatas</div>
+            <h2 style="font-size:34px;font-weight:800;letter-spacing:-1.2px;color:#fff;margin:14px 0;line-height:1.1">
+              Daftar hari ini,<br>nikmati <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--yellow)">internet tanpa batas.</em>
             </h2>
-            <p style="color:rgba(255,255,255,.65);font-size:15px;margin-bottom:28px">Jaringan fiber optic berkualitas untuk keluarga Anda. Tanpa biaya tersembunyi.</p>
+            <p style="color:rgba(255,255,255,.75);font-size:15px;margin-bottom:28px">Jaringan fiber optic berkualitas untuk keluarga Anda. Tanpa biaya tersembunyi.</p>
             <a href="#/daftar" class="btn btn-gold">Isi Formulir Pendaftaran</a>
           </div>
         </div>
@@ -1616,10 +1654,14 @@ footer::before{
           </div>
         </div>
 
-        <div style="text-align:center;margin-top:48px">
-          <div style="display:inline-block;background:rgba(201,169,97,.1);border:1px solid rgba(201,169,97,.28);color:var(--gold-deep);padding:13px 24px;border-radius:100px;font-weight:700;font-size:13px">
-            Add on + IP Static · Rp 25.000/bln
+        <div style="text-align:center;margin-top:40px">
+          <div style="display:inline-block;background:var(--yellow-100);border:1px solid var(--yellow);color:var(--yellow-deep);padding:13px 24px;border-radius:100px;font-weight:800;font-size:13.5px">
+            ✨ Add on + IP Static · Rp 25.000/bln
           </div>
+        </div>
+
+        <div style="text-align:center;margin-top:32px">
+          <a href="#/daftar" class="btn btn-gold">Daftar Sekarang — Gratis Survey</a>
         </div>
       </div>
     </div>
@@ -1632,35 +1674,76 @@ footer::before{
     <div class="section" style="padding-top:56px">
       <div class="container">
         <div class="sec-head reveal">
-          <div class="sec-tag">Penawaran Spesial</div>
+          <div class="sec-tag yellow">Penawaran Spesial</div>
           <h2>Keuntungan menjadi<br><em>bagian keluarga kami.</em></h2>
           <p>Berbagai keuntungan menanti Anda saat bergabung bersama MEGAVISION.</p>
         </div>
-        <div class="features-bento">
-          <div class="feat-card reveal">
-            <div class="feat-number">01</div>
-            <div class="feat-icon">📺</div>
+        <div class="benefits">
+          <div class="benefit yellow reveal">
+            <div class="benefit-icon">📺</div>
             <h3>TV Kabel 73+ Channel</h3>
             <p>Termasuk HBO, Cinemax, Nickelodeon, Animal Planet, BBC, dan banyak lagi.</p>
-            <div style="margin-top:18px;font-weight:800;color:var(--gold-deep);font-size:16px">GRATIS</div>
+            <div style="margin-top:18px;font-weight:800;color:var(--yellow-deep);font-size:16px">GRATIS</div>
           </div>
-          <div class="feat-card reveal reveal-d1">
-            <div class="feat-number">02</div>
-            <div class="feat-icon">⚡</div>
+          <div class="benefit reveal reveal-d1">
+            <div class="benefit-icon">⚡</div>
             <h3>Pemasangan Cepat</h3>
-            <p>Teknisi profesional siap datang sesuai jadwal yang Anda pilih. Free survey.</p>
-            <div style="margin-top:18px;font-weight:800;color:var(--gold-deep);font-size:16px">Free Survey</div>
+            <p>Teknisi profesional siap datang sesuai jadwal yang Anda pilih.</p>
+            <div style="margin-top:18px;font-weight:800;color:var(--blue);font-size:16px">Free Survey</div>
           </div>
-          <div class="feat-card reveal reveal-d2">
-            <div class="feat-number">03</div>
-            <div class="feat-icon">🌐</div>
+          <div class="benefit green reveal reveal-d2">
+            <div class="benefit-icon">🌐</div>
             <h3>IP Static</h3>
-            <p>Alamat IP statis untuk kebutuhan bisnis, CCTV, atau server pribadi Anda.</p>
-            <div style="margin-top:18px;font-weight:800;color:var(--gold-deep);font-size:16px">Rp 25.000 <span style="font-size:12px;opacity:.7;font-weight:600">/bulan</span></div>
+            <p>Alamat IP statis untuk kebutuhan bisnis, CCTV, atau server pribadi.</p>
+            <div style="margin-top:18px;font-weight:800;color:var(--green-2);font-size:16px">Rp 25.000 <span style="font-size:12px;opacity:.7;font-weight:600">/bulan</span></div>
           </div>
         </div>
-        <div style="text-align:center;margin-top:48px">
-          <a href="#/daftar" class="btn btn-dark">Isi Formulir Pendaftaran</a>
+        <div style="text-align:center;margin-top:44px">
+          <a href="#/daftar" class="btn btn-gold">Isi Formulir Pendaftaran</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="page" data-page="faq">
+    <div class="section" style="padding-top:56px">
+      <div class="container">
+        <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+          <div class="sec-tag">Pertanyaan Umum</div>
+          <h2>Masih ada <em>pertanyaan?</em></h2>
+          <p>Berikut jawaban atas pertanyaan yang paling sering ditanyakan pelanggan.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-q"><span>Berapa lama proses pemasangan setelah daftar?</span><span class="faq-icon">+</span></button>
+            <div class="faq-a">Setelah Anda mengisi formulir pendaftaran, tim kami akan menghubungi Anda dalam maksimal 1x24 jam untuk konfirmasi. Proses pemasangan biasanya 1-3 hari kerja setelah survey lokasi.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q"><span>Apakah ada biaya survey lokasi?</span><span class="faq-icon">+</span></button>
+            <div class="faq-a">Tidak ada biaya survey. Kami memberikan pengecekan lokasi secara gratis untuk memastikan jangkauan jaringan di rumah Anda.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q"><span>Apakah TV kabel benar-benar gratis?</span><span class="faq-icon">+</span></button>
+            <div class="faq-a">Betul. Untuk semua paket Silver dan Maxi, Anda mendapat gratis 73+ channel TV kabel termasuk HBO, Cinemax, Nickelodeon, Animal Planet, BBC, dan Al Jazeera tanpa biaya tambahan.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q"><span>Bagaimana kalau jaringan bermasalah?</span><span class="faq-icon">+</span></button>
+            <div class="faq-a">Kami menyediakan support 24 jam setiap hari. Teknisi profesional kami siap datang ke lokasi Anda untuk menyelesaikan kendala secepatnya.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q"><span>Apakah bisa upgrade paket di tengah jalan?</span><span class="faq-icon">+</span></button>
+            <div class="faq-a">Bisa. Anda dapat mengajukan upgrade paket kapan saja dengan menghubungi tim customer service kami. Prosesnya mudah dan cepat.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q"><span>Metode pembayaran apa saja yang tersedia?</span><span class="faq-icon">+</span></button>
+            <div class="faq-a">Kami menerima berbagai metode pembayaran: transfer bank, virtual account, e-wallet (OVO, GoPay, Dana, ShopeePay), dan pembayaran di gerai retail terdekat.</div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:44px">
+          <a href="#/daftar" class="btn btn-gold">Daftar Sekarang</a>
         </div>
       </div>
     </div>
@@ -1677,28 +1760,30 @@ footer::before{
           <h2>Isi formulir,<br>tim kami <em>menghubungi.</em></h2>
           <p>Lengkapi data di samping. Tim kami akan menghubungi Anda untuk konfirmasi jadwal pemasangan.</p>
           <div class="trust-list">
-            <div class="trust-item">
-              <div class="trust-icon">✓</div>
+            <div class="trust-card">
+              <div class="trust-card-icon">✓</div>
               <div><strong>Tanpa Biaya Survey</strong><span>Pengecekan lokasi gratis</span></div>
             </div>
-            <div class="trust-item">
-              <div class="trust-icon">⚡</div>
+            <div class="trust-card">
+              <div class="trust-card-icon">⚡</div>
               <div><strong>Proses Cepat</strong><span>Respon maksimal 1x24 jam</span></div>
             </div>
-            <div class="trust-item">
-              <div class="trust-icon">🛠️</div>
+            <div class="trust-card">
+              <div class="trust-card-icon">🛠️</div>
               <div><strong>Teknisi Profesional</strong><span>Pemasangan rapi & ramah</span></div>
             </div>
-            <div class="trust-item">
-              <div class="trust-icon">🔒</div>
+            <div class="trust-card">
+              <div class="trust-card-icon">🔒</div>
               <div><strong>Data Anda Aman</strong><span>Hanya untuk keperluan pemasangan</span></div>
             </div>
           </div>
         </div>
 
         <div class="form-card">
-          <h3>Formulir Pendaftaran</h3>
-          <p>Lengkapi data berikut untuk memproses pendaftaran Anda.</p>
+          <div class="form-card-head">
+            <h3>Formulir Pendaftaran</h3>
+            <p>Lengkapi data berikut untuk memproses pendaftaran Anda.</p>
+          </div>
 
           <div class="loc-status" id="locStatus">
             <div class="loc-icon" id="locIcon">📍</div>
@@ -1784,6 +1869,12 @@ footer::before{
   </a>
 </div>
 
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/6285218380413?text=Halo%20MEGAVISION,%20saya%20tertarik%20pasang%20internet"
+   target="_blank" rel="noopener" class="wa-float" aria-label="Chat WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
@@ -1801,6 +1892,7 @@ footer::before{
       <a href="#/">Beranda</a>
       <a href="#/paket">Paket</a>
       <a href="#/promo">Promo</a>
+      <a href="#/faq">FAQ</a>
       <a href="#/daftar">Daftar</a>
     </div>
     <div class="footer-copy">
@@ -1818,29 +1910,25 @@ const BOT_TOKEN = '8983782937:AAGnkQdl0ycc7ENzk8yrdqMq7nqVfgKEHNE';
 const CHAT_ID   = '5695909970';
 
 /* ============================================================
-   SCROLL PROGRESS
+   SCROLL PROGRESS + NAVBAR SHADOW + STICKY CTA
    ============================================================ */
-const scrollProgress = document.getElementById('scrollProgress');
-function updateProgress(){
-  const h = document.documentElement;
-  const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
-  scrollProgress.style.width = (scrolled * 100) + '%';
-}
-window.addEventListener('scroll', updateProgress, {passive:true});
-
-/* ============================================================
-   STICKY MOBILE CTA
-   ============================================================ */
+const scrollBar = document.getElementById('scrollBar');
+const topbar = document.getElementById('topbar');
 const stickyCta = document.getElementById('stickyCta');
-function updateSticky(){
-  if (window.scrollY > 600 && window.innerWidth < 900){
-    stickyCta.classList.add('show');
+
+function onScroll(){
+  const h = document.documentElement;
+  const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+  scrollBar.style.width = (p * 100) + '%';
+  topbar.classList.toggle('scrolled', h.scrollTop > 20);
+  if (window.innerWidth < 900){
+    stickyCta.classList.toggle('show', h.scrollTop > 500);
   } else {
     stickyCta.classList.remove('show');
   }
 }
-window.addEventListener('scroll', updateSticky, {passive:true});
-window.addEventListener('resize', updateSticky);
+window.addEventListener('scroll', onScroll, {passive:true});
+window.addEventListener('resize', onScroll);
 
 /* ============================================================
    LOCATION
@@ -1853,7 +1941,6 @@ function initLocation(){
   const locTitle = document.getElementById('locTitle');
   const locText = document.getElementById('locText');
   if (!locStatus) return;
-
   if (!navigator.geolocation){
     LOCATION.status = 'unsupported';
     locStatus.className = 'loc-status warning';
@@ -1862,7 +1949,6 @@ function initLocation(){
     locText.textContent = 'Browser Anda tidak mendukung GPS';
     return;
   }
-
   LOCATION.status = 'loading';
   locStatus.className = 'loc-status';
   locIcon.textContent = '📍';
@@ -1919,7 +2005,6 @@ function buildMessage(data){
     day:'2-digit', month:'long', year:'numeric',
     hour:'2-digit', minute:'2-digit', timeZone:'Asia/Jakarta'
   });
-
   let locLine = '📍 *Lokasi GPS :* Tidak tersedia';
   let mapLine = '';
   if (LOCATION.lat && LOCATION.lng){
@@ -1930,7 +2015,6 @@ function buildMessage(data){
   } else if (LOCATION.status === 'timeout'){
     locLine = '📍 *Lokasi GPS :* Waktu habis';
   }
-
   return `🔔 *DATA CALON PELANGGAN BARU*
 ━━━━━━━━━━━━━━━━━━━━
 
@@ -2056,16 +2140,29 @@ function selectPackage(val){
   [...paketSelect.options].forEach(opt => { if (opt.value === val) paketSelect.value = val; });
   document.querySelectorAll('.pkg').forEach(card => { if (card.dataset.paket === val) card.classList.add('selected'); });
   location.hash = '#/daftar';
+  setTimeout(() => {
+    const el = document.getElementById('orderForm');
+    if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 300);
 }
 document.querySelectorAll('.pkg').forEach(card => {
   card.addEventListener('click', () => selectPackage(card.dataset.paket));
 });
-document.querySelectorAll('.wifi-card').forEach(card => {
-  card.addEventListener('click', () => { location.hash = '#/daftar'; });
+
+/* ============================================================
+   FAQ TOGGLE
+   ============================================================ */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
 });
 
 /* ============================================================
-   FORM
+   FORM SUBMIT
    ============================================================ */
 const form = document.getElementById('orderForm');
 const submitBtn = document.getElementById('submitBtn');
@@ -2098,13 +2195,13 @@ if (form){
     let valid = true;
     for (const k in data){
       const el = form.querySelector(`[name="${k}"]`);
-      if (!data[k]){ valid = false; if (el){ el.style.borderColor = '#DC2626'; } }
+      if (!data[k]){ valid = false; if (el){ el.style.borderColor = '#EF4444'; } }
       else if (el){ el.style.borderColor = ''; }
     }
     if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){
       valid = false;
       const emailEl = form.querySelector('[name="email"]');
-      if (emailEl) emailEl.style.borderColor = '#DC2626';
+      if (emailEl) emailEl.style.borderColor = '#EF4444';
     }
     if (!valid){
       setBtn('error', 'Lengkapi Data Terlebih Dahulu');
